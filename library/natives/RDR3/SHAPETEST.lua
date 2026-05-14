@@ -42,6 +42,9 @@ function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flag
 ---**`SHAPETEST` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFE466162C4401D18)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, dimensionsX: number, dimensionsY: number, dimensionsZ: number, rotX: number, rotY: number, rotZ: number, rotationOrder: integer, flags: integer, entityToIgnore: integer, options: integer): integer
+---@overload fun(posX: number, posY: number, posZ: number, dimensionsX: number, dimensionsY: number, dimensionsZ: number, rotation: vector3, rotationOrder: integer, flags: integer, entityToIgnore: integer, options: integer): integer
+---@overload fun(coords: vector3, dimensionsX: number, dimensionsY: number, dimensionsZ: number, rotation: vector3, rotationOrder: integer, flags: integer, entityToIgnore: integer, options: integer): integer
 ---@param posX number
 ---@param posY number
 ---@param posZ number

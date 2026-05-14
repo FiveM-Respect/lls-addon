@@ -241,6 +241,7 @@ function Vdist2(x1, y1, z1, x2, y2, z2) end
 ---```
 ---Calculates the magnitude of a vector.  
 ---```
+---@overload fun(coords: vector3): number
 ---@param x number
 ---@param y number
 ---@param z number
@@ -252,6 +253,7 @@ function Vmag(x, y, z) end
 ---```
 ---Calculates the magnitude of a vector but does not perform Sqrt operations. (Its way faster)  
 ---```
+---@overload fun(coords: vector3): number
 ---@param x number
 ---@param y number
 ---@param z number

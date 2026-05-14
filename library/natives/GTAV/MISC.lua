@@ -61,6 +61,7 @@ function AddDispatchSpawnBlockingArea(x1, y1, x2, y2) end
 ---Returns the index of the newly created hospital spawn point.  
 ---p3 might be radius?  
 ---```
+---@overload fun(coords: vector3, p3: number, p4: any): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -102,6 +103,7 @@ function AddPopMultiplierArea(x1, y1, z1, x2, y2, z2, p6, p7, p8) end
 ---```
 ---This native is adding a zone, where you can change density settings. For example, you can add a zone on 0.0, 0.0, 0.0 with radius 900.0 and vehicleMultiplier 0.0, and you will not see any new population vehicle spawned in a radius of 900.0 from 0.0, 0.0, 0.0. Returns the id. You can have only 15 zones at the same time. You can remove zone using REMOVE_POP_MULTIPLIER_SPHERE
 ---```
+---@overload fun(coords: vector3, radius: number, pedMultiplier: number, vehicleMultiplier: number, p6: boolean, p7: boolean): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -200,6 +202,7 @@ function AddStuntJumpAngled(x1, y1, z1, x2, y2, z2, radius1, x3, y3, z3, x4, y4,
 ---```
 ---Adds a point related to CTacticalAnalysis
 ---```
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -303,6 +306,7 @@ function ClearAngledAreaOfVehicles(x1, y1, z1, x2, y2, z2, width, p7, p8, p9, p1
 ---```
 ---Example: CLEAR_AREA(0, 0, 0, 30, true, false, false, false);  
 ---```
+---@overload fun(coords: vector3, radius: number, p4: boolean, ignoreCopCars: boolean, ignoreObjects: boolean, p7: boolean)
 ---@param X number
 ---@param Y number
 ---@param Z number
@@ -318,6 +322,7 @@ function ClearArea(X, Y, Z, radius, p4, ignoreCopCars, ignoreObjects, p7) end
 ---```
 ---MISC::_0x957838AAF91BD12D(x, y, z, radius, false, false, false, false); seem to make all objects go away, peds, vehicles etc. All booleans set to true doesn't seem to change anything.
 ---```
+---@overload fun(coords: vector3, radius: number, p4: boolean, p5: boolean, p6: boolean, p7: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -334,6 +339,7 @@ ClearAreaOfEverything = ClearAreaLeaveVehicleHealth
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x04F8FC8FCF58F88D)  
 ---Clears an area of cops at the given coordinates and radius.
+---@overload fun(coords: vector3, radius: number, createNetEvent: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -346,6 +352,7 @@ function ClearAreaOfCops(x, y, z, radius, createNetEvent) end
 ---```
 ---I looked through the PC scripts that this site provides you with a link to find. It shows the last param mainly uses, (0, 2, 6, 16, and 17) so I am going to assume it is a type of flag.  
 ---```
+---@overload fun(coords: vector3, radius: number, flags: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -356,6 +363,7 @@ function ClearAreaOfObjects(x, y, z, radius, flags) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBE31FD6CE464AC59)  
 ---Clears an area of peds at the given coordinates and radius.
+---@overload fun(coords: vector3, radius: number, createNetEvent: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -366,6 +374,7 @@ function ClearAreaOfPeds(x, y, z, radius, createNetEvent) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0A1CB9094635D1A6)  
 ---Clears an area of projectiles at the given coordinates and radius.
+---@overload fun(coords: vector3, radius: number, createNetEvent: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -382,6 +391,7 @@ function ClearAreaOfProjectiles(x, y, z, radius, createNetEvent) end
 ---```
 ---NativeDB Added Parameter 10: BOOL p9
 ---```
+---@overload fun(coords: vector3, radius: number, p4: boolean, p5: boolean, p6: boolean, p7: boolean, p8: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -490,6 +500,7 @@ function CopyMemory(src, size) end
 ---NativeDB Added Parameter 8: Any p7
 ---NativeDB Added Parameter 9: Any p8
 ---```
+---@overload fun(dispatchService: integer, coords: vector3, numUnits: integer, radius: number): (boolean, integer)
 ---@param dispatchService integer
 ---@param x number
 ---@param y number
@@ -684,6 +695,7 @@ function EndReplayStats() end
 ---The positions match path finding node positions.  
 ---When roads diverge, the position may rapidly change between two or more positions. This is due to the engine not being certain of which path the player will take.  
 ---```
+---@overload fun(coords: vector3, dirX: number, dirY: number, dirZ: number, distance: number): (boolean, vector3)
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -871,6 +883,7 @@ function GetGlobalCharBuffer() end
 ---```
 ---NativeDB Introduced: v323
 ---```
+---@overload fun(coords: vector3): (boolean, number, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -891,6 +904,7 @@ GetGroundZCoordWithOffsets = GetGroundZAndNormalFor_3dCoord
 ---```
 ---NativeDB Introduced: v505
 ---```
+---@overload fun(coords: vector3, waterAsGround: boolean): (boolean, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -909,6 +923,7 @@ GetGroundZFor_3dCoord_2 = GetGroundZExcludingObjectsFor_3dCoord
 ---```
 ---NativeDB Added Parameter 6: BOOL p5
 ---```
+---@overload fun(coords: vector3, includeWater: boolean): (boolean, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1192,6 +1207,7 @@ function HasAsyncInstallFinished() end
 ---```
 ---p3 - possibly radius?  
 ---```
+---@overload fun(coords: vector3, p3: number, p4: boolean, p5: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1336,6 +1352,7 @@ function IsBulletInAngledArea(x1, y1, z1, x2, y2, z2, width, ownedByPlayer) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3F2023999AD51C1F)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, ownedByPlayer: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1464,6 +1481,7 @@ function IsPopMultiplierAreaUnk(id) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xADCDE75E1C60F32D)  
 ---The BOOL parameters that are documented have not been confirmed. They are just documented from what I've found during testing. They may not work as expected in all cases.
+---@overload fun(coords: vector3, range: number, p4: boolean, checkVehicles: boolean, checkPeds: boolean, p7: boolean, p8: boolean, ignoreEntity: integer, p10: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1540,6 +1558,7 @@ function IsProjectileTypeInArea(x1, y1, z1, x2, y2, z2, type, ownedByPlayer) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x34318593248C8FB2)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, projHash: integer | string, radius: number, ownedByPlayer: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2380,6 +2399,7 @@ function SetDispatchIdealSpawnDistance(p0) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD10F442036302D50)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2607,6 +2627,7 @@ function SetRandomWeatherType() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x706B5EDCAA7FA663)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, heading: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2862,6 +2883,7 @@ IsGameUsingMetricMeasurementSystem = ShouldUseMetricMeasurements
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF2F6A2FA49278625)  
 ---This native always come right before SET_ENTITY_QUATERNION where its final 4 parameters are SLERP_NEAR_QUATERNION p9 to p12
+---@overload fun(t: number, coords: vector3, w: number, x1: number, y1: number, z1: number, w1: number): (number, number, number, number)
 ---@param t number
 ---@param x number
 ---@param y number

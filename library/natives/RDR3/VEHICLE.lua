@@ -20,6 +20,7 @@ function AddRoadNodeSpeedZone(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x41503629D1139ABC)  
 ---This native does not have an official description.
+---@overload fun(train: integer, trackIndex: integer, coords: vector3)
 ---@param train integer
 ---@param trackIndex integer
 ---@param x number
@@ -70,6 +71,7 @@ function BreakOffVehicleWheel(vehicle, wheelIndex) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD1EFA8D68BF5D63D)  
 ---Only used to break draft vehicle log straps. Coords is always equal to the vehicle coords.
+---@overload fun(vehicle: integer, coords: vector3)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -117,6 +119,7 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x214651FB1DFEBA89)  
 ---Identical to CREATE_VEHICLE but allows to set draftAnimalPopGroup (see popgroups.#mt for DRAFT_HORSES_*)
+---@overload fun(modelHash: integer | string, coords: vector3, heading: number, isNetwork: boolean, bScriptHostVeh: boolean, bDontAutoCreateDraftAnimals: boolean, draftAnimalPopGroup: integer | string, p9: boolean): integer
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -135,6 +138,7 @@ function CreateDraftVehicle(modelHash, x, y, z, heading, isNetwork, bScriptHostV
 ---configHash: https://alloc8or.re/rdr3/doc/enums/eTrainConfig.txt
 ---For more information, see trainconfigs.ymt
 ---To make the train AI controlled, set conductor to true and set the speed once.
+---@overload fun(configHash: integer | string, coords: vector3, direction: boolean, passengers: boolean, p6: boolean, conductor: boolean): integer
 ---@param configHash integer | string
 ---@param x number
 ---@param y number
@@ -149,6 +153,7 @@ function CreateMissionTrain(configHash, x, y, z, direction, passengers, p6, cond
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xAF35D0D2583051B0)  
 ---This native does not have an official description.
+---@overload fun(modelHash: integer | string, coords: vector3, heading: number, isNetwork: boolean, bScriptHostVeh: boolean, bDontAutoCreateDraftAnimals: boolean, p8: boolean): integer
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -315,6 +320,7 @@ function GetBreakableVehicleLocksState(vehicle) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x35D302397E524939)  
 ---This native does not have an official description.
+---@overload fun(trackIndex: integer, coords: vector3, distance: number, direction: boolean): vector3
 ---@param trackIndex integer
 ---@param x number
 ---@param y number
@@ -327,6 +333,7 @@ function GetCheckpointTrainSpawnLocation(trackIndex, x, y, z, distance, directio
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x52F45D033645181B)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, flags: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -396,6 +403,7 @@ function GetLastPedInVehicleSeat(vehicle, seatIndex) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6DE03BCC15E81710)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): vector3
 ---@param x number
 ---@param y number
 ---@param z number
@@ -529,6 +537,7 @@ function GetTrackAmountOfVisiblePixels(vehicle) end
 ---[Native Documentation](https://rdr3natives.com/?_0x85D39F5E3B6D7EB0)  
 ---Returns trackIndex
 ---_E* - _F*
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -604,6 +613,7 @@ function GetTrainTrackFromTrainVehicle(train) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x86AFC343CF7F0B34)  
 ---Outputs junctionIndex, to be used with 0xE6C5E2125EB210C1
+---@overload fun(trainTrack: integer | string, coords: vector3): (boolean, integer)
 ---@param trainTrack integer | string
 ---@param x number
 ---@param y number
@@ -784,6 +794,7 @@ function InstantlyFillVehiclePopulation() end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x5698BA4FD04D39C4)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1110,6 +1121,7 @@ function N_0x1180a2974d251b7b(train) end
 ---[Native Documentation](https://rdr3natives.com/?_0x12F6C6ED3EFF42DE)  
 ---Params: coords = GET_ENTITY_VELOCITY
 ---_SET_VELOCITY*
+---@overload fun(vehicle: integer, coords: vector3)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -1185,6 +1197,7 @@ function N_0x2045429505158d1a(p0) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2200AB13CBD10F4E)  
 ---This native does not have an official description.
+---@overload fun(vehicle: integer, coords: vector3, p4: boolean, p5: number)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -1245,6 +1258,7 @@ function N_0x3137edc899e6dae4(p0, p1) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x331CBD247FC5DAA8)  
 ---Returns trackIndex
+---@overload fun(configHash: integer | string, coords: vector3, direction: boolean, p5: boolean): integer
 ---@param configHash integer | string
 ---@param x number
 ---@param y number
@@ -1412,6 +1426,7 @@ function N_0x6b53f4b811e583d2(vehicle, toggle) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6C87F49BFA181DB5)  
 ---Returns trackIndex
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1634,6 +1649,7 @@ function N_0xb4241ad8f5aee9ed(trackIndex) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB42C87521D1BDD2F)  
 ---This native does not have an official description.
+---@overload fun(vehicle: integer, coords: vector3)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -1736,6 +1752,7 @@ function N_0xd0aabe5b9f8fa589(trackIndex, p1) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD0BA1853D76683C8)  
 ---This native does not have an official description.
+---@overload fun(trackIndex: integer, coords: vector3, p4: any)
 ---@param trackIndex integer
 ---@param x number
 ---@param y number
@@ -1866,6 +1883,7 @@ function N_0xef28a614b4b264b8(train, p1) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF05DFAF1ADFEF2CD)  
 ---_IS_* (related to CREATE_MISSION_TRAIN)
+---@overload fun(trainConfig: integer | string, coords: vector3, direction: boolean, p5: boolean): boolean
 ---@param trainConfig integer | string
 ---@param x number
 ---@param y number
@@ -2257,6 +2275,7 @@ function SetMissionTrainAsNoLongerNeeded(train, flags) end
 ---**`VEHICLE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x7632755962AB9922)  
 ---This native does not have an official description.
+---@overload fun(train: integer, coords: vector3)
 ---@param train integer
 ---@param x number
 ---@param y number
@@ -2267,6 +2286,7 @@ function SetMissionTrainCoords(train, x, y, z) end
 ---[Native Documentation](https://rdr3natives.com/?_0xC9EA26893C9E4024)  
 ---Notice: BOOL p4 was wrongly named takePassengers (?)
 ---Can be used to rotate the train by setting the BOOL direction
+---@overload fun(train: integer, coords: vector3, direction: boolean)
 ---@param train integer
 ---@param x number
 ---@param y number
@@ -2465,6 +2485,7 @@ function SetVehicleCanEjectPassengersIfLocked(vehicle, p1) end
 ---Apply damage to vehicle at a location. Location is relative to vehicle model (not world).
 ---
 ---Radius of effect damage applied in a sphere at impact location
+---@overload fun(vehicle: integer, offset: vector3, damage: number, radius: number, p6: boolean)
 ---@param vehicle integer
 ---@param xOffset number
 ---@param yOffset number

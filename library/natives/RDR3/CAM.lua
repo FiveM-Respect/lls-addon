@@ -7,6 +7,9 @@
 ---p8 big values ~100 will slow down the camera movement before reaching this node
 ---
 ---p9 != 0 seems to override the rotation/pitch (bool?)
+---@overload fun(camera: integer, coords: vector3, xRot: number, yRot: number, zRot: number, length: integer, p8: integer, p9: integer)
+---@overload fun(camera: integer, x: number, y: number, z: number, rotation: vector3, length: integer, p8: integer, p9: integer)
+---@overload fun(camera: integer, coords: vector3, rotation: vector3, length: integer, p8: integer, p9: integer)
 ---@param camera integer
 ---@param x number
 ---@param y number
@@ -29,6 +32,7 @@ function AllowMotionBlurDecay(cam, p1) end
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFDC0DF7F6FB0A592)  
 ---Last param determines if its relative to the Entity
+---@overload fun(cam: integer, entity: integer, offset: vector3, isRelative: boolean)
 ---@param cam integer
 ---@param entity integer
 ---@param xOffset number
@@ -40,6 +44,7 @@ function AttachCamToEntity(cam, entity, xOffset, yOffset, zOffset, isRelative) e
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xDFC1E4A44C0324CA)  
 ---boneIndex: https://github.com/femga/rdr3_discoveries/tree/master/boneNames
+---@overload fun(cam: integer, ped: integer, boneIndex: integer, coords: vector3, heading: boolean)
 ---@param cam integer
 ---@param ped integer
 ---@param boneIndex integer
@@ -77,6 +82,9 @@ function CinematicLocationOverrideTargetEntityThisUpdate(name, entity) end
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0E94C95EC3185FA9)  
 ---This native does not have an official description.
+---@overload fun(name: string, coords: vector3, rotX: number, rotY: number, rotZ: number)
+---@overload fun(name: string, x: number, y: number, z: number, rotation: vector3)
+---@overload fun(name: string, coords: vector3, rotation: vector3)
 ---@param name string
 ---@param x number
 ---@param y number
@@ -130,6 +138,9 @@ function CreateCamera(camHash, p1) end
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x98B99B9F27E2D60B)  
 ---This native does not have an official description.
+---@overload fun(camHash: integer | string, coords: vector3, rotX: number, rotY: number, rotZ: number, fov: number, p8: boolean, p9: any): integer
+---@overload fun(camHash: integer | string, posX: number, posY: number, posZ: number, rotation: vector3, fov: number, p8: boolean, p9: any): integer
+---@overload fun(camHash: integer | string, coords: vector3, rotation: vector3, fov: number, p8: boolean, p9: any): integer
 ---@param camHash integer | string
 ---@param posX number
 ---@param posY number
@@ -146,6 +157,9 @@ function CreateCameraWithParams(camHash, posX, posY, posZ, rotX, rotY, rotZ, fov
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x40C23491CE83708E)  
 ---This native does not have an official description.
+---@overload fun(camName: string, coords: vector3, rotX: number, rotY: number, rotZ: number, fov: number, p8: boolean, p9: integer): integer
+---@overload fun(camName: string, posX: number, posY: number, posZ: number, rotation: vector3, fov: number, p8: boolean, p9: integer): integer
+---@overload fun(camName: string, coords: vector3, rotation: vector3, fov: number, p8: boolean, p9: integer): integer
 ---@param camName string
 ---@param posX number
 ---@param posY number
@@ -592,6 +606,7 @@ function IsScreenFadingOut() end
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2E941B5FFA2989C6)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1104,6 +1119,9 @@ function PauseCameraFocus(cam, pause) end
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xA263DDF694D563F6)  
 ---This native does not have an official description.
+---@overload fun(cam: integer, animName: string, animDictionary: string, coords: vector3, xRot: number, yRot: number, zRot: number, animFlags: integer, rotOrder: integer): boolean
+---@overload fun(cam: integer, animName: string, animDictionary: string, x: number, y: number, z: number, rotation: vector3, animFlags: integer, rotOrder: integer): boolean
+---@overload fun(cam: integer, animName: string, animDictionary: string, coords: vector3, rotation: vector3, animFlags: integer, rotOrder: integer): boolean
 ---@param cam integer
 ---@param animName string
 ---@param animDictionary string
@@ -1121,6 +1139,7 @@ function PlayCamAnim(cam, animName, animDictionary, x, y, z, xRot, yRot, zRot, a
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x948B39341C3A40C2)  
 ---This native does not have an official description.
+---@overload fun(cam: integer, coords: vector3)
 ---@param cam integer
 ---@param x number
 ---@param y number
@@ -1214,6 +1233,7 @@ function SetCamControlsMiniMapHeading(cam, p1) end
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF9EE7D419EE49DE6)  
 ---Sets the position of the cam.
+---@overload fun(cam: integer, coords: vector3)
 ---@param cam integer
 ---@param posX number
 ---@param posY number
@@ -1268,6 +1288,9 @@ function SetCamNearClip(cam, nearClip) end
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xA47BBFFFB83D4D0A)  
 ---This native does not have an official description.
+---@overload fun(cam: integer, coords: vector3, rotX: number, rotY: number, rotZ: number, fieldOfView: number, p8: any, graphType1: integer, graphType2: integer, rotationOrder: integer, p12: any, p13: any)
+---@overload fun(cam: integer, posX: number, posY: number, posZ: number, rotation: vector3, fieldOfView: number, p8: any, graphType1: integer, graphType2: integer, rotationOrder: integer, p12: any, p13: any)
+---@overload fun(cam: integer, coords: vector3, rotation: vector3, fieldOfView: number, p8: any, graphType1: integer, graphType2: integer, rotationOrder: integer, p12: any, p13: any)
 ---@param cam integer
 ---@param posX number
 ---@param posY number
@@ -1287,6 +1310,7 @@ function SetCamParams(cam, posX, posY, posZ, rotX, rotY, rotZ, fieldOfView, p8, 
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x63DFA6810AD78719)  
 ---Sets the rotation of the cam.
+---@overload fun(cam: integer, rotation: vector3, rotationOrder: integer)
 ---@param cam integer
 ---@param rotX number
 ---@param rotY number
@@ -1420,6 +1444,7 @@ function SetGameplayCamShakeAmplitude(amplitude) end
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFA33B8C69A4A6A0F)  
 ---Hash used in finale1.ysc: 1726668277
+---@overload fun(coords: vector3, duration: integer, blendOutDuration: integer, blendInDuration: integer, p6: integer | string)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1432,6 +1457,7 @@ function SetGameplayCoordHint(x, y, z, duration, blendOutDuration, blendInDurati
 ---**`CAM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD1F7F32640ADFD12)  
 ---p6 & p7 - possibly length or time
+---@overload fun(entity: integer, offset: vector3, p4: boolean, p5: integer, p6: integer, p7: integer, p8: any)
 ---@param entity integer
 ---@param xOffset number
 ---@param yOffset number

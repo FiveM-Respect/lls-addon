@@ -70,6 +70,7 @@ function ClearPedLastWeaponDamage(ped) end
 ---**`WEAPON` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9888652B8BA77F73)  
 ---This native does not have an official description.
+---@overload fun(weaponHash: integer | string, ammoCount: integer, coords: vector3, showWorldModel: boolean, scale: number): table
 ---@param weaponHash integer | string
 ---@param ammoCount integer
 ---@param x number
@@ -1685,6 +1686,7 @@ function SetPedCurrentWeaponVisible(ped, visible, deselectWeapon, p3, p4) end
 ---**`WEAPON` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x208A1888007FC0E6)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, weaponHash: integer | string, offset: vector3, ammoCount: integer)
 ---@param ped integer
 ---@param weaponHash integer | string
 ---@param xOffset number

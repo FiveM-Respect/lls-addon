@@ -334,6 +334,7 @@ function LoadGlobalWaterType(waterType) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4448EB75B4904BDB)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -468,6 +469,9 @@ function NetworkUpdateLoadScene() end
 ---`p7` is 0, 1, 2, 3 or 4 used in decompiled scripts, 0 is by far the most common.
 ---Returns True if success, used only 7 times in decompiled scripts of 1868
 ---```
+---@overload fun(coords: vector3, offsetX: number, offsetY: number, offsetZ: number, radius: number, p7: integer): boolean
+---@overload fun(posX: number, posY: number, posZ: number, offset: vector3, radius: number, p7: integer): boolean
+---@overload fun(coords: vector3, offset: vector3, radius: number, p7: integer): boolean
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -490,6 +494,7 @@ function NewLoadSceneStart(posX, posY, posZ, offsetX, offsetY, offsetZ, radius, 
 ---}
 ---(Previously known as STREAMING::_NEW_LOAD_SCENE_START_SAFE)
 ---```
+---@overload fun(coords: vector3, radius: number, p4: any): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -571,6 +576,7 @@ function RemovePtfxAsset() end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC9156DC11411A9EA)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -597,6 +603,7 @@ function RequestClipSet(clipSet) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x07503F7948F491A7)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -695,6 +702,9 @@ function SetFocusEntity(entity) end
 ---Override the area where the camera will render the terrain.
 ---p3, p4 and p5 are usually set to 0.0
 ---```
+---@overload fun(coords: vector3, offsetX: number, offsetY: number, offsetZ: number)
+---@overload fun(x: number, y: number, z: number, offset: vector3)
+---@overload fun(coords: vector3, offset: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -715,6 +725,7 @@ function SetGamePausesForStreaming(toggle) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB85F26619073E775)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -914,6 +925,7 @@ function StreamvolCreateLine(p0, p1, p2, p3, p4, p5, p6) end
 ---```
 ---Always returns zero.
 ---```
+---@overload fun(coords: vector3, rad: number, p4: any, p5: any): any
 ---@param x number
 ---@param y number
 ---@param z number

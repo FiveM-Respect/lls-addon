@@ -104,6 +104,7 @@ function AddPopMultiplierVolume(volume, pedDensity, vehicleDensity, p3, p4) end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE4EE55E63FA9AF45)  
 ---Params: p3 is 0 in R* Script utopia2
+---@overload fun(coords: vector3, p3: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -178,6 +179,7 @@ function ClearAngledAreaOfVehicles(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---PROJECTILES = 1,
 ---BROADCAST = 524288,
 ---AMBIENT_POPULATION = 1048576
+---@overload fun(coords: vector3, radius: number, flag: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -274,6 +276,7 @@ function CreateColorString(rgb) end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x3F892CAF67444AE7)  
 ---dispatchService: see ENABLE_DISPATCH_SERVICE
+---@overload fun(dispatchService: integer, coords: vector3, numUnits: integer, radius: number, p7: any, p8: any): (boolean, integer)
 ---@param dispatchService integer
 ---@param x number
 ---@param y number
@@ -290,6 +293,7 @@ function CreateIncident(dispatchService, x, y, z, numUnits, radius, p7, p8) end
 ---dispatchService: see ENABLE_DISPATCH_SERVICE
 ---
 ---The entities must be added to itemSet.
+---@overload fun(dispatchService: integer, coords: vector3, itemSet: integer, radius: number): (boolean, integer)
 ---@param dispatchService integer
 ---@param x number
 ---@param y number
@@ -412,6 +416,7 @@ function ForceLightningFlash() end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x67943537D179597C)  
 ---p3 is always -1.0f in the scripts
+---@overload fun(coords: vector3, p3: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -616,6 +621,7 @@ function GetGroundZAndMaterialFor_3dCoord(coords, flags) end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2A29CA9A6319E6AB)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): (boolean, number, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -625,6 +631,7 @@ function GetGroundZAndNormalFor_3dCoord(x, y, z) end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x24FA4267BB8D2431)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p4: boolean): (boolean, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -860,6 +867,7 @@ function GetStringFromFloat(value, digits) end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6C4DBF553885F9EB)  
 ---Returns a string in the following format: <<%.4f,%.4f,%.4f>>
+---@overload fun(coords: vector3): any
 ---@param x number
 ---@param y number
 ---@param z number
@@ -881,6 +889,7 @@ function GetSystemTimeStep() end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB98B78C3768AF6E0)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): number
 ---@param x number
 ---@param y number
 ---@param z number
@@ -916,6 +925,7 @@ function GetWindSpeed() end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xC153E5BCCF411814)  
 ---p3 - possibly radius?
+---@overload fun(coords: vector3, p3: number, p4: boolean, p5: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1107,6 +1117,7 @@ function IsPlayerOwningStandaloneSp() end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x825CA3ED43831015)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, range: number, p4: boolean, p5: boolean, p6: boolean, p7: boolean, p8: boolean, p9: any, p10: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1701,6 +1712,7 @@ function NextOnscreenKeyboardResultWillDisplayUsingTheseFonts(fontBitField) end
 ---**`MISC` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB2C69E11A37B5AF0)  
 ---This native does not have an official description.
+---@overload fun(override: boolean, coords: vector3, heading: number, isAutosave: boolean): (boolean, vector3, number)
 ---@param override boolean
 ---@param x number
 ---@param y number

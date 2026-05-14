@@ -43,6 +43,7 @@ function N_0xda0a30153fcc0ffd() end
 ---**`UILOG` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x69D5479982355D8F)  
 ---This native does not have an official description.
+---@overload fun(p0: integer, p1: integer, coords: vector3, p5: integer | string, p6: integer | string, p7: any)
 ---@param p0 integer
 ---@param p1 integer
 ---@param x number

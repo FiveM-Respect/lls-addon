@@ -193,6 +193,7 @@ SetMobilePhoneUnk = SetMobilePhoneDofState
 ---**`MOBILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x693A5C6D6734085B)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -203,6 +204,7 @@ function SetMobilePhonePosition(posX, posY, posZ) end
 ---```
 ---Last parameter is unknown and always zero.  
 ---```
+---@overload fun(rotation: vector3, p3: any)
 ---@param rotX number
 ---@param rotY number
 ---@param rotZ number

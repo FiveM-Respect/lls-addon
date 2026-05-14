@@ -9,6 +9,7 @@ function AbandonBlip(blip) end
 ---**`MAP` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x64C59DD6834FA942)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -39,6 +40,7 @@ function AllowSonarBlips(toggle) end
 ---**`MAP` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xEC174ADBCB611ECC)  
 ---This native does not have an official description.
+---@overload fun(blipHash: integer | string, coords: vector3, scaleX: number, scaleY: number, scaleZ: number, p7: integer): integer
 ---@param blipHash integer | string
 ---@param x number
 ---@param y number
@@ -54,6 +56,7 @@ function BlipAddForArea(blipHash, x, y, z, scaleX, scaleY, scaleZ, p7) end
 ---[Native Documentation](https://rdr3natives.com/?_0x554D9D53F696D002)  
 ---https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/textures/blips
 ---https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/textures/blips_mp
+---@overload fun(blipHash: integer | string, coords: vector3): integer
 ---@param blipHash integer | string
 ---@param x number
 ---@param y number
@@ -80,6 +83,7 @@ function BlipAddForPickupPlacement(blipHash, pickup) end
 ---**`MAP` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x45F13B7E0A15C880)  
 ---This native does not have an official description.
+---@overload fun(blipHash: integer | string, coords: vector3, radius: number): integer
 ---@param blipHash integer | string
 ---@param x number
 ---@param y number
@@ -208,6 +212,7 @@ function DoesEntityHaveBlip(entity) end
 ---**`MAP` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x3FDA2B79AEEE351C)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -381,6 +386,7 @@ function RevealMinimapFow(hash) end
 ---**`MAP` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4FF674F5E23D49CE)  
 ---This native does not have an official description.
+---@overload fun(blip: integer, coords: vector3)
 ---@param blip integer
 ---@param posX number
 ---@param posY number
@@ -505,6 +511,7 @@ function SetMinimapFowOverrideRevealScale(scale, p1) end
 ---**`MAP` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x73348402566ECB6E)  
 ---Up to eight coordinates may be revealed per frame
+---@overload fun(coords: vector3, p3: integer | string)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -540,6 +547,7 @@ function SetMinimapZone(zone) end
 ---**`MAP` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE0884C184728C75B)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -598,6 +606,7 @@ function StartGpsMultiRoute(colorNameHash, onFoot, inVehicle) end
 ---**`MAP` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x72DD432F3CDFC0EE)  
 ---This native does not have an official description.
+---@overload fun(typeHash: integer | string, coords: vector3)
 ---@param typeHash integer | string
 ---@param x number
 ---@param y number

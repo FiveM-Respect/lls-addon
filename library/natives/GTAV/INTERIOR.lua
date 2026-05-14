@@ -111,6 +111,7 @@ function ForceRoomForGameViewport(interiorID, roomHashKey) end
 ---Example for VB.NET  
 ---Dim interiorID As Integer = Native.Function.Call(Of Integer)(Hash.GET_INTERIOR_AT_COORDS, X, Y, Z)  
 ---```
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -125,6 +126,7 @@ function GetInteriorAtCoords(x, y, z) end
 ---Interior types include: "V_Michael", "V_Franklins", "V_Franklinshouse", etc.. you can find them in the scripts.  
 ---Not a very useful native as you could just use GET_INTERIOR_AT_COORDS instead and get the same result, without even having to specify the interior type.  
 ---```
+---@overload fun(coords: vector3, interiorType: string): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -137,6 +139,7 @@ function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 ---```
 ---Hashed version of GET_INTERIOR_AT_COORDS_WITH_TYPE
 ---```
+---@overload fun(coords: vector3, typeHash: integer | string): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -150,6 +153,7 @@ UnkGetInteriorAtCoords = GetInteriorAtCoordsWithTypehash
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEC4CF9FCB29A4424)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -218,6 +222,7 @@ function GetKeyForEntityInRoom(entity) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9E3B3E6D66F6E22F)  
 ---This native does not have an official description.
+---@overload fun(interior: integer, coords: vector3): vector3
 ---@param interior integer
 ---@param x number
 ---@param y number
@@ -246,6 +251,7 @@ function GetRoomKeyFromEntity(entity) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEEA5AC2EDA7C33E8)  
 ---Returns true if the collision at the specified coords is marked as being outside (false if there's an interior)
+---@overload fun(coords: vector3): boolean
 ---@param x number
 ---@param y number
 ---@param z number

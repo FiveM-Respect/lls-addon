@@ -45,6 +45,7 @@
 ---	EXP_TAG_TRACKING_ARROW,
 ---	EXP_TAG_POISON_BOTTLE
 ---};
+---@overload fun(coords: vector3, explosionType: integer, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -59,6 +60,7 @@ function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisibl
 ---[Native Documentation](https://rdr3natives.com/?_0xB7DF150605EEDC9B)  
 ---Add explosion with and assign an entity as damage causer.
 ---explosionType: https://github.com/femga/rdr3_discoveries/blob/master/graphics/explosions/README.md
+---@overload fun(entity: integer, p1: integer, coords: vector3, explosionType: integer, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number)
 ---@param entity integer
 ---@param p1 integer
 ---@param x number
@@ -75,6 +77,7 @@ function AddExplosionWithDamageCauser(entity, p1, x, y, z, explosionType, damage
 ---[Native Documentation](https://rdr3natives.com/?_0x53BA259F3A67A99E)  
 ---explosionType: see ADD_EXPLOSION
 ---Change explosionFx (Visual Effect) for specified explosionType
+---@overload fun(coords: vector3, explosionType: integer, explosionFx: integer | string, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -91,6 +94,7 @@ function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScal
 ---Add explosion with vfx and assign an entity as damage causer.
 ---explosionType: https://github.com/femga/rdr3_discoveries/blob/master/graphics/explosions/README.md
 ---explosionFx: https://github.com/femga/rdr3_discoveries/blob/master/graphics/explosions/explosion_vfxTags.lua
+---@overload fun(entity: integer, p1: boolean, coords: vector3, explosionType: integer, explosionFx: integer | string, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number)
 ---@param entity integer
 ---@param p1 boolean
 ---@param x number
@@ -107,6 +111,7 @@ function AddExplosionWithUserVfxAndDamageCauser(entity, p1, x, y, z, explosionTy
 ---**`FIRE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD84A917A64D4D016)  
 ---explosionType: see ADD_EXPLOSION
+---@overload fun(ped: integer, coords: vector3, explosionType: integer, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -121,6 +126,7 @@ function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, 
 ---**`FIRE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB646FB657F448261)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -130,6 +136,9 @@ function GetClosestFirePos(x, y, z) end
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x559FC1D310813031)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number): (boolean, vector3)
+---@overload fun(posX: number, posY: number, posZ: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): (boolean, vector3)
+---@overload fun(coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): (boolean, vector3)
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -145,6 +154,7 @@ function GetClosestFirePosInVolume(posX, posY, posZ, rotX, rotY, rotZ, scaleX, s
 ---**`FIRE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF9617BC6FAE61E08)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -230,6 +240,7 @@ function IsExplosionInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 ---**`FIRE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD62DD846D82CBB90)  
 ---explosionType: see ADD_EXPLOSION
+---@overload fun(explosionType: integer, coords: vector3, radius: number): boolean
 ---@param explosionType integer
 ---@param x number
 ---@param y number
@@ -279,6 +290,7 @@ function N_0x41b87a6495ee13dd(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 ---**`FIRE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x68F6A75FDF5A70D6)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -313,6 +325,7 @@ function StartEntityFire(entity, intensity, boneIndex, fireFlags) end
 ---xyz: Location of fire
 ---maxChildren: The max amount of times a fire can spread to other objects. Must be 25 or less, or the function will do nothing.
 ---isGasFire: Whether or not the fire is powered by gasoline.
+---@overload fun(coords: vector3, p3: integer, p4: number, p5: boolean, soundsetName: string, p7: number, p8: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -335,6 +348,9 @@ function StopEntityFire(p0, p1) end
 ---**`FIRE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB7C7BDC375AEA9A4)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number)
+---@overload fun(posX: number, posY: number, posZ: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number)
+---@overload fun(coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number)
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -349,6 +365,7 @@ function StopFireInBox(posX, posY, posZ, rotX, rotY, rotZ, scaleX, scaleY, scale
 ---**`FIRE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xDB38F247BD421708)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number

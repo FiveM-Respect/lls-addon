@@ -27,6 +27,7 @@ function AddPropSetForVehicle(vehicle, propset) end
 ---[Native Documentation](https://rdr3natives.com/?_0xE65C5CBA95F0E510)  
 ---propsetType: https://github.com/femga/rdr3_discoveries/blob/master/objects/propsets_list.lua
 ---placementType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/PlacementType
+---@overload fun(propsetType: integer | string, coords: vector3, placementType: integer, heading: number, zProbe: number, p7: boolean, useVegMod: boolean): integer
 ---@param propsetType integer | string
 ---@param x number
 ---@param y number
@@ -42,6 +43,7 @@ function CreatePropSet(propsetType, x, y, z, placementType, heading, zProbe, p7,
 ---**`PROPSET` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x899C97A1CCE7D483)  
 ---Same as _CREATE_PROP_SET
+---@overload fun(propsetType: integer | string, coords: vector3, placementType: integer, heading: number, zProbe: number, p7: boolean, useVegMod: boolean): integer
 ---@param propsetType integer | string
 ---@param x number
 ---@param y number
@@ -57,6 +59,7 @@ function CreatePropSet_2(propsetType, x, y, z, placementType, heading, zProbe, p
 ---**`PROPSET` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9609DBDDE18FAD8C)  
 ---This native does not have an official description.
+---@overload fun(hash: integer | string, coords: vector3, entity: integer, p5: number, p6: boolean, p7: integer, p8: boolean): integer
 ---@param hash integer | string
 ---@param x number
 ---@param y number
@@ -72,6 +75,7 @@ function CreatePropSetInstanceAttachedToEntity(hash, x, y, z, entity, p5, p6, p7
 ---**`PROPSET` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xACA7FB30269096D4)  
 ---Same as CREATE_PROP_SET_INSTANCE_ATTACHED_TO_ENTITY
+---@overload fun(hash: integer | string, coords: vector3, entity: integer, p5: number, p6: boolean, p7: integer, p8: boolean): integer
 ---@param hash integer | string
 ---@param x number
 ---@param y number
@@ -102,6 +106,7 @@ function DoesPropSetExist(propSet) end
 ---**`PROPSET` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x72068021F498E6E3)  
 ---This native does not have an official description.
+---@overload fun(propsetHash: integer | string, coords: vector3): boolean
 ---@param propsetHash integer | string
 ---@param x number
 ---@param y number
@@ -137,6 +142,7 @@ function GetEntitiesFromPropSet(propSet, itemSet, model, p3, p4) end
 ---**`PROPSET` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xC061E50F8D299F95)  
 ---This native does not have an official description.
+---@overload fun(propsetHash: integer | string, coords: vector3): integer
 ---@param propsetHash integer | string
 ---@param x number
 ---@param y number
@@ -239,6 +245,7 @@ function IsVehiclePropSetLoadedAdditional(vehicle) end
 ---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0xC4B67EF3FD65622D)  
 ---Relocates an existing prop set to specified coordinates and adjusts its heading (rotation) without affecting the prop set's internal layout or structure. The `propSet` parameter identifies the prop set to move. The parameters (`coordsX`, `coordsY`, `coordsZ`) set the new central position of the prop set, while `heading` specifies its rotation around the Z-axis (in degrees). When `onGroundProperly` is true, the prop set automatically aligns accurately with the terrain
+---@overload fun(propset: integer, coords: vector3, onGroundProperly: boolean, heading: number)
 ---@param propset integer
 ---@param posX number
 ---@param posY number

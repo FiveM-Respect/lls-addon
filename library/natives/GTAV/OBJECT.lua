@@ -7,6 +7,7 @@
 ---If scriptDoor is true, register the door on the script handler host (note: there's a hardcap on the number of script IDs that can be added to the system at a given time). If scriptDoor and isLocal are both false, the door is considered to be in a "Persists w/o netobj" state.
 ---
 ---A simple "localized" door-system (with hundreds/thousands of doors) can be created by setting p5, p6, and p7 to false and using EventHandlers to synchronize the states to: [DOOR_SYSTEM_SET_DOOR_STATE](#\_0x6BAB9442830C7F53), [DOOR_SYSTEM_SET_OPEN_RATIO](#\_0xB6E6FBA95C7324AC), [DOOR_SYSTEM_SET_HOLD_OPEN](#\_0xD9B71952F78A2640), etc.
+---@overload fun(doorHash: integer | string, modelHash: integer | string, coords: vector3, p5: boolean, scriptDoor: boolean, isLocal: boolean)
 ---@param doorHash integer | string
 ---@param modelHash integer | string
 ---@param x number
@@ -63,6 +64,7 @@ function ClearObjectsInsideGarage(garageHash, vehicles, peds, objects, isNetwork
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x673966A0C0FD7171)  
 ---Creates an ambient pickup given the hash. Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
+---@overload fun(pickupHash: integer | string, coords: vector3, flags: integer, value: integer, modelHash: integer | string, returnHandle: boolean, p8: boolean): integer
 ---@param pickupHash integer | string
 ---@param posX number
 ---@param posY number
@@ -91,6 +93,7 @@ function CreateAmbientPickup(pickupHash, posX, posY, posZ, flags, value, modelHa
 ---==============================================  
 ---Max is 2000 in MP. So if you put the amount to 20, but the value to $400,000 eg. They will only be able to pickup 20 - $2,000 bags. So, $40,000  
 ---```
+---@overload fun(coords: vector3, value: integer, amount: integer, model: integer | string)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -104,6 +107,7 @@ function CreateMoneyPickups(x, y, z, value, amount, model) end
 ---```
 ---NativeDB Introduced: v2372
 ---```
+---@overload fun(pickupHash: any, coords: vector3, flags: integer, value: integer, modelHash: any, p7: boolean, p8: boolean): any
 ---@param pickupHash any
 ---@param posX number
 ---@param posY number
@@ -119,6 +123,7 @@ function CreateNonNetworkedAmbientPickup(pickupHash, posX, posY, posZ, flags, va
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x125494B98A21AAF7)  
 ---This native does not have an official description.
+---@overload fun(pickupHash: integer | string, coords: vector3, placeOnGround: boolean, modelHash: integer | string): table
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -135,6 +140,7 @@ CreatePortablePickup_2 = CreateNonNetworkedPortablePickup
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x509D5878EB39E842)  
 ---Creates an object (prop) with the specified model at the specified position, offset on the Z axis by the radius of the object's model.
 ---This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
+---@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, netMissionEntity: boolean, doorFlag: boolean): table
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -149,6 +155,7 @@ function CreateObject(modelHash, x, y, z, isNetwork, netMissionEntity, doorFlag)
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A294B2138ABB884)  
 ---Creates an object (prop) with the specified model centered at the specified position.
 ---This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
+---@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, netMissionEntity: boolean, doorFlag: boolean): table
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -162,6 +169,7 @@ function CreateObjectNoOffset(modelHash, x, y, z, isNetwork, netMissionEntity, d
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFBA08C503DD5FA58)  
 ---Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
+---@overload fun(pickupHash: integer | string, coords: vector3, p4: integer, value: integer, p6: boolean, modelHash: integer | string): integer
 ---@param pickupHash integer | string
 ---@param posX number
 ---@param posY number
@@ -181,6 +189,9 @@ function CreatePickup(pickupHash, posX, posY, posZ, p4, value, p6, modelHash) en
 ---8 (1 << 3): place on ground  
 ---512 (1 << 9): spin around  
 ---```
+---@overload fun(pickupHash: integer | string, coords: vector3, rotX: number, rotY: number, rotZ: number, flag: integer, amount: integer, p9: any, p10: boolean, modelHash: integer | string): integer
+---@overload fun(pickupHash: integer | string, posX: number, posY: number, posZ: number, rotation: vector3, flag: integer, amount: integer, p9: any, p10: boolean, modelHash: integer | string): integer
+---@overload fun(pickupHash: integer | string, coords: vector3, rotation: vector3, flag: integer, amount: integer, p9: any, p10: boolean, modelHash: integer | string): integer
 ---@param pickupHash integer | string
 ---@param posX number
 ---@param posY number
@@ -199,6 +210,7 @@ function CreatePickupRotate(pickupHash, posX, posY, posZ, rotX, rotY, rotZ, flag
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2EAF1FDB2FB55698)  
 ---Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
+---@overload fun(pickupHash: integer | string, coords: vector3, placeOnGround: boolean, modelHash: integer | string): table
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -231,6 +243,7 @@ function DetachPortablePickupFromPed(pickupObject) end
 ---```
 ---p5 is usually 0.  
 ---```
+---@overload fun(coords: vector3, radius: number, hash: integer | string, p5: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -257,6 +270,7 @@ function DoesPickupObjectExist(pickupObject) end
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF9C36251F6E48E33)  
 ---Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
+---@overload fun(pickupHash: integer | string, coords: vector3, radius: number): boolean
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -289,6 +303,7 @@ DoesDesObjectExist = DoesRayfireMapObjectExist
 ---OBJECT::_9B12F9A24FABEDB0(${prop_gate_prison_01}, 1845.0, 2605.0, 45.0, 0, 0.0, 50.0, 0);  //door unlocked
 ---OBJECT::_9B12F9A24FABEDB0(${prop_gate_prison_01}, 1845.0, 2605.0, 45.0, 1, 0.0, 50.0, 0);  //door locked
 ---```
+---@overload fun(modelHash: integer | string, coords: vector3, locked: boolean, xRotMult: number, yRotMult: number, zRotMult: number)
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -302,6 +317,7 @@ function DoorControl(modelHash, x, y, z, locked, xRotMult, yRotMult, zRotMult) e
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x589F80B325CC82C5)  
 ---Search radius: 0.5
+---@overload fun(coords: vector3, modelHash: integer | string): (boolean, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -449,6 +465,7 @@ function ForcePickupRegenerate(p0) end
 ---Has 8 params in the latest patches.  
 ---isMission - if true doesn't return mission objects  
 ---```
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, isMission: boolean, p6: boolean, p7: boolean): table
 ---@param x number
 ---@param y number
 ---@param z number
@@ -463,6 +480,7 @@ function GetClosestObjectOfType(x, y, z, radius, modelHash, isMission, p6, p7) e
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x163F8B586BC95F2A)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, rotationOrder: integer): (any, vector3, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -501,6 +519,9 @@ function GetObjectTextureVariation(object) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x163E252DE035A133)  
 ---Calculates the world coordinates after applying the specified offsets to the given position, relative to a certain heading.
 ---This native is similar to [`GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS`](#\_0x1899F328B0E12848), but uses a world position and heading as the reference point.
+---@overload fun(coords: vector3, heading: number, xOffset: number, yOffset: number, zOffset: number): vector3
+---@overload fun(xPos: number, yPos: number, zPos: number, heading: number, offset: vector3): vector3
+---@overload fun(coords: vector3, heading: number, offset: vector3): vector3
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -558,6 +579,7 @@ function GetPickupObject(pickup) end
 ---Example:
 ---OBJECT::GET_RAYFIRE_MAP_OBJECT(-809.9619750976562, 170.919, 75.7406997680664, 3.0, "des_tvsmash");
 ---```
+---@overload fun(coords: vector3, radius: number, name: string): table
 ---@param x number
 ---@param y number
 ---@param z number
@@ -585,6 +607,7 @@ GetDesObjectAnimProgress = GetRayfireMapObjectAnimPhase
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E16BC2503FF1FF0)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number, p4: number): vector3
 ---@param x number
 ---@param y number
 ---@param z number
@@ -602,6 +625,7 @@ function GetSafePickupCoords(x, y, z, p3, p4) end
 ----------------  
 ---the locked bool is either 0(unlocked)(false) or 1(locked)(true)  
 ---```
+---@overload fun(type: integer | string, coords: vector3): (boolean, number)
 ---@param type integer | string
 ---@param x number
 ---@param y number
@@ -646,6 +670,7 @@ function HasClosestObjectOfTypeBeenBroken(p0, p1, p2, p3, modelHash, p5) end
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x46494A2475701343)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, p5: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -695,6 +720,7 @@ function IsAnyEntityEntirelyInsideGarage(garageHash, p1, p2, p3, p4) end
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x397DC58FF00298D1)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, range: number, p4: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -763,6 +789,7 @@ function IsObjectEntirelyInsideGarage(garageHash, entity, p2, p3) end
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8C90FE4B381BA60A)  
 ---This native does not have an official description.
+---@overload fun(objectHash: integer | string, coords: vector3, range: number): boolean
 ---@param objectHash integer | string
 ---@param x number
 ---@param y number
@@ -825,6 +852,7 @@ function IsPlayerPartiallyInsideGarage(garageHash, player, p2) end
 ---
 ---1.  ![golf_mp](https://i.imgur.com/WoIozPt.png)
 ---2.  ![am_taxi](https://i.imgur.com/lipbffH.png)
+---@overload fun(coords: vector3, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, width: number, p10: boolean, includez: boolean): boolean
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -1219,6 +1247,7 @@ function N_0xd05a3241b9a86f19(p0, p1) end
 ---
 ---NativeDB Introduced: v1290
 ---```
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1329,6 +1358,7 @@ function RemovePickup(pickup) end
 ---4 = nothing
 ---5 = green small
 ---```
+---@overload fun(coords: vector3, colorIndex: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1382,6 +1412,7 @@ function SetEnableArenaPropPhysicsOnPed(entity, toggle, p2, ped) end
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF538081986E49E9D)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1588,6 +1619,7 @@ function SetPickupUncollectable(p0, p1) end
 ---pastebin.com/gywnbzsH  
 ---get door info: pastebin.com/i14rbekD  
 ---```
+---@overload fun(type: integer | string, coords: vector3, locked: boolean, heading: number, p6: boolean)
 ---@param type integer | string
 ---@param x number
 ---@param y number
@@ -1625,6 +1657,7 @@ function SetTeamPickupObject(object, p1, p2) end
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF12E33034D887F66)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, textureVariation: integer): boolean
 ---@param x number
 ---@param y number
 ---@param z number

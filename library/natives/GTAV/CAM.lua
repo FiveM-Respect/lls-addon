@@ -21,6 +21,9 @@ function ActivateCamWithInterpAndFovCurve(camTo, camFrom, duration, easeLocation
 ---p8 big values ~100 will slow down the camera movement before reaching this node  
 ---p9 != 0 seems to override the rotation/pitch (bool?)  
 ---```
+---@overload fun(camera: integer, coords: vector3, xRot: number, yRot: number, zRot: number, length: integer, p8: integer, transitionType: integer)
+---@overload fun(camera: integer, x: number, y: number, z: number, rotation: vector3, length: integer, p8: integer, transitionType: integer)
+---@overload fun(camera: integer, coords: vector3, rotation: vector3, length: integer, p8: integer, transitionType: integer)
 ---@param camera integer
 ---@param x number
 ---@param y number
@@ -106,6 +109,7 @@ function AnimateGameplayCamZoom(p0, distance) end
 ---```
 ---Last param determines if its relative to the Entity  
 ---```
+---@overload fun(cam: integer, entity: integer, offset: vector3, isRelative: boolean)
 ---@param cam integer
 ---@param entity integer
 ---@param xOffset number
@@ -117,6 +121,7 @@ function AttachCamToEntity(cam, entity, xOffset, yOffset, zOffset, isRelative) e
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x61A3DBA14AB7F411)  
 ---This native works with peds only.
+---@overload fun(cam: integer, ped: integer, boneIndex: integer, offset: vector3, isRelative: boolean)
 ---@param cam integer
 ---@param ped integer
 ---@param boneIndex integer
@@ -130,6 +135,7 @@ function AttachCamToPedBone(cam, ped, boneIndex, xOffset, yOffset, zOffset, isRe
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8DB3F12A02CAEF72)  
 ---This native works with vehicles only.
 ---Bone indexes are usually given by this native [GET_ENTITY_BONE_INDEX_BY_NAME](#\_0xFB71170B7E76ACBA).
+---@overload fun(cam: integer, vehicle: integer, boneIndex: integer, relativeRotation: boolean, rotation: vector3, offX: number, offY: number, offZ: number, fixedDirection: boolean)
 ---@param cam integer
 ---@param vehicle integer
 ---@param boneIndex integer
@@ -212,6 +218,9 @@ function CreateCamera(camHash, active) end
 ---```
 ---NativeDB Introduced: v323
 ---```
+---@overload fun(camHash: integer | string, coords: vector3, rotX: number, rotY: number, rotZ: number, fov: number, active: boolean, rotationOrder: integer): integer
+---@overload fun(camHash: integer | string, posX: number, posY: number, posZ: number, rotation: vector3, fov: number, active: boolean, rotationOrder: integer): integer
+---@overload fun(camHash: integer | string, coords: vector3, rotation: vector3, fov: number, active: boolean, rotationOrder: integer): integer
 ---@param camHash integer | string
 ---@param posX number
 ---@param posY number
@@ -230,6 +239,9 @@ function CreateCameraWithParams(camHash, posX, posY, posZ, rotX, rotY, rotZ, fov
 ---Create a camera with the specified cam name/type, You can use `SET_CAM_` natives to manipulate the camera.
 ---
 ---Take a look at [CREATE_CAM](#\_0xC3981DCE61D9E13F) if you would like to see the available camera names.
+---@overload fun(camName: string, coords: vector3, rotX: number, rotY: number, rotZ: number, fov: number, active: boolean, rotationOrder: integer): integer
+---@overload fun(camName: string, posX: number, posY: number, posZ: number, rotation: vector3, fov: number, active: boolean, rotationOrder: integer): integer
+---@overload fun(camName: string, coords: vector3, rotation: vector3, fov: number, active: boolean, rotationOrder: integer): integer
 ---@param camName string
 ---@param posX number
 ---@param posY number
@@ -671,6 +683,9 @@ function GetRenderingCam() end
 ---```
 ---NativeDB Introduced: v2189
 ---```
+---@overload fun(cam: integer, entity: integer, rotation: vector3, xOffset: number, yOffset: number, zOffset: number, isRelative: boolean)
+---@overload fun(cam: integer, entity: integer, xRot: number, yRot: number, zRot: number, offset: vector3, isRelative: boolean)
+---@overload fun(cam: integer, entity: integer, rotation: vector3, offset: vector3, isRelative: boolean)
 ---@param cam integer
 ---@param entity integer
 ---@param xRot number
@@ -690,6 +705,9 @@ function HardAttachCamToEntity(cam, entity, xRot, yRot, zRot, xOffset, yOffset, 
 ---```
 ---NativeDB Introduced: v1180
 ---```
+---@overload fun(cam: integer, ped: integer, boneIndex: integer, rotation: vector3, xOffset: number, yOffset: number, zOffset: number, isRelative: boolean)
+---@overload fun(cam: integer, ped: integer, boneIndex: integer, xRot: number, yRot: number, zRot: number, offset: vector3, isRelative: boolean)
+---@overload fun(cam: integer, ped: integer, boneIndex: integer, rotation: vector3, offset: vector3, isRelative: boolean)
 ---@param cam integer
 ---@param ped integer
 ---@param boneIndex integer
@@ -941,6 +959,7 @@ function IsScriptGlobalShaking() end
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE33D59DA70B58FDF)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1265,6 +1284,9 @@ function OverrideCamSplineVelocity(cam, p1, p2, p3) end
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
+---@overload fun(cam: integer, animName: string, animDictionary: string, coords: vector3, xRot: number, yRot: number, zRot: number, p9: boolean, p10: integer): boolean
+---@overload fun(cam: integer, animName: string, animDictionary: string, x: number, y: number, z: number, rotation: vector3, p9: boolean, p10: integer): boolean
+---@overload fun(cam: integer, animName: string, animDictionary: string, coords: vector3, rotation: vector3, p9: boolean, p10: integer): boolean
 ---@param cam integer
 ---@param animName string
 ---@param animDictionary string
@@ -1298,6 +1320,7 @@ function PlaySynchronizedCamAnim(camera, scene, animName, animDictionary) end
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF75497BB865F0803)  
 ---This native does not have an official description.
+---@overload fun(cam: integer, coords: vector3)
 ---@param cam integer
 ---@param x number
 ---@param y number
@@ -1309,6 +1332,7 @@ function PointCamAtCoord(cam, x, y, z) end
 ---Points the camera at the specified entity.
 ---
 ---Offset works like [GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS](#\_0x1899F328B0E12848).
+---@overload fun(cam: integer, entity: integer, offset: vector3, p5: boolean)
 ---@param cam integer
 ---@param entity integer
 ---@param offsetX number
@@ -1322,6 +1346,7 @@ function PointCamAtEntity(cam, entity, offsetX, offsetY, offsetZ, p5) end
 ---```
 ---Parameters p0-p5 seems correct. The bool p6 is unknown, but through every X360 script it's always 1. Please correct p0-p5 if any prove to be wrong.  
 ---```
+---@overload fun(cam: integer, ped: integer, boneIndex: integer, coords: vector3, p6: boolean)
 ---@param cam integer
 ---@param ped integer
 ---@param boneIndex integer
@@ -1400,6 +1425,7 @@ function SetCamControlsMiniMapHeading(cam, toggle) end
 ---```
 ---Sets the position of the cam.  
 ---```
+---@overload fun(cam: integer, coords: vector3)
 ---@param cam integer
 ---@param posX number
 ---@param posY number
@@ -1556,6 +1582,9 @@ function SetCamNearDof(cam, nearDOF) end
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBFD8727AEA3CCEBA)  
 ---This native does not have an official description.
+---@overload fun(cam: integer, coords: vector3, rotX: number, rotY: number, rotZ: number, fieldOfView: number, transitionSpeed: integer, p9: integer, p10: integer, rotationOrder: integer)
+---@overload fun(cam: integer, posX: number, posY: number, posZ: number, rotation: vector3, fieldOfView: number, transitionSpeed: integer, p9: integer, p10: integer, rotationOrder: integer)
+---@overload fun(cam: integer, coords: vector3, rotation: vector3, fieldOfView: number, transitionSpeed: integer, p9: integer, p10: integer, rotationOrder: integer)
 ---@param cam integer
 ---@param posX number
 ---@param posY number
@@ -1573,6 +1602,7 @@ function SetCamParams(cam, posX, posY, posZ, rotX, rotY, rotZ, fieldOfView, tran
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x85973643155D0B07)  
 ---Sets the rotation of the camera.
+---@overload fun(cam: integer, rotation: vector3, rotationOrder: integer)
 ---@param cam integer
 ---@param rotX number
 ---@param rotY number
@@ -1742,6 +1772,7 @@ function SetFirstPersonCamPitchRange(minAngle, maxAngle) end
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC91C6C55199308CA)  
 ---This native does not have an official description.
+---@overload fun(cam: integer, coords: vector3)
 ---@param cam integer
 ---@param x number
 ---@param y number
@@ -1928,6 +1959,7 @@ function SetGameplayCamVehicleCameraName(vehicleModel) end
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD51ADCD2D8BC0FB3)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, duration: integer, blendOutDuration: integer, blendInDuration: integer, unk: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1942,6 +1974,7 @@ function SetGameplayCoordHint(x, y, z, duration, blendOutDuration, blendInDurati
 ---```
 ---p6 & p7 - possibly length or time  
 ---```
+---@overload fun(entity: integer, offset: vector3, p4: boolean, p5: integer, p6: integer, p7: integer, p8: any)
 ---@param entity integer
 ---@param xOffset number
 ---@param yOffset number
@@ -2027,6 +2060,7 @@ function SetGameplayPedHint(p0, x1, y1, z1, p4, duration, blendOutDuration, blen
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA2297E18F3E71C2E)  
 ---Focuses the camera on the specified vehicle.
+---@overload fun(vehicle: integer, offset: vector3, p4: boolean, time: integer, easeInTime: integer, easeOutTime: integer)
 ---@param vehicle integer
 ---@param offsetX number
 ---@param offsetY number

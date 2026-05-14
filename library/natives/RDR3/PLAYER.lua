@@ -4,6 +4,7 @@
 ---[Native Documentation](https://rdr3natives.com/?_0x3946FC742AC305CD)  
 ---Associates a specific interactive focus mode preset between a player and a ped, with a specified location and target entity.
 ---To access all available presets, refer to the file located at: `/update_1.rpf/common/data/interactive_focus_mode_presets.meta`
+---@overload fun(player: integer, ped: integer, preset: string, coords: vector3, targetEntity: integer, name: string)
 ---@param player integer
 ---@param ped integer
 ---@param preset string
@@ -19,6 +20,7 @@ function AddAmbientPlayerInteractiveFocusPreset(player, ped, preset, x, y, z, ta
 ---Adds an interactive focus mode preset between a player and a specific set of coordinates with a target entity.
 ---To access all available presets, refer to the file located at:update_1.rpf.common.data.interactive_focus_mode_presets.meta
 ---
+---@overload fun(player: integer, preset: string, coords: vector3, targetEntity: integer, name: string): vector3
 ---@param player integer
 ---@param preset string
 ---@param x number
@@ -2926,6 +2928,7 @@ function SpecialAbilityStartRestore(player, abilityType, p2) end
 ---**`PLAYER` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xDF8822C55EDDA65B)  
 ---This native does not have an official description.
+---@overload fun(player: integer, coords: vector3, heading: number, p5: boolean, p6: boolean, p7: boolean, p8: boolean)
 ---@param player integer
 ---@param x number
 ---@param y number

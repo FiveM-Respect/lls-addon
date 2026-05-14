@@ -33,6 +33,7 @@ GetCurrentIntensity = GetDeepOceanScaler
 ---Retrieves the depth of the water beneath the specified position, accounting for the waves.
 ---
 ---**Note:** The result might vary depending on the specific frame when this command is executed due to wave fluctuations.
+---@overload fun(coords: vector3): (boolean, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -44,6 +45,7 @@ function GetWaterHeight(x, y, z) end
 ---Retrieves the depth of the water beneath the specified position, disregarding wave effects.
 ---
 ---**Note:** The result remains consistent across different frames as it doesn't consider wave fluctuations.
+---@overload fun(coords: vector3): (boolean, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -129,6 +131,7 @@ function TestProbeAgainstWater(x1, y1, z1, x2, y2, z2) end
 ---**`WATER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B3451FA1E3142E2)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, flag: integer): (boolean, number)
 ---@param x number
 ---@param y number
 ---@param z number

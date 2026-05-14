@@ -13,6 +13,7 @@ function EnableWaterLookup() end
 ---**`WATER` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFCA8B23F28813F69)  
 ---Checks against a global variable that is set by _SET_WORLD_WATER_TYPE. If that is set to one it will fail. Likely not the only issue but part of it.
+---@overload fun(coords: vector3): (boolean, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -22,6 +23,7 @@ function GetWaterHeight(x, y, z) end
 ---**`WATER` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xDCF3690AA262C03F)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): (boolean, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -126,6 +128,7 @@ function TestProbeAgainstAllWater(x1, y1, z1, x2, y2, z2, flags) end
 ---Checks against a global variable that is set by _SET_WORLD_WATER_TYPE. If it's set to 1 (Guarma) it will fail.
 ---
 ---See TEST_PROBE_AGAINST_ALL_WATER.
+---@overload fun(coords: vector3, flags: integer): (integer, number)
 ---@param x number
 ---@param y number
 ---@param z number

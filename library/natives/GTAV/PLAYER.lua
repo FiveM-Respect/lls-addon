@@ -134,6 +134,7 @@ function EnableSpecialAbility(player, toggle) end
 ----
 ---This can be used to prevent dying if you are "out of the world"
 ---```
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2227,6 +2228,7 @@ function StartFiringAmnesty(duration) end
 ---When trying to find the Z value the native will take longer the higher the difference from the given Z to the ground, this combined with the timeout can cause the teleport to just teleport to the given Z value, so try to estimate the z value, so don't just pass in 1000.0.
 ---
 ---Also if you're in a vehicle and teleportWithVehicle is true it will not find the Z value for you.
+---@overload fun(player: integer, coords: vector3, heading: number, teleportWithVehicle: boolean, findCollisionLand: boolean, p7: boolean)
 ---@param player integer
 ---@param x number
 ---@param y number

@@ -252,6 +252,7 @@ function N_0x91a4f58e01ed5e4c(value) end
 ---**`STATS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x99230691875FC218)  
 ---This native does not have an official description.
+---@overload fun(p0: any, p1: integer | string, coords: vector3)
 ---@param p0 any
 ---@param p1 integer | string
 ---@param x number

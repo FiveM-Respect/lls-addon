@@ -337,6 +337,7 @@ function TelemetryMissionCheckpoint(p0, p1, p2) end
 ---**`TELEMETRY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6571E4327390EC0B)  
 ---_TELEMETRY_C* - _TELEMETRY_G*
+---@overload fun(p0: any, p1: any, coords: vector3, reason: integer)
 ---@param p0 any
 ---@param p1 any
 ---@param x number

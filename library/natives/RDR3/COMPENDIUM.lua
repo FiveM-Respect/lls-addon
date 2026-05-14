@@ -115,6 +115,7 @@ function CompendiumGetEntryByStatItem(category, animalType) end
 ---**`COMPENDIUM` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x729D54121A5E9E20)  
 ---This native does not have an official description.
+---@overload fun(animalStatItem: integer | string, coords: vector3): integer
 ---@param animalStatItem integer | string
 ---@param x number
 ---@param y number
@@ -203,6 +204,7 @@ function CompendiumGetSubcategoryToastAppId(category, subcategory) end
 ---[Native Documentation](https://rdr3natives.com/?_0x725D52F21A5E9E09)  
 ---herbType: https://alloc8or.re/rdr3/doc/enums/eHerbType.txt
 ---Vector3: Player Location
+---@overload fun(herbType: integer | string, coords: vector3)
 ---@param herbType integer | string
 ---@param x number
 ---@param y number

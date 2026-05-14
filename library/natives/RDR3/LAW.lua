@@ -77,6 +77,7 @@ function CreateGuardZone(name) end
 ---**`LAW` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0D4B77E862475ED3)  
 ---Returns true when investigation creation was successful
+---@overload fun(guardZoneName: string, entity: integer, coords: vector3): boolean
 ---@param guardZoneName string
 ---@param entity integer
 ---@param x number
@@ -88,6 +89,7 @@ function CreateGuardZoneForEntity(guardZoneName, entity, x, y, z) end
 ---**`LAW` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x75CBF20BA47E4F89)  
 ---dispatchResponseHash: see common/data/dispatchresponses/..
+---@overload fun(coords: vector3, dispatchResponseHash: integer | string): any
 ---@param x number
 ---@param y number
 ---@param z number
@@ -192,6 +194,7 @@ function IsLawIncidentActive(player) end
 ---**`LAW` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF0B67BAD53C35BD9)  
 ---This native does not have an official description.
+---@overload fun(pedGroup1: integer, ped: integer, pedGroup2: integer, coords: vector3, crimeType: integer | string): boolean
 ---@param pedGroup1 integer
 ---@param ped integer
 ---@param pedGroup2 integer
@@ -233,6 +236,7 @@ function N_0x0bdfebcf40a5f7e3(crimeType) end
 ---**`LAW` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0C392DB374655176)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number, itemSet: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -437,6 +441,7 @@ function N_0x89e005b1662f6e48(player, p1, p2) end
 ---**`LAW` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x95878B13E272EF1F)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, ped: integer, p2: boolean, coords: vector3, crimeType: integer | string): any
 ---@param entity integer
 ---@param ped integer
 ---@param p2 boolean
@@ -826,6 +831,7 @@ function SetDispatchMultiplierOverride(multiplier) end
 ---**`LAW` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x7E7BF59F89FC6C6D)  
 ---This native does not have an official description.
+---@overload fun(name: string, coords: vector3)
 ---@param name string
 ---@param x number
 ---@param y number
@@ -835,6 +841,7 @@ function SetGuardZonePosition(name, x, y, z) end
 ---**`LAW` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2F9005E2EA4E5EE4)  
 ---This native does not have an official description.
+---@overload fun(name: string, coords: vector3)
 ---@param name string
 ---@param x number
 ---@param y number

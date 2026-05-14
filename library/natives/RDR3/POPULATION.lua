@@ -79,6 +79,7 @@ function GetRandomFishTypeForLocation() end
 ---**`POPULATION` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6B12ED8C77E8567B)  
 ---This native does not have an official description.
+---@overload fun(popSetHash: integer | string, flags: integer, p2: integer | string, p3: boolean, p4: boolean, coords: vector3): integer
 ---@param popSetHash integer | string
 ---@param flags integer
 ---@param p2 integer | string

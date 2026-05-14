@@ -3,6 +3,7 @@
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CE544C68FB812A0)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, speed: number, p5: boolean): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -155,6 +156,7 @@ function AttachContainerToHandlerFrame(handler, container) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA1DD82F3CCF9A01E)  
 ---This native does not have an official description.
+---@overload fun(vehicle: integer, entity: integer, p2: integer, coords: vector3)
 ---@param vehicle integer
 ---@param entity integer
 ---@param p2 integer
@@ -166,6 +168,9 @@ function AttachEntityToCargobob(vehicle, entity, p2, x, y, z) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x16B5E274BDE402F8)  
 ---This native does not have an official description.
+---@overload fun(vehicle: integer, trailer: integer, offset: vector3, coordsX: number, coordsY: number, coordsZ: number, rotationX: number, rotationY: number, rotationZ: number, disableColls: number)
+---@overload fun(vehicle: integer, trailer: integer, offsetX: number, offsetY: number, offsetZ: number, coordsX: number, coordsY: number, coordsZ: number, rotation: vector3, disableColls: number)
+---@overload fun(vehicle: integer, trailer: integer, offset: vector3, coordsX: number, coordsY: number, coordsZ: number, rotation: vector3, disableColls: number)
 ---@param vehicle integer
 ---@param trailer integer
 ---@param offsetX number
@@ -183,6 +188,7 @@ function AttachVehicleOnToTrailer(vehicle, trailer, offsetX, offsetY, offsetZ, c
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4127F1D84E347769)  
 ---This native does not have an official description.
+---@overload fun(cargobob: integer, vehicle: integer, vehicleBoneIndex: integer, coords: vector3)
 ---@param cargobob integer
 ---@param vehicle integer
 ---@param vehicleBoneIndex integer
@@ -384,6 +390,7 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 ---*   17. Very long train and freight variation.
 ---*   18. Freight train only.
 ---*   26. Double metro train (with both models flipped opposite to each other). This used to be `25` before the 2802 build, it also used to be `24` before the 2372 build.
+---@overload fun(variation: integer, coords: vector3, direction: boolean): integer
 ---@param variation integer
 ---@param x number
 ---@param y number
@@ -428,6 +435,7 @@ EnableCargobobHook = CreatePickUpRopeForCargobob
 ---p16 - Unknown (always -1)  
 ---Vector3 coords = GET_ENTITY_COORDS(PLAYER_PED_ID(), 0);	CREATE_SCRIPT_VEHICLE_GENERATOR(coords.x, coords.y, coords.z, 1.0f, 5.0f, 3.0f, GET_HASH_KEY("adder"), -1. -1, -1, -1, -1, true, false, false, false, true, -1);  
 ---```
+---@overload fun(coords: vector3, heading: number, p4: number, p5: number, modelHash: integer | string, p7: integer, p8: integer, p9: integer, p10: integer, p11: boolean, p12: boolean, p13: boolean, p14: boolean, p15: boolean, p16: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -456,6 +464,7 @@ function CreateScriptVehicleGenerator(x, y, z, heading, p4, p5, modelHash, p7, p
 ---```
 ---NativeDB Added Parameter 8: BOOL p7
 ---```
+---@overload fun(modelHash: integer | string, coords: vector3, heading: number, isNetwork: boolean, netMissionEntity: boolean): integer
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -733,6 +742,7 @@ function DoesVehicleTyreExist(vehicle, tyreIndex) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE38CB9D7D39FDBCC)  
 ---This native does not have an official description.
+---@overload fun(vehicle: integer, coords: vector3)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -938,6 +948,7 @@ function GetCargobobHookPosition(cargobob) end
 ---Conclusion: This native is not worth trying to use. Use something like this instead: pastebin.com/xiFdXa7h
 ---Use flag 127 to return police cars
 ---```
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, flags: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1443,6 +1454,7 @@ function GetRandomVehicleFrontBumperInSphere(p0, p1, p2, p3, p4, p5, p6) end
 ---modelHash: The vehicle model to limit the selection to. Pass 0 for any model.  
 ---flags: The bitwise flags that modifies the behaviour of this function.  
 ---```
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, flags: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1813,6 +1825,7 @@ GetVehicleDashboardColour = GetVehicleDashboardColor
 ---PC scripts:  
 ---v_5/*{3}*/ = VEHICLE::GET_VEHICLE_DEFORMATION_AT_POS(a_0._f1, 1.21, 6.15, 0.3);  
 ---```
+---@overload fun(vehicle: integer, offset: vector3): vector3
 ---@param vehicle integer
 ---@param offsetX number
 ---@param offsetY number
@@ -2593,6 +2606,7 @@ IsAnyPassengerRappelingFromVehicle = IsAnyPedRappellingFromHeli
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x61E1DD6125A3EEE6)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -3458,6 +3472,7 @@ function N_0x41290b40fa63e6da(p0) end
 ---```
 ---SET_*
 ---```
+---@overload fun(vehicle: integer, coords: vector3, p4: number)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -3524,6 +3539,9 @@ function N_0x51db102f4a3ba5e0(toggle) end
 ---    }
 ---}
 ---```
+---@overload fun(vehicle: integer, coords: vector3, rotX: number, rotY: number, rotZ: number, p7: integer, p8: any): boolean
+---@overload fun(vehicle: integer, x: number, y: number, z: number, rotation: vector3, p7: integer, p8: any): boolean
+---@overload fun(vehicle: integer, coords: vector3, rotation: vector3, p7: integer, p8: any): boolean
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -3546,6 +3564,7 @@ function N_0x56eb5e94318d3fb6(vehicle, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5845066D8A1EA7F7)  
 ---This native does not have an official description.
+---@overload fun(vehicle: integer, coords: vector3, p4: any)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -5013,6 +5032,7 @@ function SetHeliBladesSpeed(vehicle, speed) end
 ---```
 ---NativeDB Introduced: v1180
 ---```
+---@overload fun(vehicle: integer, coords: vector3)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -5152,6 +5172,7 @@ function SetMissionTrainAsNoLongerNeeded(train, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x591CA673AA6AB736)  
 ---This native does not have an official description.
+---@overload fun(train: integer, coords: vector3)
 ---@param train integer
 ---@param x number
 ---@param y number
@@ -5926,6 +5947,7 @@ function SetVehicleCustomSecondaryColour(vehicle, r, g, b) end
 ---Apply damage to vehicle at a location. Location is relative to vehicle model (not world).
 ---Radius of effect damage applied in a sphere at impact location
 ---When `focusOnModel` set to `true`, the damage sphere will travel towards the vehicle from the given point, thus guaranteeing an impact
+---@overload fun(vehicle: integer, offset: vector3, damage: number, radius: number, focusOnModel: boolean)
 ---@param vehicle integer
 ---@param xOffset number
 ---@param yOffset number
@@ -6373,6 +6395,7 @@ function SetVehicleGeneratesEngineShockingEvents(vehicle, toggle) end
 ---Specifies an area of interest where cargens will focus on spawning vehicles
 ---
 ---You can clear the area of interest with [`CLEAR_VEHICLE_GENERATOR_AREA_OF_INTEREST`](#\_0x0A436B8643716D14)
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number

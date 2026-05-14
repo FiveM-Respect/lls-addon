@@ -25,6 +25,7 @@ function AudioIsMusicPlaying() end
 ---**`AUDIO` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x374F0E716BFCDE82)  
 ---This native does not have an official description.
+---@overload fun(name: string, coords: vector3)
 ---@param name string
 ---@param x number
 ---@param y number
@@ -992,6 +993,7 @@ function N_0xfe5c6177064bd390(p0) end
 ---**`AUDIO` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFFE9C53DEEA3DB0B)  
 ---This native does not have an official description.
+---@overload fun(p0: any, p1: any, coords: vector3, isSrlLoaded: boolean, p6: any): any
 ---@param p0 any
 ---@param p1 any
 ---@param x number
@@ -1015,6 +1017,7 @@ function PauseScriptedConversation(p0, p1, p2, p3, p4) end
 ---**`AUDIO` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xED640017ED337E45)  
 ---Old name: _PLAY_AMBIENT_SPEECH_AT_COORDS
+---@overload fun(coords: vector3): (boolean, any)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1153,6 +1156,7 @@ function PlaySoundFromItem(item, soundSet, p2) end
 ---[Native Documentation](https://rdr3natives.com/?_0xDCF5BA95BBF0FABA)  
 ---Starts Audio Loop
 ---_PLAY_SOUND_FROM_ENTITY* - _PLAY_SOUND_FRONTEND*
+---@overload fun(soundId: integer, soundName: string, coords: vector3, soundsetName: string, p6: boolean, p7: integer, p8: boolean)
 ---@param soundId integer
 ---@param soundName string
 ---@param x number
@@ -1204,6 +1208,7 @@ function PlayStreamFromPed(ped, streamId) end
 ---**`AUDIO` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x21442F412E8DE56B)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, streamId: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1347,6 +1352,7 @@ function SetAmbientZoneListStatePersistent(ambientZone, p1, p2) end
 ---**`AUDIO` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x3743CE6948194349)  
 ---This native does not have an official description.
+---@overload fun(ambientZone: string, coords: vector3, heading: number)
 ---@param ambientZone string
 ---@param x number
 ---@param y number
@@ -1654,6 +1660,7 @@ function UnregisterScriptWithAudio() end
 ---[Native Documentation](https://rdr3natives.com/?_0x0286617C8FC50A53)  
 ---Only used in R* SP Scripts
 ---Old Name: _UPDATE_SOUND_POSITION
+---@overload fun(soundId: integer, coords: vector3)
 ---@param soundId integer
 ---@param x number
 ---@param y number

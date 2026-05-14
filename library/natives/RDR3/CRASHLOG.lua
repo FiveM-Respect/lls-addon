@@ -9,6 +9,7 @@ function N_0x0fd3ecf9d0c8655f(p0) end
 ---**`CRASHLOG` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x23CCAB8F40B9CBEE)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): boolean
 ---@param x number
 ---@param y number
 ---@param z number

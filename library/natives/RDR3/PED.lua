@@ -10,6 +10,7 @@ function AddArmourToPed(ped, amount) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4E23CD07BD161E06)  
 ---This native does not have an official description.
+---@overload fun(groupId: integer, coords: vector3, position: integer)
 ---@param groupId integer
 ---@param x number
 ---@param y number
@@ -140,6 +141,9 @@ function ApplyPedDamagePack(ped, damagePack, damage, mult) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x58D32261AE0F0843)  
 ---seems to only work with PD_Vomit ? 
+---@overload fun(ped: integer, boneId: integer, offset: vector3, xRot: number, yRot: number, zRot: number, damagePack: string)
+---@overload fun(ped: integer, boneId: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, damagePack: string)
+---@overload fun(ped: integer, boneId: integer, offset: vector3, rotation: vector3, damagePack: string)
 ---@param ped integer
 ---@param boneId integer
 ---@param xOffset number
@@ -188,6 +192,9 @@ function AreAllAmbientPedReservationsReady() end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x7C00CFC48A782DC0)  
 ---This native does not have an official description.
+---@overload fun(volume: integer, entity: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, p8: integer, p9: boolean)
+---@overload fun(volume: integer, entity: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, p8: integer, p9: boolean)
+---@overload fun(volume: integer, entity: integer, offset: vector3, rotation: vector3, p8: integer, p9: boolean)
 ---@param volume integer
 ---@param entity integer
 ---@param offsetX number
@@ -493,6 +500,7 @@ function CountPedsInCombatWithTarget(ped, flag) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x336B3D200AB007CB)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, radius: number, flag: integer): integer
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -509,6 +517,7 @@ function CountPedsInCombatWithTargetWithinRadius(ped, x, y, z, radius, flag) end
 ---Only works while on-foot.
 ---
 ---_CREATE_[P-Z]
+---@overload fun(coords: vector3, heading: number, radius: number, p5: number, p6: number, p7: number, stopAtDestination: boolean): integer
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -536,6 +545,7 @@ function CreateGroup(taskAllocator) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0BCD4091C8EABA42)  
 ---Only used in SP scripts, for example odriscolls1: BOOLS: true, true, true, false, false
+---@overload fun(requestId: integer, coords: vector3, heading: number, p5: boolean, p6: boolean, p7: boolean, p8: boolean, p9: boolean): integer
 ---@param requestId integer
 ---@param x number
 ---@param y number
@@ -554,6 +564,9 @@ function CreateMetaPed(requestId, x, y, z, heading, p5, p6, p7, p8, p9) end
 ---Creates prop from metaped asset bundle
 ---https://github.com/femga/rdr3_discoveries/blob/master/objects/metaped_asset_bundles_list.lua
 ---Creates a pickup-able metaped component. asset doesn't seems to be related to component hashes. Hash example : 0xD20354AB (https ://i.imgur.com/dzHkcDb.png)
+---@overload fun(asset: integer | string, coords: vector3, rotX: number, rotY: number, rotZ: number, p7: boolean, p8: boolean, p9: boolean): integer
+---@overload fun(asset: integer | string, posX: number, posY: number, posZ: number, rotation: vector3, p7: boolean, p8: boolean, p9: boolean): integer
+---@overload fun(asset: integer | string, coords: vector3, rotation: vector3, p7: boolean, p8: boolean, p9: boolean): integer
 ---@param asset integer | string
 ---@param posX number
 ---@param posY number
@@ -570,6 +583,7 @@ function CreateMetaPedAsset(asset, posX, posY, posZ, rotX, rotY, rotZ, p7, p8, p
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xEAF682A14F8E5F53)  
 ---Creates metaped from ped outfit requestId. See _REQUEST_METAPED_OUTFIT
+---@overload fun(requestId: integer, coords: vector3, heading: number, p5: boolean, p6: boolean, p7: boolean, p8: boolean): integer
 ---@param requestId integer
 ---@param x number
 ---@param y number
@@ -585,6 +599,7 @@ function CreateMetaPedOutfitPed(requestId, x, y, z, heading, p5, p6, p7, p8) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD49F9B0955C367DE)  
 ---This native does not have an official description.
+---@overload fun(modelHash: integer | string, coords: vector3, heading: number, isNetwork: boolean, bScriptHostPed: boolean, p7: boolean, p8: boolean): integer
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -867,6 +882,9 @@ function GetActiveDynamicScenario_2(ped) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xBE22B26DD764C040)  
 ---This native does not have an official description.
+---@overload fun(animDict: string, animName: string, coords: vector3, xRot: number, yRot: number, zRot: number, p8: number, p9: integer): vector3
+---@overload fun(animDict: string, animName: string, x: number, y: number, z: number, rotation: vector3, p8: number, p9: integer): vector3
+---@overload fun(animDict: string, animName: string, coords: vector3, rotation: vector3, p8: number, p9: integer): vector3
 ---@param animDict string
 ---@param animName string
 ---@param x number
@@ -883,6 +901,9 @@ function GetAnimInitialOffsetPosition(animDict, animName, x, y, z, xRot, yRot, z
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4B805E6046EE9E47)  
 ---This native does not have an official description.
+---@overload fun(animDict: string, animName: string, coords: vector3, xRot: number, yRot: number, zRot: number, p8: number, p9: integer): vector3
+---@overload fun(animDict: string, animName: string, x: number, y: number, z: number, rotation: vector3, p8: number, p9: integer): vector3
+---@overload fun(animDict: string, animName: string, coords: vector3, rotation: vector3, p8: number, p9: integer): vector3
 ---@param animDict string
 ---@param animName string
 ---@param x number
@@ -970,6 +991,7 @@ function GetCharExpression(ped, index) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xC33AB876A77F8164)  
 ---Gets the closest ped in a radius.
+---@overload fun(coords: vector3, radius: number, p4: boolean, p5: boolean, p7: boolean, p8: boolean, p9: boolean, pedType: integer): (boolean, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1389,6 +1411,7 @@ function GetPedBlackboardScriptInt(ped, variableName) end
 ---offsetX: The X-component of the offset to add to the position relative to the bone's rotation.
 ---offsetY: The Y-component of the offset to add to the position relative to the bone's rotation.
 ---offsetZ: The Z-component of the offset to add to the position relative to the bone's rotation.
+---@overload fun(ped: integer, boneId: integer, offset: vector3): vector3
 ---@param ped integer
 ---@param boneId integer
 ---@param offsetX number
@@ -2101,7 +2124,7 @@ function GetVehiclePedIsEntering(ped) end
 ---
 ---If the Ped is not in a vehicle and includeLastVehicle is true, the vehicle they were last in is returned.
 ---@param ped integer
----@param lastVehicle boolean
+---@param lastVehicle? boolean [default: false]
 ---@return integer
 function GetVehiclePedIsIn(ped, lastVehicle) end
 
@@ -2295,6 +2318,7 @@ function IsAnimalSkinned(ped) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x68772DB2B2526F9F)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, radius: number): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2306,6 +2330,7 @@ function IsAnyHostilePedNearPoint(ped, x, y, z, radius) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x083961498679DC9F)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2656,6 +2681,7 @@ function IsPedHangingOnToVehicle(ped) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFCF37A457CB96DC0)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, p4: number): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2740,7 +2766,7 @@ function IsPedInAnyTrain(ped) end
 ---[Native Documentation](https://rdr3natives.com/?_0x997ABD671D25CA0B)  
 ---Gets a value indicating whether the specified ped is in any vehicle.
 ---@param ped integer
----@param atGetIn boolean
+---@param atGetIn? boolean [default: false]
 ---@return boolean
 function IsPedInAnyVehicle(ped, atGetIn) end
 
@@ -2825,6 +2851,7 @@ function IsPedInModel(ped, modelHash) end
 ---If returned true: There are enemy peds near friendly turn in ped. Going to aggro.
 ---If returned false: Moving back to idle as there aren't any remaining enemy peds near ped
 ---_IS_PED_IN_*
+---@overload fun(ped: integer, coords: vector3, radius: number, p5: boolean): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3694,6 +3721,7 @@ function N_0x3a5697b80fed5ebe(ped, p1, p2, p3, p4) end
 ---Params: p1 = 4/5/6, p5 = 40.f/100.f, coords = Player ped
 ---Perhaps returns some distance (Clearing that the local player is able to use ILO while in combat because they are near the recipient but also near hated peds)
 ---_GET_NUM_M* - _GET_PEDS_J*
+---@overload fun(ped: integer, p1: integer, coords: vector3, p5: number, itemset: integer): integer
 ---@param ped integer
 ---@param p1 integer
 ---@param x number
@@ -3817,6 +3845,7 @@ function N_0x4b19f171450e0d4f(ped) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4E68C7EF706DF35D)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, p4: number, relationshipGroup: integer | string)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4075,6 +4104,7 @@ function N_0x642720d8d69328b6(ped, p1) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6507AC3BD7C99009)  
 ---_IS_N* - _IS_P*
+---@overload fun(coords: vector3, p3: number): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -4541,6 +4571,7 @@ function N_0x97c475212b327666(groupId, p1) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9851DE7AEC10B4E1)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number, p4: integer, p5: any)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -5042,6 +5073,7 @@ function N_0xcdfb8c04d4c95d9b(p0, p1, p2, p3) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xCF0B19806473D324)  
 ---_SET_PED_COMBAT_*
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5210,6 +5242,7 @@ function N_0xe1103300f3456de7(groupId, p1, p2) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE1AADD0055D76603)  
 ---_C*
+---@overload fun(ped: integer, entity: integer, boneIndex1: integer, boneIndex2: integer, coords: vector3, p7: number, p8: boolean, p9: boolean, p10: integer)
 ---@param ped integer
 ---@param entity integer
 ---@param boneIndex1 integer
@@ -5390,6 +5423,7 @@ function N_0xf47d54b986f0a346(ped, danceIntensity) end
 ---Only used in SP Scripts
 ---Returns count / index
 ---_C*
+---@overload fun(shockingEvent: integer, coords: vector3, p4: number): (integer, integer)
 ---@param shockingEvent integer
 ---@param x number
 ---@param y number
@@ -5656,6 +5690,7 @@ function RegisterHatedTargetsAroundPed(ped, radius) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD8736EFDA38EDC5C)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, radius: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -6329,6 +6364,7 @@ function SetHorseScriptedFlag(ped, toggle) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xC32779C16FCEECD9)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, ikIndex: integer, entityLookAt: integer, boneLookAt: integer, offset: vector3, p7: any, blendInDuration: integer, blendOutDuration: integer)
 ---@param ped integer
 ---@param ikIndex integer
 ---@param entityLookAt integer
@@ -6938,6 +6974,7 @@ function SetPedDefensiveAreaVolume(ped, volume, p2, p3, p4) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x1854217C640B39EC)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, entity: integer, coords: vector3, radius: number, p6: integer, p7: boolean)
 ---@param ped integer
 ---@param entity integer
 ---@param x number
@@ -7452,6 +7489,7 @@ function SetPedOwnsAnimal(ped, animal, p2) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFE07FF6495D52E2A)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -7580,6 +7618,7 @@ function SetPedShootRate(ped, shootRate) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x802092B07E3B1EEA)  
 ---lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
+---@overload fun(ped: integer, coords: vector3, lookIntensity: integer): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -7591,6 +7630,7 @@ function SetPedShouldPlayCombatScenarioExit(ped, x, y, z, lookIntensity) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xEC6935EBE0847B90)  
 ---Old name: _SET_PED_SHOULD_PLAY_DIRECTED_SCENARIO_EXIT
+---@overload fun(ped: integer, coords: vector3): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -7601,6 +7641,7 @@ function SetPedShouldPlayDirectedNormalScenarioExit(ped, x, y, z) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x62FDAD5E01D2DD47)  
 ---lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
+---@overload fun(ped: integer, coords: vector3, lookIntensity: integer, p5: boolean): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -7617,6 +7658,7 @@ function SetPedShouldPlayEmotionalScenarioExit(ped, x, y, z, lookIntensity, p5) 
 ---1 - REACT_LOOK_LOW
 ---2 - REACT_LOOK_MEDIUM
 ---3 - REACT_LOOK_HIGH
+---@overload fun(ped: integer, coords: vector3, lookIntensity: integer): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -7640,6 +7682,7 @@ function SetPedShouldPlayNormalScenarioExit(ped) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x463803429297117C)  
 ---lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
+---@overload fun(ped: integer, coords: vector3, lookIntensity: integer, p5: boolean): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -7652,6 +7695,7 @@ function SetPedShouldPlayQuickScenarioExit(ped, x, y, z, lookIntensity, p5) end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9D3151A373974804)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, radius: number, p5: boolean, p6: boolean, p7: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -8156,6 +8200,7 @@ function SetTotalPedDamageFromAi(ped, totalDamage) end
 ---[Native Documentation](https://rdr3natives.com/?_0x4C57F27D1554E6B0)  
 ---Triggers a gunshot
 ---Params: p5 = -1 in R* Scripts
+---@overload fun(ped: integer, coords: vector3, p4: integer, p5: number, p6: integer, p7: number): any
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -8213,6 +8258,7 @@ function SpawnpointsIsSearchFailed() end
 ---**`PED` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2DF9038C90AD5264)  
 ---Params: p4 = 35.f, duration = 5000 in R* Scripts
+---@overload fun(coords: vector3, width: number, p4: number, spawnpointsFlag: integer, p6: number, duration: integer, p8: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -8267,6 +8313,7 @@ function TimeSincePedLastShot(ped) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x09E378C52B1433B5)  
 ---_TOGGLE_S* - _UPDATE_*
+---@overload fun(ped: integer, coords: vector3, scale: number)
 ---@param ped integer
 ---@param x number
 ---@param y number

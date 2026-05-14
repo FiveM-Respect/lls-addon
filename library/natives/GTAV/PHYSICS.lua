@@ -29,6 +29,9 @@ function ActivatePhysics(entity) end
 ---    RopeWire64 = 7 // Verticies: 64, Radius: 0.025, Textures: steel_cable & steel_cable_n---
 ---}
 ---```
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, maxLength: number, ropeType: integer, initLength: number, minLength: number, lengthChangeRate: number, onlyPPU: boolean, collisionOn: boolean, lockFromFront: boolean, timeMultiplier: number, breakable: boolean): (integer, any)
+---@overload fun(x: number, y: number, z: number, rotation: vector3, maxLength: number, ropeType: integer, initLength: number, minLength: number, lengthChangeRate: number, onlyPPU: boolean, collisionOn: boolean, lockFromFront: boolean, timeMultiplier: number, breakable: boolean): (integer, any)
+---@overload fun(coords: vector3, rotation: vector3, maxLength: number, ropeType: integer, initLength: number, minLength: number, lengthChangeRate: number, onlyPPU: boolean, collisionOn: boolean, lockFromFront: boolean, timeMultiplier: number, breakable: boolean): (integer, any)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -51,6 +54,9 @@ function AddRope(x, y, z, rotX, rotY, rotZ, maxLength, ropeType, initLength, min
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE37F721824571784)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, vecX: number, vecY: number, vecZ: number, impulse: number)
+---@overload fun(posX: number, posY: number, posZ: number, coords: vector3, impulse: number)
+---@overload fun(coords: vector3, coords: vector3, impulse: number)
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -86,6 +92,7 @@ function AttachEntitiesToRope(ropeId, ent1, ent2, ent1_x, ent1_y, ent1_z, ent2_x
 ---```
 ---The position supplied can be anywhere, and the entity should anchor relative to that point from it's origin.  
 ---```
+---@overload fun(ropeId: integer, entity: integer, coords: vector3, p5: boolean)
 ---@param ropeId integer
 ---@param entity integer
 ---@param x number
@@ -290,6 +297,7 @@ function N_0xcc6e963682533882(object) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B320CF14146B69A)  
 ---This native does not have an official description.
+---@overload fun(ropeId: integer, vertex: integer, coords: vector3)
 ---@param ropeId integer
 ---@param vertex integer
 ---@param x number
@@ -380,6 +388,7 @@ function SetCgAtBoundcenter(entity) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD8FA3908D7B86904)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3)
 ---@param entity integer
 ---@param x number
 ---@param y number

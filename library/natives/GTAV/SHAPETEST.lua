@@ -81,6 +81,9 @@ function StartShapeTestBoundingBox(entity, flags1, flags2) end
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFE466162C4401D18)  
 ---For more information, see [`START_EXPENSIVE_SYNCHRONOUS_SHAPE_TEST_LOS_PROBE`](#\_0x377906D8A31E5586) and [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E).
+---@overload fun(coords: vector3, x1: number, y1: number, z1: number, rotX: number, rotY: number, rotZ: number, p9: integer, flags: integer, entity: integer, p12: integer): integer
+---@overload fun(x: number, y: number, z: number, x1: number, y1: number, z1: number, rotation: vector3, p9: integer, flags: integer, entity: integer, p12: integer): integer
+---@overload fun(coords: vector3, x1: number, y1: number, z1: number, rotation: vector3, p9: integer, flags: integer, entity: integer, p12: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number

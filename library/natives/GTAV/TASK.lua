@@ -57,6 +57,7 @@ function AddPatrolRouteNode(id, guardScenario, x1, y1, z1, x2, y2, z2, waitTime)
 ---```
 ---x, y, z: offset in world coords from some entity.  
 ---```
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -201,6 +202,7 @@ function DeletePatrolRoute(patrolRoute) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5A59271FFADD33C1)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, b: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -266,6 +268,7 @@ function DoesScenarioOfTypeExistInArea(p0, p1, p2, p3, p4, p5) end
 ---```
 ---Checks if there is a cover point at position  
 ---```
+---@overload fun(coords: vector3): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -812,6 +815,7 @@ function N_0xab13a5565480b6d9(ped, p1) end
 ---
 ---NativeDB Introduced: v1493
 ---```
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -977,6 +981,7 @@ function SetAnimWeight(p0, p1, p2, p3, p4) end
 ---```
 ---For p1 & p2 (Ped, Vehicle). I could be wrong, as the only time this native is called in scripts is once and both are 0, but I assume this native will work like SET_MOUNTED_WEAPON_TARGET in which has the same exact amount of parameters and the 1st and last 3 parameters are right and the same for both natives.  
 ---```
+---@overload fun(shootingPed: integer, targetPed: integer, targetVehicle: integer, coords: vector3)
 ---@param shootingPed integer
 ---@param targetPed integer
 ---@param targetVehicle integer
@@ -1094,6 +1099,7 @@ function SetHighFallTask(ped, duration, p2, p3) end
 ---NativeDB Added Parameter 7: Any p6
 ---NativeDB Added Parameter 8: Any p7
 ---```
+---@overload fun(shootingPed: integer, targetPed: integer, targetVehicle: integer, coords: vector3)
 ---@param shootingPed integer
 ---@param targetPed integer
 ---@param targetVehicle integer
@@ -1111,6 +1117,7 @@ function SetNextDesiredMoveState(p0) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC313379AF0FCEDA7)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -1361,6 +1368,7 @@ function TaskAgitatedAction(ped, ped2) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6671F3EEC681BDA1)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, time: integer, bInstantBlendToAim: boolean, bPlayAimIntro: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -1393,6 +1401,7 @@ function TaskAimGunScripted(ped, scriptTask, bDisableBlockingClip, bInstantBlend
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8605AF0DE8B3A5AC)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, targetPed: integer, coords: vector3, iGunTaskType: integer | string, bDisableBlockingClip: boolean, bForceAim: boolean)
 ---@param ped integer
 ---@param targetPed integer
 ---@param x number
@@ -1448,6 +1457,7 @@ function TaskArrestPed(ped, target) end
 ---  BoatTaxiSettings = 1071,
 ---}
 ---```
+---@overload fun(ped: integer, boat: integer, vehicleTarget: integer, pedTarget: integer, coords: vector3, missionType: integer, speed: number, drivingStyle: integer, radius: number, missionFlags: integer)
 ---@param ped integer
 ---@param boat integer
 ---@param vehicleTarget integer
@@ -1545,6 +1555,7 @@ function TaskCombatHatedTargetsAroundPedTimed(p0, p1, p2, p3) end
 ---```
 ---Despite its name, it only attacks ONE hated target. The one closest to the specified position.  
 ---```
+---@overload fun(ped: integer, coords: vector3, radius: number, p5: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -1641,6 +1652,7 @@ function TaskExitCover(p0, p1, p2, p3, p4) end
 ---Adds a new point to the current point route; a maximum of 8 points can be added.
 ---
 ---Call [TASK_FLUSH_ROUTE](#\_0x841142A1376E9006) before the first call to this. Call [TASK_FOLLOW_POINT_ROUTE](#\_0x595583281858626E) to make the Ped go the route.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1704,6 +1716,7 @@ function TaskFlushRoute() end
 ---    ENAV_PULL_FROM_EDGE_EXTRA = 32768
 ---};
 ---```
+---@overload fun(ped: integer, coords: vector3, moveBlendRatio: number, time: integer, radius: number, flags: integer, finalHeading: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -1718,6 +1731,7 @@ function TaskFollowNavMeshToCoord(ped, x, y, z, moveBlendRatio, time, radius, fl
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x17F58B88D085DBAC)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, speed: number, timeout: integer, unkFloat: number, unkInt: integer, unkX: number, unkY: number, unkZ: number, unk_40000f: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -1758,6 +1772,7 @@ function TaskFollowPointRoute(ped, speed, routeMode) end
 ---p7 always 10.0  
 ---p8 always 1  
 ---```
+---@overload fun(ped: integer, entity: integer, offset: vector3, movementSpeed: number, timeout: integer, stoppingRange: number, persistFollowing: boolean)
 ---@param ped integer
 ---@param entity integer
 ---@param offsetX number
@@ -1797,6 +1812,7 @@ function TaskGetOffBoat(ped, boat) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD76B57B44F1E6F8B)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, speed: number, timeout: integer, targetHeading: number, distanceToSlide: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -1931,6 +1947,7 @@ function TaskGoToCoordAndAimAtHatedEntitiesNearCoord(pedHandle, goToLocationX, g
 ---  DRIVINGMODE_AVOIDCARS_STOPFORPEDS_OBEYLIGHTS = 786599 // DF_SwerveAroundAllCars|DF_StopAtLights|DF_StopForPeds|DF_SteerAroundObjects|DF_UseShortCutLinks|DF_ChangeLanesAroundObstructions|DF_StopForCars
 ---};
 ---```
+---@overload fun(ped: integer, coords: vector3, fMoveBlendRatio: number, vehicle: integer, bUseLongRangeVehiclePathing: boolean, drivingFlags: integer, fMaxRangeToShootTargets: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -1947,6 +1964,7 @@ function TaskGoToCoordAnyMeans(ped, x, y, z, fMoveBlendRatio, vehicle, bUseLongR
 ---```
 ---NativeDB Added Parameter 13: Any p12
 ---```
+---@overload fun(ped: integer, coords: vector3, speed: number, p5: any, p6: boolean, walkingStyle: integer, p8: number, p9: any, p10: any, p11: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -1966,6 +1984,7 @@ function TaskGoToCoordAnyMeansExtraParams(ped, x, y, z, speed, p5, p6, walkingSt
 ---```
 ---NativeDB Added Parameter 14: Any p13
 ---```
+---@overload fun(ped: integer, coords: vector3, speed: number, p5: any, p6: boolean, walkingStyle: integer, p8: number, p9: any, p10: any, p11: any, p12: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -1984,6 +2003,7 @@ function TaskGoToCoordAnyMeansExtraParamsWithCruiseSpeed(ped, x, y, z, speed, p5
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11315AB3385B8AC0)  
 ---Will make the ped move to a coordinate while aiming (and optionally shooting) at given coordinates.
+---@overload fun(ped: integer, coords: vector3, aimAtX: number, aimAtY: number, aimAtZ: number, moveSpeed: number, shoot: boolean, p9: number, p10: number, p11: boolean, flags: any, p13: boolean, firingPattern: integer | string)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2020,6 +2040,7 @@ function TaskGoToCoordWhileAimingAtCoord(ped, x, y, z, aimAtX, aimAtY, aimAtZ, m
 ---    FIRING_PATTERN_TAMPA_MORTAR = -1842093953
 ---}
 ---```
+---@overload fun(ped: integer, coords: vector3, entityToAimAt: integer, moveSpeed: number, shoot: boolean, targetRadius: number, slowDistance: number, useNavMesh: boolean, navFlags: integer, instantBlendAtAim: boolean, firingPattern: integer | string, time: integer)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2207,6 +2228,7 @@ function TaskHandsUp(ped, duration, facingPed, p3, p4) end
 ---x,y,z appear to be how close to the EntityToFollow the heli should be. Scripts use 0.0, 0.0, 80.0. Then the heli tries to position itself 80 units above the EntityToFollow. If you reduce it to -5.0, it tries to go below (if the EntityToFollow is a heli or plane)  
 ---NOTE: If the pilot finds enemies, it will engage them, then remain there idle, not continuing to chase the Entity given.  
 ---```
+---@overload fun(pilot: integer, entityToFollow: integer, coords: vector3)
 ---@param pilot integer
 ---@param entityToFollow integer
 ---@param x number
@@ -2256,6 +2278,7 @@ function TaskHeliEscortHeli(pilot, heli1, heli2, p3, p4, p5) end
 ---  HeightMapOnlyAvoidance = 320,
 ---}
 ---```
+---@overload fun(ped: integer, heli: integer, vehicleTarget: integer, pedTarget: integer, coords: vector3, missionType: integer, speed: number, radius: number, heading: number, height: number, minHeight: number, slowDist: number, missionFlags: integer)
 ---@param ped integer
 ---@param heli integer
 ---@param vehicleTarget integer
@@ -2319,6 +2342,7 @@ function TaskLeaveVehicle(ped, vehicle, flags) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6FA46612594F7973)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, duration: integer, p5: any, p6: any)
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -2438,6 +2462,7 @@ function TaskParachute(ped, p1) end
 ---```
 ---makes ped parachute to coords x y z. Works well with PATHFIND::GET_SAFE_COORD_FOR_PED  
 ---```
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2482,6 +2507,7 @@ function TaskPause(ped, ms) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD04FE6765D990A06)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, heading: number, duration: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2493,6 +2519,7 @@ function TaskPedSlideToCoord(ped, x, y, z, heading, duration) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5A4A6A6D3DC64F52)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, heading: number, p5: number, p6: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2528,6 +2555,7 @@ function TaskPerformSequenceLocally(ped, taskSequenceId) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2D2386F273FF7A25)  
 ---This native does not have an official description.
+---@overload fun(pilot: integer, entityToFollow: integer, coords: vector3)
 ---@param pilot integer
 ---@param entityToFollow integer
 ---@param x number
@@ -2616,6 +2644,7 @@ function TaskPlaneMission(ped, vehicle, targetVehicle, targetPed, fTargetCoordX,
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x92C360B5F15D2302)  
 ---The given ped will try to drive the plane to the given coordinates and will then drive around the given coords (the plane will form 8s on the ground)
+---@overload fun(pilot: integer, aircraft: integer, coords: vector3, fCruiseSpeed: number, fTargetReachedDist: number)
 ---@param pilot integer
 ---@param aircraft integer
 ---@param xPos number
@@ -2628,6 +2657,7 @@ function TaskPlaneTaxi(pilot, aircraft, xPos, yPos, zPos, fCruiseSpeed, fTargetR
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x965FEC691D55E9BF)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, heading: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2693,6 +2723,9 @@ function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOut
 ---Similar in functionality to [`TASK_PLAY_ANIM`](#\_0xEA47FE3719165B94), except the position and rotation parameters let you specify the initial position and rotation of the task. The ped is teleported to the position specified.
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
+---@overload fun(ped: integer, animDictionary: string, animationName: string, coords: vector3, rotX: number, rotY: number, rotZ: number, blendInSpeed: number, blendOutSpeed: number, duration: integer, flag: any, animTime: number, p14: any, p15: any)
+---@overload fun(ped: integer, animDictionary: string, animationName: string, posX: number, posY: number, posZ: number, rotation: vector3, blendInSpeed: number, blendOutSpeed: number, duration: integer, flag: any, animTime: number, p14: any, p15: any)
+---@overload fun(ped: integer, animDictionary: string, animationName: string, coords: vector3, rotation: vector3, blendInSpeed: number, blendOutSpeed: number, duration: integer, flag: any, animTime: number, p14: any, p15: any)
 ---@param ped integer
 ---@param animDictionary string
 ---@param animationName string
@@ -2744,6 +2777,7 @@ function TaskPlayPhoneGestureAnimation(ped, animDict, animation, boneMaskType, p
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4172393E6BE1FECE)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, timeout: any, p5: boolean, p6: number, p7: boolean, p8: boolean, p9: any, p10: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2878,6 +2912,7 @@ function TaskSeekCoverFromPed(ped, target, duration, p3) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x75AC2B60386D89F2)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, duration: integer, p5: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2955,6 +2990,7 @@ function TaskSetSphereDefensiveArea(p0, p1, p2, p3, p4) end
 ---```
 ---NativeDB Introduced: v3407
 ---```
+---@overload fun(ped: integer, coords: vector3, moveBlendRatio: number, radius: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2975,6 +3011,7 @@ function TaskShockingEventReact(ped, eventHandle) end
 ---```
 ---Firing Pattern Hash Information: https://pastebin.com/Px036isB
 ---```
+---@overload fun(ped: integer, coords: vector3, duration: integer, firingPattern: integer | string)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3028,6 +3065,7 @@ function TaskSkyDive(ped) end
 ---```
 ---Makes the specified ped flee the specified distance from the specified position.  
 ---```
+---@overload fun(ped: integer, coords: vector3, distance: number, time: integer, p6: boolean, p7: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3058,6 +3096,7 @@ function TaskSmartFleePed(ped, fleeTarget, distance, fleeTime, p4, p5) end
 ---```
 ---scenarioName example: "WORLD_HUMAN_GUARD_STAND"  
 ---```
+---@overload fun(ped: integer, coords: vector3, heading: number, scenarioName: string)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3078,6 +3117,7 @@ function TaskStandStill(ped, time) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFA4EFC79F69D4F07)  
 ---The ped will move or warp to the position and heading given, then start the scenario passed. See [`TASK_START_SCENARIO_IN_PLACE`](#\_0x142A02425FF02BD9) for a list of scenarios.
+---@overload fun(ped: integer, scenarioName: string, coords: vector3, heading: number, timeToLeave: integer, playIntro: boolean, warp: boolean)
 ---@param ped integer
 ---@param scenarioName string
 ---@param x number
@@ -3150,6 +3190,7 @@ function TaskStopPhoneGestureAnimation(ped) end
 ---```
 ---NativeDB Introduced: v2189
 ---```
+---@overload fun(p0: any, submarine: integer, coords: vector3, p5: any)
 ---@param p0 any
 ---@param submarine integer
 ---@param x number
@@ -3230,6 +3271,7 @@ function TaskSynchronizedScene(ped, scene, animDictionary, animationName, speed,
 ---NativeDB Added Parameter 5: Any p4
 ---NativeDB Added Parameter 6: Any p5
 ---```
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3251,6 +3293,7 @@ function TaskToggleDuck(p0, p1) end
 ---```
 ---duration in milliseconds  
 ---```
+---@overload fun(ped: integer, coords: vector3, duration: integer)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3319,6 +3362,7 @@ function TaskUseNearestScenarioChainToCoordWarp(p0, p1, p2, p3, p4, p5) end
 ---Updated variables
 ---An alternative to TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD_WARP. Makes the ped walk to the scenario instead.
 ---```
+---@overload fun(ped: integer, coords: vector3, distance: number, duration: integer)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3330,6 +3374,7 @@ function TaskUseNearestScenarioToCoord(ped, x, y, z, distance, duration) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x58E2E0F23F6B76C3)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, radius: number, p5: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3341,6 +3386,7 @@ function TaskUseNearestScenarioToCoordWarp(ped, x, y, z, radius, p5) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x447C1E9EF844BC0F)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3375,6 +3421,7 @@ function TaskVehicleChase(driver, targetEnt) end
 ---Here the e.g. code I used  
 ---Function.Call(Hash.TASK_VEHICLE_DRIVE_TO_COORD, Ped, Vehicle, Cor X, Cor Y, Cor Z, 30f, 1f, Vehicle.GetHashCode(), 16777216, 1f, true);  
 ---```
+---@overload fun(ped: integer, vehicle: integer, coords: vector3, speed: number, p6: any, vehicleModel: integer | string, drivingMode: integer, stopRange: number, p10: number)
 ---@param ped integer
 ---@param vehicle integer
 ---@param x number
@@ -3420,6 +3467,7 @@ function TaskVehicleDriveToCoord(ped, vehicle, x, y, z, speed, p6, vehicleModel,
 ---  DF_ForceJoinInRoadDirection = 1073741824
 ---}
 ---```
+---@overload fun(ped: integer, vehicle: integer, coords: vector3, speed: number, drivingStyle: integer, stopRange: number)
 ---@param ped integer
 ---@param vehicle integer
 ---@param x number
@@ -3519,6 +3567,7 @@ function TaskVehicleFollowWaypointRecording(ped, vehicle, WPRecording, p3, p4, p
 ---If using this to continually follow a Ped who is on foot:  You will need to run this in a tick loop.  Call it in with the Ped's updated coordinates every 20 ticks or so and you will have one hell of a smart, fast-reacting NPC driver -- provided he doesn't get stuck.  If your update frequency is too fast, the Ped may not have enough time to figure his way out of being stuck, and thus, remain stuck.  One way around this would be to implement an "anti-stuck" mechanism, which allows the driver to realize he's stuck, temporarily pause the tick, unstuck, then resume the tick.  
 ---EDIT:  This is being discussed in more detail at http://gtaforums.com/topic/818504-any-idea-on-how-to-make-peds-clever-and-insanely-fast-c/  
 ---```
+---@overload fun(ped: integer, vehicle: integer, coords: vector3, speed: number, behaviorFlag: integer, stoppingRange: number)
 ---@param ped integer
 ---@param vehicle integer
 ---@param x number
@@ -3596,6 +3645,7 @@ function TaskVehicleMission(ped, vehicle, vehicleTarget, missionType, speed, dri
 ---All parameters except ped, vehicle, x, y, z and speed are optional; with `missionType` being only those that don't require a target entity.
 ---
 ---If you don't want to use a parameter; pass `0` for int parameters, and `-1.0f` for the remaining float parameters.
+---@overload fun(ped: integer, vehicle: integer, coords: vector3, missionType: integer, speed: number, drivingStyle: integer, radius: number, straightLineDist: number, DriveAgainstTraffic: boolean)
 ---@param ped integer
 ---@param vehicle integer
 ---@param x number
@@ -3635,6 +3685,7 @@ function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, missionType, speed
 ---Depending on the angle of approach, the vehicle can park at the specified heading or at its exact opposite (-180) angle.  
 ---Radius seems to define how close the vehicle has to be -after parking- to the position for this task considered completed. If the value is too small, the vehicle will try to park again until it's exactly where it should be. 20.0 Works well but lower values don't, like the radius is measured in centimeters or something.  
 ---```
+---@overload fun(ped: integer, vehicle: integer, coords: vector3, heading: number, mode: integer, radius: number, keepEngineOn: boolean)
 ---@param ped integer
 ---@param vehicle integer
 ---@param x number
@@ -3663,6 +3714,7 @@ function TaskVehiclePlayAnim(vehicle, animationSet, animationName) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5190796ED39C9B6D)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, p4: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3735,6 +3787,7 @@ function TaskVehicleTempAction(driver, vehicle, action, time) end
 ---The ped will continue to wander after getting distracted, but only if this additional task is temporary, ie. killing a target, after killing the target it will continue to wander around.
 ---
 ---Use `GetIsTaskActive(ped, 222)` to check if the ped is still wandering the area.
+---@overload fun(ped: integer, coords: vector3, radius: number, minimalLength: integer, timeBetweenWalks: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3968,6 +4021,7 @@ function WaypointPlaybackUseDefaultSpeed(p0) end
 ---```
 ---For a full list of the points, see here: goo.gl/wIH0vn
 ---```
+---@overload fun(name: string, coords: vector3): (boolean, integer)
 ---@param name string
 ---@param x number
 ---@param y number

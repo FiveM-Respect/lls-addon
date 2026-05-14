@@ -688,6 +688,9 @@ function SetAnimSceneInt(animScene, name, value, p3) end
 ---**`ANIMSCENE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x020894BF17A02EF2)  
 ---This native does not have an official description.
+---@overload fun(animScene: integer, coords: vector3, rotX: number, rotY: number, rotZ: number, order: integer)
+---@overload fun(animScene: integer, posX: number, posY: number, posZ: number, rotation: vector3, order: integer)
+---@overload fun(animScene: integer, coords: vector3, rotation: vector3, order: integer)
 ---@param animScene integer
 ---@param posX number
 ---@param posY number

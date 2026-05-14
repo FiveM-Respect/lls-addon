@@ -56,6 +56,7 @@ function ConvertOldPickupTypeToNew(pickupHash) end
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x673966A0C0FD7171)  
 ---flags: see CREATE_PICKUP
+---@overload fun(pickupHash: integer | string, coords: vector3, flags: integer, amount: integer, modelHash: integer | string, createAsScriptObject: boolean, scriptHostObject: boolean, customAmmoType: integer, p10: number): table
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -73,6 +74,7 @@ function CreateAmbientPickup(pickupHash, x, y, z, flags, amount, modelHash, crea
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x509D5878EB39E842)  
 ---This native does not have an official description.
+---@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, bScriptHostObj: boolean, dynamic: boolean, p7: boolean, p8: boolean): table
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -88,6 +90,7 @@ function CreateObject(modelHash, x, y, z, isNetwork, bScriptHostObj, dynamic, p7
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9A294B2138ABB884)  
 ---This native does not have an official description.
+---@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, bScriptHostObj: boolean, dynamic: boolean, p7: boolean): table
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -110,6 +113,7 @@ function CreateObjectSkeleton(object) end
 ---[Native Documentation](https://rdr3natives.com/?_0xFBA08C503DD5FA58)  
 ---https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/Placement%20Flags
 ---https://github.com/femga/rdr3_discoveries/blob/master/objects/pickup_list.lua
+---@overload fun(pickupHash: integer | string, coords: vector3, flags: integer, p5: integer, p6: boolean, modelHash: integer | string, p8: integer, p9: number, p10: any): integer
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -127,6 +131,9 @@ function CreatePickup(pickupHash, x, y, z, flags, p5, p6, modelHash, p8, p9, p10
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x891804727E0A98B7)  
 ---flags: see CREATE_PICKUP
+---@overload fun(pickupHash: integer | string, coords: vector3, rotX: number, rotY: number, rotZ: number, flags: integer, p8: integer, p9: integer, p10: boolean, modelHash: integer | string, p12: integer, p13: number, p14: any): integer
+---@overload fun(pickupHash: integer | string, posX: number, posY: number, posZ: number, rotation: vector3, flags: integer, p8: integer, p9: integer, p10: boolean, modelHash: integer | string, p12: integer, p13: number, p14: any): integer
+---@overload fun(pickupHash: integer | string, coords: vector3, rotation: vector3, flags: integer, p8: integer, p9: integer, p10: boolean, modelHash: integer | string, p12: integer, p13: number, p14: any): integer
 ---@param pickupHash integer | string
 ---@param posX number
 ---@param posY number
@@ -148,6 +155,7 @@ function CreatePickupRotate(pickupHash, posX, posY, posZ, rotX, rotY, rotZ, flag
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2EAF1FDB2FB55698)  
 ---This native does not have an official description.
+---@overload fun(pickupHash: integer | string, coords: vector3, placeOnGround: boolean, modelHash: integer | string): table
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -179,6 +187,7 @@ function DetachPortablePickupFromPed(pickupObject) end
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xBFA48E2FF417213F)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, hash: integer | string, p5: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -205,6 +214,7 @@ function DoesPickupObjectExist(pickupObject) end
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF9C36251F6E48E33)  
 ---This native does not have an official description.
+---@overload fun(pickupHash: integer | string, coords: vector3, radius: number): boolean
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -329,6 +339,7 @@ function GetAmmoTypeFromPickupType(pickupHash) end
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE143FA2249364369)  
 ---Returns the closest object of a specified type within a given radius from a specified position
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, missionScriptObject: boolean, scriptHostObject: boolean, networkObject: boolean): table
 ---@param x number
 ---@param y number
 ---@param z number
@@ -365,6 +376,9 @@ function GetObjectLightIntensity(object) end
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x163E252DE035A133)  
 ---Old name: _GET_OBJECT_OFFSET_FROM_COORDS
+---@overload fun(coords: vector3, heading: number, xOffset: number, yOffset: number, zOffset: number): vector3
+---@overload fun(xPos: number, yPos: number, zPos: number, heading: number, offset: vector3): vector3
+---@overload fun(coords: vector3, heading: number, offset: vector3): vector3
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -392,6 +406,7 @@ function GetPickupObject(pickup) end
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB48FCED898292E52)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, name: string): table
 ---@param x number
 ---@param y number
 ---@param z number
@@ -916,6 +931,7 @@ function SetCustomTexturesOnObject(object, txdHash, p2, p3) end
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF538081986E49E9D)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number)
 ---@param x number
 ---@param y number
 ---@param z number

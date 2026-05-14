@@ -12,6 +12,7 @@
 ---    APPLY_TYPE_ANGULAR_IMPULSE = 5
 ---}
 ---```
+---@overload fun(entity: integer, forceType: integer, coords: vector3, offX: number, offY: number, offZ: number, nComponent: integer, bLocalForce: boolean, bLocalOffset: boolean, bScaleByMass: boolean, bPlayAudio: boolean, bScaleByTimeWarp: boolean)
 ---@param entity integer
 ---@param forceType integer
 ---@param x number
@@ -31,6 +32,7 @@ function ApplyForceToEntity(entity, forceType, x, y, z, offX, offY, offZ, nCompo
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x18FF00FC7EFF559E)  
 ---Apply a force to an entities center of mass.
+---@overload fun(entity: integer, forceType: integer, coords: vector3, nComponent: integer, bLocalForce: boolean, bScaleByMass: boolean, bApplyToChildren: boolean)
 ---@param entity integer
 ---@param forceType integer
 ---@param x number
@@ -67,6 +69,9 @@ function AttachEntityBoneToEntityBonePhysically(entity1, entity2, entityBone, en
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6B9BBD38AB0796DF)  
 ---Attach an entity to the specified entity.
+---@overload fun(entity1: integer, entity2: integer, boneIndex: integer, coords: vector3, xRot: number, yRot: number, zRot: number, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, rotationOrder: integer, syncRot: boolean)
+---@overload fun(entity1: integer, entity2: integer, boneIndex: integer, xPos: number, yPos: number, zPos: number, rotation: vector3, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, rotationOrder: integer, syncRot: boolean)
+---@overload fun(entity1: integer, entity2: integer, boneIndex: integer, coords: vector3, rotation: vector3, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, rotationOrder: integer, syncRot: boolean)
 ---@param entity1 integer
 ---@param entity2 integer
 ---@param boneIndex integer
@@ -94,6 +99,7 @@ function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRo
 ---p17 - do not teleport entity to be attached to the position of the bone Index of the target entity (if 1, entity will not be teleported to target bone)
 ---p18 - is always 2 in scripts.
 ---```
+---@overload fun(entity1: integer, entity2: integer, boneIndex1: integer, boneIndex2: integer, xPos1: number, yPos1: number, zPos1: number, xPos2: number, yPos2: number, zPos2: number, rotation: vector3, breakForce: number, fixedRot: boolean, p15: boolean, collision: boolean, teleport: boolean, p18: integer)
 ---@param entity1 integer
 ---@param entity2 integer
 ---@param boneIndex1 integer
@@ -124,6 +130,7 @@ function ClearEntityLastDamageEntity(entity) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x150E808B375A385A)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: any, modelHash: integer | string, p5: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -138,6 +145,7 @@ function CreateForcedObject(x, y, z, p3, modelHash, p5) end
 ---Network players do not see changes done with this.
 ---Use [`CREATE_MODEL_HIDE_EXCLUDING_SCRIPT_OBJECTS`](#\_0x3A52AE588830BF7F) if you only want to hide map objects and exclude those created by scripts.
 ---Use [`REMOVE_MODEL_HIDE`](#\_0xD9E3006FB3CBD765) to make hidden objects visible again.
+---@overload fun(coords: vector3, radius: number, model: integer | string, surviveMapReload: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -151,6 +159,7 @@ function CreateModelHide(x, y, z, radius, model, surviveMapReload) end
 ---Hides all objects of the specified model intersecting a sphere centered at (x, y, z) with the given radius, excluding objects created by scripts.
 ---Network players do not see changes done with this.
 ---Use [`REMOVE_MODEL_HIDE`](#\_0xD9E3006FB3CBD765) to make hidden objects visible again.
+---@overload fun(coords: vector3, radius: number, model: integer | string, surviveMapReload: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -165,6 +174,7 @@ function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, surviveMa
 ---Only works with objects!  
 ---Network players do not see changes done with this.  
 ---```
+---@overload fun(coords: vector3, radius: number, originalModel: integer | string, newModel: integer | string, bSurviveMapReload: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -533,6 +543,7 @@ function GetEntityHealth(entity) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5A504562485944DD)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, atTop: boolean, inWorldCoords: boolean): number
 ---@param entity integer
 ---@param X number
 ---@param Y number
@@ -780,6 +791,7 @@ function GetObjectIndexFromEntityIndex(entity) end
 ---Entity's coords are: x=30, y=1000, z=60.  
 ---All three returned coords will then be in range of [-20,20] depending on rotation of the entity.  
 ---```
+---@overload fun(entity: integer, coords: vector3): vector3
 ---@param entity integer
 ---@param posX number
 ---@param posY number
@@ -795,6 +807,7 @@ function GetOffsetFromEntityGivenWorldCoords(entity, posX, posY, posZ) end
 ---y = forward/backward  
 ---z = up/down  
 ---```
+---@overload fun(entity: integer, offset: vector3): vector3
 ---@param entity integer
 ---@param offsetX number
 ---@param offsetY number
@@ -972,6 +985,7 @@ function IsEntityAPed(entity) end
 ---For the highlightArea, if do3dCheck is true, the marker will be drawn at the bottom of the target area. So if the square is centered on the ground with a zSize larger than 0, the marker will appear under the ground.
 ---The marker also doesn't scale, so it is always the same size (around half a meter).
 ---So unfortunately the marker isn't that useful as it doesn't convey the correct information about the area (the marker doesn't reflect when the player is actually in the marker or not)
+---@overload fun(entity: integer, coords: vector3, xSize: number, ySize: number, zSize: number, highlightArea: boolean, do3dCheck: boolean, transportMode: integer): boolean
 ---@param entity integer
 ---@param xPos number
 ---@param yPos number
@@ -1338,6 +1352,7 @@ function PlaySynchronizedEntityAnim(entity, syncedScene, animName, animDictName,
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB9C54555ED30FBC4)  
 ---[Animations list](https://alexguirre.github.io/animations-list/)
+---@overload fun(coords: vector3, radius: number, objectModelHash: integer | string, sceneId: integer, pAnimName: string, pAnimDictName: string, fBlendDelta: number, fBlendOutDelta: number, flags: integer, fMoverBlendInDelta: number): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1377,6 +1392,7 @@ function RemoveForcedObject(p0, p1, p2, p3, p4) end
 ---
 ---If lazy is false, all matching objects currently in scope are restored immediately.
 ---If lazy is true, objects will only reappear when their map is reloaded.
+---@overload fun(coords: vector3, radius: number, model: integer | string, lazy: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1388,6 +1404,7 @@ function RemoveModelHide(x, y, z, radius, model, lazy) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x033C0F9A64E229AE)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, oldModelHash: integer | string, newModelHash: integer | string, bLazy: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1437,6 +1454,7 @@ function SetEntityAlwaysPrerender(entity, toggle) end
 ---```
 ---NativeDB Introduced: v2372
 ---```
+---@overload fun(entity: integer, coords: vector3)
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -1540,6 +1558,7 @@ SetEntityCollision_2 = SetEntityCompletelyDisableCollision
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x06843DA7060A026B)  
 ---Sets the coordinates (world position) for a specified entity, offset by the radius of the entity on the Z axis.
+---@overload fun(entity: integer, coords: vector3, alive: boolean, deadFlag: boolean, ragdollFlag: boolean, clearArea: boolean)
 ---@param entity integer
 ---@param xPos number
 ---@param yPos number
@@ -1559,6 +1578,7 @@ function SetEntityCoords(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag,
 ---*   This native allows precise placement of entities without the usual adjustments for collision or interaction with the environment that may occur with other teleportation natives.
 ---*   The `keepTasks` and `keepIK` parameters are specifically useful for maintaining the current state of a ped, ensuring actions or animations are not abruptly stopped due to the teleportation.
 ---*   Setting `doWarp` to `false` is useful when simulating continuous movement or when the entity should interact with its immediate surroundings upon arrival.
+---@overload fun(entity: integer, coords: vector3, keepTasks: boolean, keepIK: boolean, doWarp: boolean)
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -1571,6 +1591,7 @@ function SetEntityCoordsNoOffset(entity, x, y, z, keepTasks, keepIK, doWarp) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x621873ECE1178967)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, alive: boolean, deadFlag: boolean, ragdollFlag: boolean, clearArea: boolean)
 ---@param entity integer
 ---@param xPos number
 ---@param yPos number
@@ -1770,6 +1791,7 @@ function SetEntityProofs(entity, bulletProof, fireProof, explosionProof, collisi
 ---```
 ---w is the correct parameter name!  
 ---```
+---@overload fun(entity: integer, coords: vector3, w: number)
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -1837,6 +1859,7 @@ function SetEntityTrafficlightOverride(entity, state) end
 ---```
 ---Note that the third parameter(denoted as z) is "up and down" with positive numbers encouraging upwards movement.
 ---```
+---@overload fun(entity: integer, coords: vector3)
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -1937,6 +1960,7 @@ function StopSynchronizedMapEntityAnim(p0, p1, p2, p3, p4, p5) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEE5D2A122E09EC42)  
 ---This native does not have an official description.
+---@overload fun(entityModelHash: integer | string, coords: vector3, p4: boolean): boolean
 ---@param entityModelHash integer | string
 ---@param x number
 ---@param y number

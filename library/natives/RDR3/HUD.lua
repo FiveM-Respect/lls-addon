@@ -721,6 +721,7 @@ function UiPromptClearPromptPriorityPreference() end
 ---**`HUD` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xAE84C5EE2C384FB3)  
 ---This native does not have an official description.
+---@overload fun(prompt: integer, coords: vector3)
 ---@param prompt integer
 ---@param x number
 ---@param y number

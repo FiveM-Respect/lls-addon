@@ -131,6 +131,7 @@ function PersistenceIsScenarioMarkedAsLooted(scenario) end
 ---**`PERSISTENCE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB6E1A185C2B9319A)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -140,6 +141,7 @@ function PersistenceIsScenarioMarkedAsLootedAtCoords(x, y, z) end
 ---**`PERSISTENCE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x188313616D184213)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, model: integer | string): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -156,6 +158,7 @@ function PersistenceRefreshTownVolume(volume) end
 ---**`PERSISTENCE` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9D16896F0DBE78A2)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number

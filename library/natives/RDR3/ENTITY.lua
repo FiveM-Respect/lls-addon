@@ -9,6 +9,7 @@ function AddEntityTrackingTrails(entity) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF15E8F5D333F09C4)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, forceFlags: integer, coords: vector3, offX: number, offY: number, offZ: number, boneIndex: integer, isDirectionRel: boolean, ignoreUpVec: boolean, isForceRel: boolean, p12: boolean, p13: boolean)
 ---@param entity integer
 ---@param forceFlags integer
 ---@param x number
@@ -29,6 +30,7 @@ function ApplyForceToEntity(entity, forceFlags, x, y, z, offX, offY, offZ, boneI
 ---[Native Documentation](https://rdr3natives.com/?_0x31DA7CEC5334DB37)  
 ---p6/relative - makes the xyz force not relative to world coords, but to something else
 ---p7/highForce - setting false will make the force really low
+---@overload fun(entity: integer, forceType: integer, coords: vector3, component: integer, isDirectionRel: boolean, isForceRel: boolean, p8: boolean)
 ---@param entity integer
 ---@param forceType integer
 ---@param x number
@@ -43,6 +45,9 @@ function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, component, i
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x445D7D8EA66E373E)  
 ---Attach an entity to coordinates physically better name may be perfered? seems to be used with boats `p_skiff02x` ? The last 6 params are always 0 everywhere in the base code. p7 = 500.0 some kind of time? p8 =1
+---@overload fun(entity: integer, coords: vector3, offsetx: number, offsety: number, offsetz: number, timer: number, p8: boolean, p9: integer, p10: integer, p11: integer, p12: integer, p13: integer, p14: integer)
+---@overload fun(entity: integer, x: number, y: number, z: number, offset: vector3, timer: number, p8: boolean, p9: integer, p10: integer, p11: integer, p12: integer, p13: integer, p14: integer)
+---@overload fun(entity: integer, coords: vector3, offset: vector3, timer: number, p8: boolean, p9: integer, p10: integer, p11: integer, p12: integer, p13: integer, p14: integer)
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -72,6 +77,9 @@ function AttachEntityToCoordsPhysically(entity, x, y, z, offsetx, offsety, offse
 ---isPed - pitch doesn't work when false and roll will only work on negative numbers (only peds)
 ---vertexIndex - position of vertex
 ---fixedRot - if false it ignores entity vector
+---@overload fun(entity1: integer, entity2: integer, boneIndex: integer, coords: vector3, xRot: number, yRot: number, zRot: number, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, vertexIndex: integer, fixedRot: boolean, p15: boolean, p16: boolean)
+---@overload fun(entity1: integer, entity2: integer, boneIndex: integer, xPos: number, yPos: number, zPos: number, rotation: vector3, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, vertexIndex: integer, fixedRot: boolean, p15: boolean, p16: boolean)
+---@overload fun(entity1: integer, entity2: integer, boneIndex: integer, coords: vector3, rotation: vector3, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, vertexIndex: integer, fixedRot: boolean, p15: boolean, p16: boolean)
 ---@param entity1 integer
 ---@param entity2 integer
 ---@param boneIndex integer
@@ -94,6 +102,7 @@ function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRo
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB629A43CA1643481)  
 ---This native does not have an official description.
+---@overload fun(entity1: integer, entity2: integer, p2: integer, boneIndex: integer, offset: vector3, p7: number, p8: number, p9: number, p10: number, p11: number, p12: number, p13: number, p14: boolean, p15: boolean, p16: boolean, p17: boolean, p18: integer, p19: boolean, p20: number, p21: number)
 ---@param entity1 integer
 ---@param entity2 integer
 ---@param p2 integer
@@ -156,6 +165,7 @@ function CreateFootpathTrail(p0, waypointRecord, bUseSnowOffset, p3, p4, p5, p6,
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0961A905AFBC34C7)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: any, modelHash: integer | string, p5: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -167,6 +177,7 @@ function CreateForcedObject(x, y, z, p3, modelHash, p5) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x069848B3FB3C4426)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, model: integer | string, p5: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -178,6 +189,7 @@ function CreateModelHide(x, y, z, radius, model, p5) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD136090A9AAAB17D)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, model: integer | string, p5: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -189,6 +201,7 @@ function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, p5) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x10B2218320B6F5AC)  
 ---Only works with objects!
+---@overload fun(coords: vector3, radius: number, originalModel: integer | string, newModel: integer | string, p6: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -347,6 +360,7 @@ function GetEntitiesInVolume(volume, itemSet, entityType) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x59B57C4B06531E1E)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, itemSet: integer, p5: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -490,6 +504,7 @@ function GetEntityHealthFloat(entity) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x296DEBC84474B375)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, atTop: boolean, inWorldCoords: boolean): number
 ---@param entity integer
 ---@param X number
 ---@param Y number
@@ -729,6 +744,7 @@ function GetOffsetFromEntityBone(entity, boneIndex) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x497C6B1A2C9AE69C)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3): vector3
 ---@param entity integer
 ---@param posX number
 ---@param posY number
@@ -743,6 +759,7 @@ function GetOffsetFromEntityGivenWorldCoords(entity, posX, posY, posZ) end
 ---x = left/right
 ---y = forward/backward
 ---z = up/down
+---@overload fun(entity: integer, offset: vector3): vector3
 ---@param entity integer
 ---@param offsetX number
 ---@param offsetY number
@@ -841,6 +858,7 @@ function HasCollisionLoadedAroundEntity(entity) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6BFBDC46139C45AB)  
 ---Old name: _HAS_COLLISION_LOADED_AT_COORDS
+---@overload fun(coords: vector3): boolean
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -891,6 +909,7 @@ function HasEntityBeenDamagedByEntity(entity1, entity2, p2, p3) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0C9DBF48C6BA6E4C)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, flags: integer): boolean
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -964,6 +983,7 @@ function IsEntityAPed(entity) end
 ---Checks if entity is within x/y/zSize distance of x/y/z. 
 ---
 ---Last three are unknown ints, almost always p7 = 0, p8 = 1, p9 = 0
+---@overload fun(entity: integer, coords: vector3, xSize: number, ySize: number, zSize: number, p7: boolean, p8: boolean, p9: integer): boolean
 ---@param entity integer
 ---@param xPos number
 ---@param yPos number
@@ -1733,6 +1753,7 @@ function PauseEntityTracking(entity, pause) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6F3068258A499E52)  
 ---This native does not have an official description.
+---@overload fun(modelHash: integer | string, coords: vector3, flags: integer): any
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -1788,6 +1809,7 @@ function RemoveModelHide(p0, p1, p2, p3, p4, p5) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x824E1C26A14CB817)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, originalModel: integer | string, newModel: integer | string, p6: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1975,6 +1997,7 @@ function SetEntityCompletelyDisableCollision(entity, toggle, keepPhysics) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x06843DA7060A026B)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, xAxis: boolean, yAxis: boolean, zAxis: boolean, clearArea: boolean)
 ---@param entity integer
 ---@param xPos number
 ---@param yPos number
@@ -1988,6 +2011,7 @@ function SetEntityCoords(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis, clearAre
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x203BEFFDBE12E96A)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, heading: number, xAxis: boolean, yAxis: boolean, zAxis: boolean)
 ---@param entity integer
 ---@param xPos number
 ---@param yPos number
@@ -2001,6 +2025,7 @@ function SetEntityCoordsAndHeading(entity, xPos, yPos, zPos, heading, xAxis, yAx
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0918E3565C20F03C)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, heading: number, p5: boolean, p6: boolean)
 ---@param entity integer
 ---@param xPos number
 ---@param yPos number
@@ -2013,6 +2038,7 @@ function SetEntityCoordsAndHeadingNoOffset(entity, xPos, yPos, zPos, heading, p5
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x239A3351AC1DA385)  
 ---Axis - Invert Axis Flags
+---@overload fun(entity: integer, coords: vector3, xAxis: boolean, yAxis: boolean, zAxis: boolean)
 ---@param entity integer
 ---@param xPos number
 ---@param yPos number
@@ -2163,6 +2189,7 @@ function SetEntityProofs(entity, proofsBitset, specialFlag) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x100E7007D13E3687)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, w: number)
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -2213,6 +2240,7 @@ function SetEntityThreatTier(entity, tier, p2) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x1C99BB7B6E96D16F)  
 ---Note that the third parameter(denoted as z) is "up and down" with positive numbers encouraging upwards movement.
+---@overload fun(entity: integer, coords: vector3)
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -2284,6 +2312,7 @@ function UnpinMapEntity(entity) end
 ---**`ENTITY` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x3546FAB293FF2981)  
 ---This native does not have an official description.
+---@overload fun(entityModelHash: integer | string, coords: vector3, p4: boolean): boolean
 ---@param entityModelHash integer | string
 ---@param x number
 ---@param y number

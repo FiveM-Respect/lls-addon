@@ -4,6 +4,7 @@
 ---[Native Documentation](https://rdr3natives.com/?_0xFA2ECC78A6014D4F)  
 ---https://i.imgur.com/ULQU9US.jpg
 ---More rounded and small puddle
+---@overload fun(coords: vector3, unused: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -14,6 +15,7 @@ function AddBloodPool(x, y, z, unused) end
 ---[Native Documentation](https://rdr3natives.com/?_0xF708298675ABDC6A)  
 ---https://i.imgur.com/rPITUCV.jpg
 ---More customizable and more like quadrants
+---@overload fun(coords: vector3, p3: number, size: number, p5: number, permanent: boolean, p7: number, p8: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -43,6 +45,7 @@ function AddBloodPoolsForPedWithParams(ped, p1, size, p3) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xDD9DC1AB63D513CE)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -51,6 +54,7 @@ function AddBloodTrailPoint(x, y, z) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF5E45CB1CF965D2D)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -102,6 +106,7 @@ function AddEntityToEntityMaskWithIntensity(entity, mask, intensity) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x73354FB6D03D2E8A)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -111,6 +116,7 @@ function AddPetrolTrailDecalInfo(x, y, z, p3) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFA50F79257745E74)  
 ---Returns veg modifier handle
+---@overload fun(coords: vector3, radius: number, modType: integer, flags: integer, p6: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -481,6 +487,7 @@ function DoesParticleFxLoopedExist(ptfxHandle) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD2D9E04C0DF927F4)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, colorR: integer, colorG: integer, colorB: integer, range: number, intensity: number)
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -502,6 +509,9 @@ function DrawLowQualityPhotoToPhone(p0, photoRotation) end
 ---[Native Documentation](https://rdr3natives.com/?_0x2A32FAA57B937173)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/graphics/markers/marker_types.lua
 ---Old name: _DRAW_MARKER
+---@overload fun(type: integer | string, coords: vector3, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: integer, green: integer, blue: integer, alpha: integer, bobUpAndDown: boolean, faceCamera: boolean, p19: integer, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean)
+---@overload fun(type: integer | string, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, red: integer, green: integer, blue: integer, alpha: integer, bobUpAndDown: boolean, faceCamera: boolean, p19: integer, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean)
+---@overload fun(type: integer | string, coords: vector3, dirX: number, dirY: number, dirZ: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, red: integer, green: integer, blue: integer, alpha: integer, bobUpAndDown: boolean, faceCamera: boolean, p19: integer, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean)
 ---@param type integer | string
 ---@param posX number
 ---@param posY number
@@ -944,6 +954,7 @@ function N_0x3da7a10583a4bec0() end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x402E1A61D2587FCD)  
 ---Only used in R* SP Script spd_agnesdown1
+---@overload fun(p0: any, coords: vector3, p4: number, p5: number, heading: number): boolean
 ---@param p0 any
 ---@param x number
 ---@param y number
@@ -1379,6 +1390,7 @@ function RemoveDecalsFromObject(obj) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x86DE59FA02902B40)  
 ---Removes all decals in range from a position, it includes the bullet holes, blood pools, petrol...
+---@overload fun(coords: vector3, range: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1413,6 +1425,7 @@ function RemoveParticleFxFromEntity(entity) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x87B5905ECA623B68)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number)
 ---@param X number
 ---@param Y number
 ---@param Z number
@@ -1501,6 +1514,7 @@ function SetCloudLayer(x, y, p2) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFE7966DF01452F32)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1510,6 +1524,7 @@ function SetCloudNoise(x, y, z) end
 ---[Native Documentation](https://rdr3natives.com/?_0x10C1767B93257480)  
 ---Only used in finale2, smuggler2, winter4
 ---_SET_CLOUD_A* - _SET_CLOUD_H*
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1553,6 +1568,7 @@ function SetEntityRenderGuarmaShip(vehicle, toggle) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x27219300C36A8D40)  
 ---Returns handle to be used with REMOVE_GRASS_CULL_SPHERE
+---@overload fun(coords: vector3, p3: number, p4: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1660,6 +1676,9 @@ function SetParticleFxLoopedFarClipDist(ptfxHandle, range) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD3A4A95FC94FE83B)  
 ---This native does not have an official description.
+---@overload fun(ptfxHandle: integer, coords: vector3, rotX: number, rotY: number, rotZ: number)
+---@overload fun(ptfxHandle: integer, x: number, y: number, z: number, rotation: vector3)
+---@overload fun(ptfxHandle: integer, coords: vector3, rotation: vector3)
 ---@param ptfxHandle integer
 ---@param x number
 ---@param y number
@@ -1834,6 +1853,7 @@ function SetTimecycleModifierStrength(strength) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF6FDA3D4404D4F2C)  
 ---This native does not have an official description.
+---@overload fun(point: integer, coords: vector3, radius: number)
 ---@param point integer
 ---@param x number
 ---@param y number
@@ -1883,6 +1903,9 @@ function SetTvVolume(volume) end
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x8F90AB32E1944BDE)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, entity: integer, offset: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param entity integer
 ---@param xOffset number
@@ -1901,6 +1924,9 @@ function StartNetworkedParticleFxLoopedOnEntity(effectName, entity, xOffset, yOf
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9C56621462FFE7A6)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, entity: integer, offset: vector3, xRot: number, yRot: number, zRot: number, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param entity integer
 ---@param xOffset number
@@ -1920,6 +1946,9 @@ function StartNetworkedParticleFxLoopedOnEntityBone(effectName, entity, xOffset,
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFB97618457994A62)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, coords: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
+---@overload fun(effectName: string, xPos: number, yPos: number, zPos: number, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
+---@overload fun(effectName: string, coords: vector3, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
 ---@param effectName string
 ---@param xPos number
 ---@param yPos number
@@ -1937,6 +1966,9 @@ function StartNetworkedParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, 
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE6CFE43937061143)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
 ---@param effectName string
 ---@param entity integer
 ---@param offsetX number
@@ -1955,6 +1987,9 @@ function StartNetworkedParticleFxNonLoopedOnEntity(effectName, entity, offsetX, 
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xBA32867E86125D3A)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/graphics/ptfx/ptfx_assets_looped.lua
+---@overload fun(effectName: string, coords: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean, p11: boolean): integer
+---@overload fun(effectName: string, x: number, y: number, z: number, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean, p11: boolean): integer
+---@overload fun(effectName: string, coords: vector3, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean, p11: boolean): integer
 ---@param effectName string
 ---@param x number
 ---@param y number
@@ -1973,6 +2008,9 @@ function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, sca
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xBD41E1440CE39800)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, entity: integer, offset: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param entity integer
 ---@param xOffset number
@@ -1991,6 +2029,9 @@ function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOf
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD3BA6EC7F2FBD5E9)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, entity: integer, offset: vector3, xRot: number, yRot: number, zRot: number, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param entity integer
 ---@param xOffset number
@@ -2010,6 +2051,9 @@ function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset,
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE689C1B1432BB8AF)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, ped: integer, offset: vector3, xRot: number, yRot: number, zRot: number, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, ped: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param ped integer
 ---@param xOffset number
@@ -2029,6 +2073,9 @@ function StartParticleFxLoopedOnPedBone(effectName, ped, xOffset, yOffset, zOffs
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2E80BF72EF7C87AC)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/graphics/ptfx/ptfx_assets_non_looped.lua
+---@overload fun(effectName: string, coords: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: integer, yAxis: boolean, zAxis: boolean): boolean
+---@overload fun(effectName: string, xPos: number, yPos: number, zPos: number, rotation: vector3, scale: number, xAxis: integer, yAxis: boolean, zAxis: boolean): boolean
+---@overload fun(effectName: string, coords: vector3, rotation: vector3, scale: number, xAxis: integer, yAxis: boolean, zAxis: boolean): boolean
 ---@param effectName string
 ---@param xPos number
 ---@param yPos number
@@ -2046,6 +2093,9 @@ function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRo
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFF4C64C513388C12)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
 ---@param effectName string
 ---@param entity integer
 ---@param offsetX number
@@ -2064,6 +2114,9 @@ function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, 
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x3FAA72BD940C3AC0)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, ped: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
 ---@param effectName string
 ---@param ped integer
 ---@param offsetX number
@@ -2083,6 +2136,9 @@ function StartParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, of
 ---**`GRAPHICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xC695870B8A149B96)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, ped: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
 ---@param effectName string
 ---@param ped integer
 ---@param offsetX number

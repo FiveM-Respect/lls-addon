@@ -5,6 +5,7 @@
 ---```
 ---eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
 ---```
+---@overload fun(eventType: integer, coords: vector3, duration: number): integer
 ---@param eventType integer
 ---@param x number
 ---@param y number
@@ -48,6 +49,7 @@ function ClearDecisionMakerEventResponse(name, eventType) end
 ---```
 ---eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
 ---```
+---@overload fun(eventType: integer, coords: vector3, radius: number): boolean
 ---@param eventType integer
 ---@param x number
 ---@param y number

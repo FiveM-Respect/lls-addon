@@ -27,6 +27,7 @@
 ---};
 ---
 ---https://github.com/femga/rdr3_discoveries/tree/master/zones & https://alloc8or.re/rdr3/doc/enums/CMapZone__Type.txt
+---@overload fun(coords: vector3, type: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -45,6 +46,7 @@ function GetMapZoneAtCoords(x, y, z, type) end
 ---- CREEK
 ---- POND
 ---- GLACIER
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number

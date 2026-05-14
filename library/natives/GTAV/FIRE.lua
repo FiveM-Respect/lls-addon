@@ -102,6 +102,7 @@
 ---	EMPLAUNCHER_EMP = 83
 ---};
 ---```
+---@overload fun(coords: vector3, explosionType: integer, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -115,6 +116,7 @@ function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisibl
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x36DD3FE58B5E5212)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, explosionType: integer, explosionFx: integer | string, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -132,6 +134,7 @@ AddSpecfxExplosion = AddExplosionWithUserVfx
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x172AA1B624FA1013)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, explosionType: integer, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -148,6 +151,7 @@ function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, 
 ---```
 ---Returns TRUE if it found something. FALSE if not.  
 ---```
+---@overload fun(coords: vector3): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -178,6 +182,7 @@ GetPedInsideExplosionArea = GetEntityInsideExplosionArea
 ---```
 ---NativeDB Introduced: v1290
 ---```
+---@overload fun(explosionType: integer, coords: vector3, radius: number): integer
 ---@param explosionType integer
 ---@param x number
 ---@param y number
@@ -189,6 +194,7 @@ function GetEntityInsideExplosionSphere(explosionType, x, y, z, radius) end
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x50CAD495A460B305)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -246,6 +252,7 @@ function IsExplosionInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAB0F816885B0E483)  
 ---This native does not have an official description.
+---@overload fun(explosionType: integer, coords: vector3, radius: number): boolean
 ---@param explosionType integer
 ---@param x number
 ---@param y number
@@ -285,6 +292,7 @@ function StartEntityFire(entity) end
 ---maxChildren: The max amount of times a fire can spread to other objects. Must be 25 or less, or the function will do nothing.  
 ---isGasFire: Whether or not the fire is powered by gasoline.  
 ---```
+---@overload fun(coords: vector3, maxChildren: integer, isGasFire: boolean): integer
 ---@param X number
 ---@param Y number
 ---@param Z number
@@ -302,6 +310,7 @@ function StopEntityFire(entity) end
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x056A8A219B8E829F)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number

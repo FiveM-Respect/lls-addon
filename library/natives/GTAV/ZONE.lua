@@ -25,6 +25,7 @@ function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 ---Ped player = Game.Player.Character;  
 ---Hash h = Function.Call<Hash>(Hash.GET_HASH_OF_MAP_AREA_AT_COORDS, player.Position.X, player.Position.Y, player.Position.Z);  
 ---```
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -129,6 +130,7 @@ function GetHashOfMapAreaAtCoords(x, y, z) end
 ---PROL = Prologue / North Yankton
 ---ISHeist = Cayo Perico Island
 ---```
+---@overload fun(coords: vector3): string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -138,6 +140,7 @@ function GetNameOfZone(x, y, z) end
 ---**`ZONE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x27040C25DE6CB2F4)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number

@@ -20,6 +20,7 @@
 ---    BLOCKING_OBJECT_ALLPATHS = 7,
 ---}
 ---```
+---@overload fun(coords: vector3, width: number, length: number, height: number, heading: number, bPermanent: boolean, flags: integer): any
 ---@param x number
 ---@param y number
 ---@param z number
@@ -117,6 +118,7 @@ function DoesNavmeshBlockingObjectExist(p0) end
 ---8 = Route is being recalculated or the navmesh is confusing. This happens randomly during the drive but consistently at {2044.0358, 2996.6116, 44.9717} if you face towards the bar and the route needs you to turn right. In that particular case, it could be a bug with how the turn appears to be 270 deg. CCW instead of "right." Either way, this seems to be the engine saying "I don't know the route right now."
 ---return value set to 0 always
 ---```
+---@overload fun(coords: vector3, p3: boolean): (integer, integer, number, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -127,6 +129,7 @@ function GenerateDirectionsToCoord(x, y, z, p3) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2EABE3B06F58C1BE)  
 ---Same as [`GET_CLOSEST_VEHICLE_NODE`](#\_0x240A18690AE96513), but with the node flag `GCNF_INCLUDE_SWITCHED_OFF_NODES` set.
+---@overload fun(coords: vector3, zMeasureMult: number, zTolerance: integer): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -138,6 +141,7 @@ function GetClosestMajorVehicleNode(x, y, z, zMeasureMult, zTolerance) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x132F52BBA570FE92)  
 ---Finds an edge (node connection to another node) that satisfies the specified criteria.
+---@overload fun(coords: vector3, minimumEdgeLength: number, minimumLaneCount: integer, onlyMajorRoads: boolean): (boolean, vector3, vector3, integer, integer, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -159,6 +163,7 @@ function GetClosestRoad(x, y, z, minimumEdgeLength, minimumLaneCount, onlyMajorR
 ---    GCNF_FAVOUR_FACING = 512
 ---}
 ---```
+---@overload fun(coords: vector3, nodeFlags: integer, zMeasureMult: number, zTolerance: number): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -171,6 +176,7 @@ function GetClosestVehicleNode(x, y, z, nodeFlags, zMeasureMult, zTolerance) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFF071FB798B803B0)  
 ---Same as [`GET_CLOSEST_VEHICLE_NODE`](#\_0x240A18690AE96513), but with the node flag `GCNF_GET_HEADING` set, causing the native to also return the heading.
+---@overload fun(coords: vector3, nodeFlags: integer, zMeasureMult: number, zTolerance: integer): (boolean, vector3, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -250,6 +256,7 @@ function GetNextGpsDisabledZoneIndex(index) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE50E52416CCF948B)  
 ---Same as [`GET_CLOSEST_VEHICLE_NODE`](#\_0x240A18690AE96513), but returns the nth closest node instead of the first.
+---@overload fun(coords: vector3, nthClosest: integer, nodeFlags: integer, zMeasureMult: number, zTolerance: number): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -263,6 +270,7 @@ function GetNthClosestVehicleNode(x, y, z, nthClosest, nodeFlags, zMeasureMult, 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x45905BE8654AE067)  
 ---Like [`GET_CLOSEST_VEHICLE_NODE_WITH_HEADING`](#\_0xFF071FB798B803B0), but returns the nth closest node instead of the first.
+---@overload fun(coords: vector3, desiredX: number, desiredY: number, desiredZ: number, nthClosest: integer, nodeFlags: integer, zMeasureMult: number, zTolerance: number): (boolean, vector3, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -279,6 +287,7 @@ function GetNthClosestVehicleNodeFavourDirection(x, y, z, desiredX, desiredY, de
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x22D7275A79FE8215)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, nthClosest: integer, nodeFlags: integer, zMeasureMult: number, zTolerance: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -292,6 +301,7 @@ function GetNthClosestVehicleNodeId(x, y, z, nthClosest, nodeFlags, zMeasureMult
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6448050E9C2A7207)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, nthClosest: integer, nodeFlags: integer, zMeasureMult: number, zTolerance: number): (integer, vector3, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -305,6 +315,7 @@ function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, nodeFlags, z
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x80CA6A8B6C094CC4)  
 ---Get the nth closest vehicle node with its heading and total lane count. If you need specific forward and backward lane counts use [`GET_CLOSEST_ROAD`](#\_0x132F52BBA570FE92).
+---@overload fun(coords: vector3, nthClosest: integer, nodeFlags: integer, zMeasureMult: number, zTolerance: number): (boolean, vector3, number, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -330,6 +341,7 @@ function GetNumNavmeshesExistingInArea(posMinX, posMinY, posMinZ, posMaxX, posMa
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x16F46FB18C8009E4)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: integer): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -361,6 +373,7 @@ GetGpsWaypointRouteEnd = GetPosAlongGpsTypeRoute
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x93E0DB8440B73A7D)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, p4: boolean, p5: boolean, p6: boolean): (boolean, vector3, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -374,6 +387,7 @@ function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA0F8A7517A273C05)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, heading: number): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -402,6 +416,7 @@ GetRoadSidePointWithHeading = GetRoadBoundaryUsingHeading
 ---    GSC_FLAG_USE_FLOOD_FILL = 32
 ---}
 ---```
+---@overload fun(coords: vector3, onlyOnPavement: boolean, flags: integer): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -419,6 +434,7 @@ function GetSafeCoordForPed(x, y, z, onlyOnPavement, flags) end
 ---crossingRoad - if the coordinates are on an intersection, a hash to the name of the crossing road
 ---Note: the names are returned as hashes, the strings can be returned using the function HUD::GET_STREET_NAME_FROM_HASH_KEY.
 ---```
+---@overload fun(coords: vector3): (integer, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -483,6 +499,7 @@ function GetVehicleNodePosition(nodeId) end
 ---	WATER = 1 << 10,
 ---}
 ---```
+---@overload fun(coords: vector3): (boolean, integer, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -518,6 +535,7 @@ function IsNavmeshRequiredRegionOwnedByAnyThread() end
 ---Gets a value indicating whether the specified position is on a road.  
 ---The vehicle parameter is not implemented (ignored).  
 ---```
+---@overload fun(coords: vector3, vehicle: integer): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -752,6 +770,7 @@ function SetRoadsInArea(x1, y1, z1, x2, y2, z2, nodeEnabled, unknown2) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x109E99373F290687)  
 ---This native does not have an official description.
+---@overload fun(object: integer, coords: vector3, scaleX: number, scaleY: number, scaleZ: number, heading: number, flags: integer)
 ---@param object integer
 ---@param posX number
 ---@param posY number

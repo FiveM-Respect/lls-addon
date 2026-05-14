@@ -1975,6 +1975,7 @@ function NetworkAddFriend(message) end
 ---```
 ---NativeDB Introduced: v1734
 ---```
+---@overload fun(netScene: integer, modelHash: integer | string, coords: vector3, animDict: string, animName: string, blendInSpeed: number, blendOutSpeed: number, flags: integer)
 ---@param netScene integer
 ---@param modelHash integer | string
 ---@param x number
@@ -2136,6 +2137,7 @@ function NetworkApplyTransitionParameterString(p0, string, p2) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDBD2056652689917)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2587,6 +2589,9 @@ function NetworkConcealPlayer(player, toggle, bAllowDamagingWhileConcealed) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7CD6BC4C2BBDD526)  
 ---Creates a networked synchronized scene.
 ---Be sure to actually start the scene with [`NETWORK_START_SYNCHRONISED_SCENE`](#\_0x9A1B3FCDB36C8697) after you're done adding peds or entities to the scene.
+---@overload fun(coords: vector3, xRot: number, yRot: number, zRot: number, rotationOrder: integer, holdLastFrame: boolean, looped: boolean, phaseToStopScene: number, phaseToStartScene: number, animSpeed: number): integer
+---@overload fun(x: number, y: number, z: number, rotation: vector3, rotationOrder: integer, holdLastFrame: boolean, looped: boolean, phaseToStopScene: number, phaseToStartScene: number, animSpeed: number): integer
+---@overload fun(coords: vector3, rotation: vector3, rotationOrder: integer, holdLastFrame: boolean, looped: boolean, phaseToStopScene: number, phaseToStartScene: number, animSpeed: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -4554,6 +4559,7 @@ function NetworkOverrideClockTime(hours, minutes, seconds) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA7E30DE9272B6D49)  
 ---This native does not have an official description.
+---@overload fun(entity: integer, coords: vector3, heading: number)
 ---@param entity integer
 ---@param x number
 ---@param y number
@@ -4828,6 +4834,7 @@ function NetworkResetBodyTracker() end
 ---```
 ---p4 and p5 are always 0 in scripts  
 ---```
+---@overload fun(player: integer, coords: vector3, p4: boolean, p5: boolean)
 ---@param player integer
 ---@param x number
 ---@param y number
@@ -4925,6 +4932,7 @@ function NetworkRespawnCoords(player, x, y, z, p4, p5) end
 ---*   **bUnpauseRenderPhases**: This boolean parameter will unpause the render phases when set to `true`.
 ---*   **iSpawnLocation**: This integer parameter sets the player's spawn location metric for telemetry. See `ePlayerSpawnLocation` enum.
 ---*   **iSpawnReason**: This integer parameter sets the player's spawn reason metric for telemetry. See `eSpawnReason` enum.
+---@overload fun(coords: vector3, heading: number, nInvincibilityTime: integer, bLeaveDeadPed: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -5672,6 +5680,7 @@ function NetworkShowProfileUi() end
 ---```
 ---
 ---p5, p6, p7 is another coordinate (or zero), often related to `GET_BLIP_COORDS`, in the decompiled scripts.
+---@overload fun(player: integer, coords: vector3, radius: number, p5: number, p6: number, p7: number, flags: integer): boolean
 ---@param player integer
 ---@param x number
 ---@param y number

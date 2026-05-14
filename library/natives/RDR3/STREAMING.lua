@@ -78,6 +78,7 @@ function HasCollisionForModelLoaded(model) end
 ---**`STREAMING` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xDA8B2EAF29E872E2)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -232,6 +233,7 @@ function IsPlayerSwitchInProgress() end
 ---**`STREAMING` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x73B40D97D7BAAD77)  
 ---Returns true if IPL is streamed in (?)
+---@overload fun(iplHash: integer | string, coords: vector3): boolean
 ---@param iplHash integer | string
 ---@param x number
 ---@param y number
@@ -254,6 +256,9 @@ function IsSrlLoaded() end
 ---**`STREAMING` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x387AD749E3B69B70)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, offsetX: number, offsetY: number, offsetZ: number, radius: number, controlFlags: integer): boolean
+---@overload fun(posX: number, posY: number, posZ: number, offset: vector3, radius: number, controlFlags: integer): boolean
+---@overload fun(coords: vector3, offset: vector3, radius: number, controlFlags: integer): boolean
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -268,6 +273,7 @@ function LoadSceneStart(posX, posY, posZ, offsetX, offsetY, offsetZ, radius, con
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x513F8AA5BF2F17CF)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, controlFlags: integer): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -561,6 +567,7 @@ function RemoveScenarioTypeForPed(scenarioTypeId) end
 ---**`STREAMING` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x83A8D71650D1894F)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -593,6 +600,7 @@ function RequestClipSetByHash(clipSetHash) end
 ---**`STREAMING` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0A3720F162A033C9)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -619,6 +627,7 @@ function RequestIplHash(iplHash) end
 ---**`STREAMING` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xA8432A14D4DC2101)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -683,6 +692,9 @@ function SetFocusEntity(entity) end
 ---**`STREAMING` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x25F6EF88664540E2)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, offsetX: number, offsetY: number, offsetZ: number)
+---@overload fun(x: number, y: number, z: number, offset: vector3)
+---@overload fun(coords: vector3, offset: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -706,6 +718,7 @@ function SetGuarmaWorldhorizonActive(toggle) end
 ---**`STREAMING` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB88B905AFA35CB4D)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number

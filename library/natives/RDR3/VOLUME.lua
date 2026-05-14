@@ -61,6 +61,9 @@ function AddSphereVolumeToVolumeAggregate(aggregate, p1, p2, p3, p4, p5, p6, p7,
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x12FCAA23F2320422)  
 ---This native does not have an official description.
+---@overload fun(aggregate: integer, typeHash: integer | string, coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number)
+---@overload fun(aggregate: integer, typeHash: integer | string, x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number)
+---@overload fun(aggregate: integer, typeHash: integer | string, coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number)
 ---@param aggregate integer
 ---@param typeHash integer | string
 ---@param x number
@@ -77,6 +80,9 @@ function AddVolumeToVolumeAggregate(aggregate, typeHash, x, y, z, rotX, rotY, ro
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0EB78C2B156635B1)  
 ---This native does not have an official description.
+---@overload fun(volumeType: integer | string, coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(volumeType: integer | string, x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(volumeType: integer | string, coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
 ---@param volumeType integer | string
 ---@param x number
 ---@param y number
@@ -127,6 +133,9 @@ function CreateVolumeAggregateWithCustomName(name) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xDF85637F22706891)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -142,6 +151,9 @@ function CreateVolumeBox(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF68485C7495D848E)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
+---@overload fun(x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
+---@overload fun(coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -158,6 +170,9 @@ function CreateVolumeBoxWithCustomName(x, y, z, rotX, rotY, rotZ, scaleX, scaleY
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x502022FA1AF9DC86)  
 ---This native does not have an official description.
+---@overload fun(volumeType: integer | string, coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(volumeType: integer | string, x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(volumeType: integer | string, coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
 ---@param volumeType integer | string
 ---@param x number
 ---@param y number
@@ -174,6 +189,9 @@ function CreateVolumeByHash(volumeType, x, y, z, rotX, rotY, rotZ, scaleX, scale
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x1F85E4AC774A201E)  
 ---This native does not have an official description.
+---@overload fun(volumeType: integer | string, coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
+---@overload fun(volumeType: integer | string, x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
+---@overload fun(volumeType: integer | string, coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
 ---@param volumeType integer | string
 ---@param x number
 ---@param y number
@@ -191,6 +209,9 @@ function CreateVolumeByHashWithCustomName(volumeType, x, y, z, rotX, rotY, rotZ,
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x0522D4774B82E3E6)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -206,6 +227,9 @@ function CreateVolumeCylinder(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ)
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xDF1E350EDDF06E59)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
+---@overload fun(x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
+---@overload fun(coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -222,6 +246,7 @@ function CreateVolumeCylinderWithCustomName(x, y, z, rotX, rotY, rotZ, scaleX, s
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x00BBF7CEAE8C666A)  
 ---Params: p5 is always 0
+---@overload fun(coords: vector3, radius: number, flag: integer, p5: any): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -244,6 +269,9 @@ function CreateVolumeLockAttachedToEntity(entity, radius, flag, p3) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB3FB80A32BAE3065)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
+---@overload fun(coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -259,6 +287,9 @@ function CreateVolumeSphere(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) e
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x10157BC3247FF3BA)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
+---@overload fun(x: number, y: number, z: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
+---@overload fun(coords: vector3, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, name: string): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -300,6 +331,7 @@ function DeleteVolume(volume) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x397769175A7DBB30)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, p4: boolean, p5: integer, p6: integer): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -327,6 +359,7 @@ function FindVolumeLockRequestIdWithArgs() end
 ---[Native Documentation](https://rdr3natives.com/?_0x2B32B11520626229)  
 ---Indexes items (including entyties and peds) in a set volume
 ---Counts up as its the return value of how many items it writes to given itemSet
+---@overload fun(coords: vector3, radius: number, itemSet: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -394,6 +427,7 @@ function IsAggregateVolume(volume) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF256A75210C5C0EB)  
 ---Old name: _IS_POSITION_INSIDE_VOLUME
+---@overload fun(volume: integer, coords: vector3): boolean
 ---@param volume integer
 ---@param x number
 ---@param y number
@@ -404,6 +438,7 @@ function IsPointInVolume(volume, x, y, z) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x769BB7626B8CDB06)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, p4: integer, p5: integer, flags: integer): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -431,6 +466,7 @@ function IsVolumeLockRequestValid_2(volLockRequestId) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xEC43C2FFB70E3F30)  
 ---This native does not have an official description.
+---@overload fun(volLock: integer, coords: vector3)
 ---@param volLock integer
 ---@param x number
 ---@param y number
@@ -692,6 +728,7 @@ function RemoveBoundsFromAggregateVolume(volume, aggregate) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF14BCEF290F869E1)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, p4: integer, p5: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -724,6 +761,7 @@ function SetAntiGriefVolumeBlocksPlayer(volume, toggle) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x541B8576615C33DE)  
 ---This native does not have an official description.
+---@overload fun(volume: integer, coords: vector3): boolean
 ---@param volume integer
 ---@param posX number
 ---@param posY number
@@ -749,6 +787,7 @@ function SetVolumeRelationship(volume, relationshipGroup) end
 ---**`VOLUME` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xA07CF1B21B56F041)  
 ---This native does not have an official description.
+---@overload fun(volume: integer, rotation: vector3): boolean
 ---@param volume integer
 ---@param rotX number
 ---@param rotY number

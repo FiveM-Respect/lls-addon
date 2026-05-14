@@ -66,6 +66,7 @@ function GetApproxFloorForPoint(x, y) end
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x132F52BBA570FE92)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number, p4: integer, p10: boolean): (any, vector3, vector3, any, any, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -78,6 +79,7 @@ function GetClosestRoad(x, y, z, p3, p4, p10) end
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x240A18690AE96513)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, nodeType: integer, p5: number, p6: number): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -90,6 +92,7 @@ function GetClosestVehicleNode(x, y, z, nodeType, p5, p6) end
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x23CFFD4CCB243354)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, nodeType: integer, p6: number, p7: number): (boolean, vector3, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -114,6 +117,7 @@ function GetGpsBlipRouteLength() end
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x5A6D8DF6FBC5D0C4)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, nthClosest: integer, unknown1: integer, unknown2: number, unknown3: any): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -127,6 +131,7 @@ function GetNthClosestVehicleNode(x, y, z, nthClosest, unknown1, unknown2, unkno
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2FAC235A6062F14A)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, desiredX: number, desiredY: number, desiredZ: number, nthClosest: integer, nodetype: integer, p10: any, p11: any): (boolean, vector3, number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -143,6 +148,7 @@ function GetNthClosestVehicleNodeFavourDirection(x, y, z, desiredX, desiredY, de
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x116443008E5CEFC3)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, nth: integer, nodetype: integer, p5: number, p6: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -156,6 +162,7 @@ function GetNthClosestVehicleNodeId(x, y, z, nth, nodetype, p5, p6) end
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4114EAA8A7F7766D)  
 ---Returns the nth closest vehicle node with a heading to a coord
+---@overload fun(coords: vector3, nthClosest: integer, nodeFlags: integer, zMeasureMult: number, zTolerance: number): (integer, number, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -169,6 +176,7 @@ function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, nodeFlags, z
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x591B40D4390DB54A)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, nthClosest: integer, unknown2: integer, unknown3: number, unknown4: number): (boolean, vector3, number, any)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -194,6 +202,7 @@ function GetNumNavmeshesExistingInArea(p0, p1, p2, p3, p4, p5) end
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x93E0DB8440B73A7D)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, minLanes: integer, avoidDeadEnds: boolean, avoidHighways: boolean): (boolean, vector3, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -207,6 +216,7 @@ function GetRandomVehicleNode(x, y, z, radius, minLanes, avoidDeadEnds, avoidHig
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB61C8E878A4199CA)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, onGround: boolean, flags: integer): (boolean, vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -218,6 +228,7 @@ function GetSafeCoordForPed(x, y, z, onGround, flags) end
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xA3791B915B8B84C6)  
 ---This native does not have an official description.
+---@overload fun(nodeId: integer, coords: vector3): (vector3, number)
 ---@param nodeId integer
 ---@param x number
 ---@param y number
@@ -254,6 +265,7 @@ function IsNavmeshLoadedInArea(x1, y1, z1, x2, y2, z2) end
 ---**`PATHFIND` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x125BF4ABFC536B09)  
 ---Gets a value indicating whether the specified position is on a road.
+---@overload fun(coords: vector3, vehicle: integer): boolean
 ---@param x number
 ---@param y number
 ---@param z number

@@ -148,6 +148,7 @@ function Vdist2(x1, y1, z1, x2, y2, z2) end
 ---**`BUILTIN` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x652D2EEEF1D3E62C)  
 ---Calculates the magnitude of a vector.
+---@overload fun(coords: vector3): number
 ---@param x number
 ---@param y number
 ---@param z number
@@ -157,6 +158,7 @@ function Vmag(x, y, z) end
 ---**`BUILTIN` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xA8CEACB4F35AE058)  
 ---Calculates the magnitude of a vector but does not perform Sqrt operations. (Its way faster)
+---@overload fun(coords: vector3): number
 ---@param x number
 ---@param y number
 ---@param z number

@@ -104,6 +104,7 @@ function ApplyDamageToPed(ped, damageAmount, armorFirst) end
 ---Found one occurence in re_crashrescue.c4  
 ---PED::APPLY_PED_BLOOD(l_4B, 3, 0.0, 0.0, 0.0, "wound_sheet");  
 ---```
+---@overload fun(ped: integer, boneIndex: integer, rotation: vector3, woundType: string)
 ---@param ped integer
 ---@param boneIndex integer
 ---@param xRot number
@@ -555,6 +556,7 @@ CreateParachuteObject = CreateParachuteBagObject
 ---Creates a ped (biped character, pedestrian, actor) with the specified model at the specified position and heading.
 ---This ped will initially be owned by the creating script as a mission entity, and the model should be loaded already
 ---(e.g. using REQUEST_MODEL).
+---@overload fun(pedType: integer, modelHash: integer | string, coords: vector3, heading: number, isNetwork: boolean, bScriptHostPed: boolean): integer
 ---@param pedType integer
 ---@param modelHash integer | string
 ---@param x number
@@ -590,6 +592,7 @@ function CreatePedInsideVehicle(vehicle, pedType, modelHash, seat, isNetwork, bS
 ---Creates a Ped at the specified location, returns the Ped Handle.
 ---Ped will not act until SET_PED_AS_NO_LONGER_NEEDED is called.
 ---```
+---@overload fun(coords: vector3): integer
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -611,6 +614,7 @@ function CreateRandomPedAsDriver(vehicle, returnHandle) end
 ---roll and pitch 0  
 ---yaw to Ped.rotation  
 ---```
+---@overload fun(coords: vector3, roll: number, pitch: number, yaw: number, p6: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -624,6 +628,7 @@ function CreateSynchronizedScene(x, y, z, roll, pitch, yaw, p6) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x62EC273D00187DCA)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, object: integer | string): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -772,6 +777,9 @@ function FreezePedCameraRotation(ped) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBE22B26DD764C040)  
 ---[Animations list](https://alexguirre.github.io/animations-list/)
+---@overload fun(animDict: string, animName: string, coords: vector3, xRot: number, yRot: number, zRot: number, p8: number, p9: integer): vector3
+---@overload fun(animDict: string, animName: string, x: number, y: number, z: number, rotation: vector3, p8: number, p9: integer): vector3
+---@overload fun(animDict: string, animName: string, coords: vector3, rotation: vector3, p8: number, p9: integer): vector3
 ---@param animDict string
 ---@param animName string
 ---@param x number
@@ -788,6 +796,9 @@ function GetAnimInitialOffsetPosition(animDict, animName, x, y, z, xRot, yRot, z
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4B805E6046EE9E47)  
 ---[Animations list](https://alexguirre.github.io/animations-list/)
+---@overload fun(animDict: string, animName: string, coords: vector3, xRot: number, yRot: number, zRot: number, p8: number, p9: integer): vector3
+---@overload fun(animDict: string, animName: string, x: number, y: number, z: number, rotation: vector3, p8: number, p9: integer): vector3
+---@overload fun(animDict: string, animName: string, coords: vector3, rotation: vector3, p8: number, p9: integer): vector3
 ---@param animDict string
 ---@param animName string
 ---@param x number
@@ -833,6 +844,7 @@ function GetAnimInitialOffsetRotation(animDict, animName, x, y, z, xRot, yRot, z
 ---2. waiting to cross a road.  
 ---Note: PED::GET_PED_NEARBY_PEDS works for more peds.  
 ---```
+---@overload fun(coords: vector3, radius: number, p4: boolean, p5: boolean, p7: boolean, p8: boolean, pedType: integer): (boolean, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1041,6 +1053,7 @@ function GetPedAsGroupMember(groupID, memberNumber) end
 ---offsetY: The Y-component of the offset to add to the position relative to the bone's rotation.  
 ---offsetZ: The Z-component of the offset to add to the position relative to the bone's rotation.  
 ---```
+---@overload fun(ped: integer, boneId: integer, offset: vector3): vector3
 ---@param ped integer
 ---@param boneId integer
 ---@param offsetX number
@@ -1980,6 +1993,7 @@ function GetPlayerPedIsFollowing(ped) end
 ---Animal = 28  
 ---Army = 29  
 ---```
+---@overload fun(coords: vector3, xRadius: number, yRadius: number, zRadius: number, pedType: integer): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2078,7 +2092,7 @@ SetExclusivePhoneRelationships = GetVehiclePedIsEntering
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A9112A0FE9A4713)  
 ---Retrieves the vehicle the specified ped is currently in, or the last vehicle they were in.
 ---@param ped integer
----@param lastVehicle boolean
+---@param lastVehicle? boolean [default: false]
 ---@return integer
 function GetVehiclePedIsIn(ped, lastVehicle) end
 
@@ -2236,6 +2250,7 @@ function InstantlyFillPedPopulation() end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x68772DB2B2526F9F)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, radius: number): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2247,6 +2262,7 @@ function IsAnyHostilePedNearPoint(ped, x, y, z, radius) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x083961498679DC9F)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2510,6 +2526,7 @@ function IsPedHangingOnToVehicle(ped) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFCF37A457CB96DC0)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, p4: number): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2637,7 +2654,7 @@ function IsPedInAnyTrain(ped) end
 ---Returns whether the specified ped is in any vehicle. If `atGetIn` is set to true, also returns true if the ped is
 ---currently in the process of entering a vehicle (a specific stage check for `CTaskEnterVehicle`).
 ---@param ped integer
----@param atGetIn boolean
+---@param atGetIn? boolean [default: false]
 ---@return boolean
 function IsPedInAnyVehicle(ped, atGetIn) end
 
@@ -2739,6 +2756,7 @@ function IsPedInParachuteFreeFall(ped) end
 ---```
 ---NativeDB Introduced: v3407
 ---```
+---@overload fun(ped: integer, coords: vector3, range: number): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4251,6 +4269,7 @@ function SetHeadBlendPaletteColor(ped, r, g, b, id) end
 ---```
 ---NativeDB Introduced: v323
 ---```
+---@overload fun(ped: integer, ikIndex: integer, entityLookAt: integer, boneLookAt: integer, offset: vector3, ikTargetFlags: integer, blendInDuration: integer, blendOutDuration: integer)
 ---@param ped integer
 ---@param ikIndex integer
 ---@param entityLookAt integer
@@ -5424,6 +5443,7 @@ function SetPedConfigFlag(ped, flagId, value) end
 ---```
 ---teleports ped to coords along with the vehicle ped is in  
 ---```
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param posX number
 ---@param posY number
@@ -5433,6 +5453,7 @@ function SetPedCoordsKeepVehicle(ped, posX, posY, posZ) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x87052FE446E07247)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param posX number
 ---@param posY number
@@ -5496,6 +5517,7 @@ function SetPedDefensiveAreaDirection(ped, p1, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF9B8F91AAD3B953E)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, target: integer, offset: vector3, radius: number, p6: boolean)
 ---@param ped integer
 ---@param target integer
 ---@param xOffset number
@@ -5508,6 +5530,7 @@ function SetPedDefensiveSphereAttachedToPed(ped, target, xOffset, yOffset, zOffs
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE4723DB6E736CCFF)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, target: integer, offset: vector3, radius: number, p6: boolean)
 ---@param ped integer
 ---@param target integer
 ---@param xOffset number
@@ -6191,6 +6214,7 @@ function SetPedNonCreationArea(x1, y1, z1, x2, y2, z2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFE07FF6495D52E2A)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3): any
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -6418,6 +6442,7 @@ function SetPedShootRate(ped, shootRate) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x96A05E4FB321B1BA)  
 ---Fires a weapon at a coordinate using a ped.
+---@overload fun(ped: integer, coords: vector3, toggle: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -6431,6 +6456,7 @@ function SetPedShootsAtCoord(ped, x, y, z, toggle) end
 ---Exiting the scenario may take several frames while the ped is playing the exit animation.
 ---If the ped is not currently using a scenario at the time of the command or 0,0,0 is specified as the reaction position,
 ---then the ped will by default attempt to direct their exit forwards.
+---@overload fun(ped: integer, coords: vector3): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -6463,6 +6489,7 @@ function SetPedShouldPlayNormalScenarioExit(ped) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9D3151A373974804)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, radius: number, p5: boolean, p6: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -6727,6 +6754,7 @@ function SetPedWetnessHeight(ped, height) end
 ---```
 ---Min and max are usually 100.0 and 200.0
 ---```
+---@overload fun(coords: vector3, min: number, max: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -6789,6 +6817,7 @@ function SetScenarioPedDensityMultiplierThisFrame(interiorMult, exteriorMult) en
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x28157D43CF600981)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, range: number, p4: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -6814,6 +6843,7 @@ function SetScriptedAnimSeatOffset(ped, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5086C7843552CF85)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -6839,6 +6869,7 @@ function SetSynchronizedSceneLooped(sceneID, toggle) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6ACF6B7225801CD7)  
 ---This native does not have an official description.
+---@overload fun(sceneID: integer, coords: vector3, roll: number, pitch: number, yaw: number, p7: boolean)
 ---@param sceneID integer
 ---@param x number
 ---@param y number
@@ -6922,6 +6953,7 @@ function SpawnpointsStartSearch(p0, p1, p2, p3, p4, interiorFlags, scale, durati
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB2AFF10216DEFA2F)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number, p4: number, p5: number, p6: number, interiorFlags: integer, scale: number, duration: integer)
 ---@param x number
 ---@param y number
 ---@param z number

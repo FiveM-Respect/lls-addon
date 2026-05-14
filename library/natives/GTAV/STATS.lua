@@ -2598,6 +2598,7 @@ function StatSetMaskedInt(statName, p1, p2, p3, save) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDB283FDE680FE72E)  
 ---This native does not have an official description.
+---@overload fun(statName: integer | string, coords: vector3, save: boolean): boolean
 ---@param statName integer | string
 ---@param x number
 ---@param y number

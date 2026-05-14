@@ -65,6 +65,7 @@ CreateAirDefenseArea = CreateAirDefenceAngledArea
 ---Both coordinates are from objects in the decompiled scripts.
 ---
 ---Native related to [\_0xECDC202B25E5CF48](#\_0xECDC202B25E5CF48) p1 value. The only weapon hash used in the decompiled scripts is weapon_air_defence_gun. These two natives are used by the yacht script, decompiled scripts suggest it and the weapon hash used (valkyrie's rockets) are also used by yachts.
+---@overload fun(coords: vector3, radius: number, weaponPositionX: number, weaponPositionY: number, weaponPositionZ: number, weaponHash: integer | string): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -87,6 +88,7 @@ CreateAirDefenseSphere = CreateAirDefenceSphere
 ---NativeDB Added Parameter 9: BOOL bRegisterAsNetworkObject
 ---NativeDB Added Parameter 10: BOOL bScriptHostObject
 ---```
+---@overload fun(weaponHash: integer | string, ammoCount: integer, coords: vector3, bCreateDefaultComponents: boolean, scale: number, customModelHash: integer): table
 ---@param weaponHash integer | string
 ---@param ammoCount integer
 ---@param x number
@@ -135,6 +137,7 @@ function ExplodeProjectiles(ped, weaponHash, p2) end
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x44F1012B69313374)  
 ---This native does not have an official description.
+---@overload fun(zoneId: integer, coords: vector3)
 ---@param zoneId integer
 ---@param x number
 ---@param y number
@@ -737,6 +740,7 @@ function HidePedWeaponForScriptedCutscene(ped, toggle) end
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDAB963831DBFD3F4)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number): (boolean, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1071,6 +1075,7 @@ function SetPedCycleVehicleWeaponsOnly(ped) end
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x208A1888007FC0E6)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, weaponHash: integer | string, offset: vector3, ammoCount: integer)
 ---@param ped integer
 ---@param weaponHash integer | string
 ---@param xOffset number

@@ -52,6 +52,7 @@ function ForceRoomForGameViewport(interiorID, roomHashKey) end
 ---**`INTERIOR` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xCDD36C9E5C469070)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -61,6 +62,7 @@ function GetInteriorAtCoords(x, y, z) end
 ---**`INTERIOR` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xAAD6170AA33B13C0)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, interiorType: string): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -71,6 +73,7 @@ function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 ---**`INTERIOR` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x3543AEA1816D1D2B)  
 ---Hashed version of GET_INTERIOR_AT_COORDS_WITH_TYPE
+---@overload fun(coords: vector3, typeHash: integer | string): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -81,6 +84,7 @@ function GetInteriorAtCoordsWithTypehash(x, y, z, typeHash) end
 ---**`INTERIOR` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x5054D1A5218FA696)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -138,6 +142,7 @@ function GetRoomKeyFromEntity(entity) end
 ---**`INTERIOR` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF291396B517E25B2)  
 ---Returns true if the collision at the specified coords is marked as being outside (false if there's an interior)
+---@overload fun(coords: vector3): boolean
 ---@param x number
 ---@param y number
 ---@param z number

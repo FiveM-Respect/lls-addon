@@ -256,6 +256,7 @@ function GetReservedMissionEntitiesForThread(threadId) end
 ---Coords: Slot world position
 ---
 ---Old name: _GET_RESERVATIONS_FOR_SLOT_WORLD_POSITION
+---@overload fun(coords: vector3, p3: boolean): (integer, integer, integer, integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -542,6 +543,7 @@ function N_0x236321f1178a5446(player, ped) end
 ---**`NETWORK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2686BD9566B65EDA)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -966,6 +968,7 @@ function N_0x862c5040f4888741(player1, player2) end
 ---**`NETWORK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x880A7202301E282B)  
 ---Params: p5 = 50.f, p6 = 0 in R* Script net_fetch (NET_FETCH_CLIENT_UPDATE_PED_ROLE_CLUE_IDLE)
+---@overload fun(coords: vector3, p5: number, p6: any): (boolean, any, any)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2810,6 +2813,7 @@ function NetworkResetPopulation(p0, p1) end
 ---**`NETWORK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xEA23C49EAA83ACFB)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, heading: number, p4: integer, p5: boolean, p6: any, p7: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -3131,6 +3135,7 @@ function NetworkSetInSpectatorMode(toggle, playerPed) end
 ---**`NETWORK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFBF1ECFB39A77B5F)  
 ---This native does not have an official description.
+---@overload fun(toggle: boolean, coords: vector3)
 ---@param toggle boolean
 ---@param x number
 ---@param y number
@@ -3255,6 +3260,7 @@ function NetworkSpawnConfigAddPropertyScripted(configProperty, include) end
 ---**`NETWORK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xFD1AC0B3858F224C)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, heading: number)
 ---@param x number
 ---@param y number
 ---@param z number

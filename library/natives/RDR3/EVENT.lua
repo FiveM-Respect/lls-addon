@@ -12,6 +12,7 @@ function AddModelToEventMonitor(model, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?_0xD9F8455409B525E9)  
 ---eventType: https://alloc8or.re/rdr3/doc/enums/eEventType.txt
 ---https://github.com/femga/rdr3_discoveries/blob/master/AI/EVENTS
+---@overload fun(eventType: integer | string, coords: vector3, p4: number, p5: number, p6: number, p7: number, p8: number, p9: integer, p10: integer): integer
 ---@param eventType integer | string
 ---@param x number
 ---@param y number
@@ -106,6 +107,7 @@ function IsEventTrackerActive(eventName, shockingEvent) end
 ---**`EVENT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9DB47E16060D6354)  
 ---eventType: https://alloc8or.re/rdr3/doc/enums/eEventType.txt
+---@overload fun(eventType: integer | string, coords: vector3, radius: number): boolean
 ---@param eventType integer | string
 ---@param x number
 ---@param y number
@@ -249,6 +251,7 @@ function RemoveAllShockingEvents(p0) end
 ---**`EVENT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB4C71BA9CAB097BD)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, p4: boolean)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -266,6 +269,7 @@ function RemoveAllShockingEventsOfType(eventType, scriptCreatedOnly) end
 ---**`EVENT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6A648D42BF271DC7)  
 ---eventType: https://alloc8or.re/rdr3/doc/enums/eEventType.txt
+---@overload fun(eventType: integer | string, coords: vector3, radius: number, p5: boolean)
 ---@param eventType integer | string
 ---@param x number
 ---@param y number

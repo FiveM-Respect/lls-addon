@@ -338,6 +338,7 @@ function SetCutsceneFadeValues(p0, p1, p2, p3) end
 ---**`CUTSCENE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB812B3FD1C01CF27)  
 ---Sets cutscene location, used for multiplayer apartments/businesses.
+---@overload fun(coords: vector3, heading: number, p4: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -411,6 +412,7 @@ function StartCutscene(flags) end
 ---**`CUTSCENE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1C9ADDA3244A1FBF)  
 ---Similar to [`SET_CUTSCENE_ORIGIN`](#\_0xB812B3FD1C01CF27) but without heading and doesn't need [`START_CUTSCENE`](#\_0x186D5CB5E7B0FF7B)
+---@overload fun(coords: vector3, flags: integer)
 ---@param x number
 ---@param y number
 ---@param z number

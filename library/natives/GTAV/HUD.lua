@@ -55,6 +55,7 @@ function ActivateFrontendMenu(menuhash, togglePause, component) end
 ---By default, the blip will show as a *regular* blip with the specified color/sprite if it is outside of the minimap view.
 ---
 ---(Native name is *likely* to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
+---@overload fun(coords: vector3, width: number, height: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -66,6 +67,7 @@ function AddBlipForArea(x, y, z, width, height) end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5A039BB0BCA604B6)  
 ---Creates a blip for the specified coordinates. You can use `SET_BLIP_` natives to change the blip.
+---@overload fun(coords: vector3): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -98,6 +100,7 @@ function AddBlipForPickup(pickup) end
 ---
 ---Example image:
 ---![example](https://i.imgur.com/fDCmHVD.png)
+---@overload fun(coords: vector3, radius: number): integer
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -114,6 +117,7 @@ function AddNextMessageToPreviousBriefs(addToBrief) end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x311438A071DD9B1A)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -122,6 +126,7 @@ function AddPointToGpsCustomRoute(x, y, z) end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA905192A6781C41B)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1752,6 +1757,7 @@ function GetMenuPedMaskedIntStat(p0, p2, p3) end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E31B91145873922)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -3041,6 +3047,7 @@ function PulseBlip(blip) end
 ---```
 ---Add a BLIP_GALLERY at the specific coordinate. Used in fm_maintain_transition_players to display race track points.
 ---```
+---@overload fun(coords: vector3): any
 ---@param x number
 ---@param y number
 ---@param z number
@@ -3330,6 +3337,7 @@ function SetBlipColour(blip, color) end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAE2AF67E9D9AF65D)  
 ---This native does not have an official description.
+---@overload fun(blip: integer, coords: vector3)
 ---@param blip integer
 ---@param posX number
 ---@param posY number
@@ -3859,6 +3867,7 @@ function SetFloatingHelpTextToEntity(hudIndex, entity, offsetX, offsetY) end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x784BA7E0ECEB4178)  
 ---This native does not have an official description.
+---@overload fun(hudIndex: integer, coords: vector3)
 ---@param hudIndex integer
 ---@param x number
 ---@param y number
@@ -4013,6 +4022,7 @@ function SetMinimapComponent(componentID, toggle, hudColor) end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0923DBF87DFF735E)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -5426,6 +5436,7 @@ function ToggleStealthRadar(toggle) end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x72DD432F3CDFC0EE)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, p4: integer)
 ---@param posX number
 ---@param posY number
 ---@param posZ number

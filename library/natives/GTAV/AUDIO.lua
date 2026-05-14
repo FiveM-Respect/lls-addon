@@ -549,6 +549,7 @@ SetSynchronizedAudioEventPositionThisFrame = InitSynchSceneAudioWithEntity
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC8EDE9BDBCCBA6D4)  
 ---This native does not have an official description.
+---@overload fun(audioName: string, coords: vector3)
 ---@param audioName string
 ---@param x number
 ---@param y number
@@ -1012,6 +1013,7 @@ function PauseScriptedConversation(finishCurrentLine) end
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xED640017ED337E45)  
 ---This native does not have an official description.
+---@overload fun(speechName: string, voiceName: string, coords: vector3, speechParam: string)
 ---@param speechName string
 ---@param voiceName string
 ---@param x number
@@ -1250,6 +1252,7 @@ function PlaySound(soundId, audioName, audioRef, p3, p4, p5) end
 ---All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/eeFc5DiW  
 ---gtaforums.com/topic/795622-audio-for-mods  
 ---```
+---@overload fun(soundId: integer, audioName: string, coords: vector3, audioRef: string, isNetwork: boolean, range: integer, p8: boolean)
 ---@param soundId integer
 ---@param audioName string
 ---@param x number
@@ -1303,6 +1306,7 @@ function PlayStreamFromPed(ped) end
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x21442F412E8DE56B)  
 ---Plays a preloaded stream back from the specified Vector3.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1409,6 +1413,7 @@ function PrepareSynchronizedAudioEventForScene(sceneId, audioEvent) end
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFBE20329593DEC9D)  
 ---Creates a broken glass area
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2028,6 +2033,7 @@ function SetPositionedPlayerVehicleRadioEmitterEnabled(enabled) end
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x33E3C6C6F2F0B506)  
 ---This native does not have an official description.
+---@overload fun(speakerConversationIndex: integer, coords: vector3)
 ---@param speakerConversationIndex integer
 ---@param x number
 ---@param y number
@@ -2505,6 +2511,7 @@ function UnrequestTennisBanks() end
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7EC3C679D0E7E46B)  
 ---Updates a playing sounds absolute position.
+---@overload fun(soundId: integer, coords: vector3)
 ---@param soundId integer
 ---@param x number
 ---@param y number

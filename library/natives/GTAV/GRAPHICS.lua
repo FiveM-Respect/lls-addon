@@ -61,6 +61,7 @@
 ---    liquidTrail_water = 9050  
 ---}  
 ---```
+---@overload fun(decalType: integer, coords: vector3, dirX: number, dirY: number, dirZ: number, sideX: number, sideY: number, sideZ: number, width: number, height: number, rCoef: number, gCoef: number, bCoef: number, opacity: number, timeout: number, isLongRange: boolean, isDynamic: boolean, useComplexColn: boolean): integer
 ---@param decalType integer
 ---@param posX number
 ---@param posY number
@@ -101,6 +102,7 @@ function AddEntityIcon(entity, icon) end
 ---```
 ---NativeDB Introduced: v2699
 ---```
+---@overload fun(coords: vector3, groundLvl: number, width: number, transparency: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -113,6 +115,7 @@ function AddOilDecal(x, y, z, groundLvl, width, transparency) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4F5212C7AD880DF8)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, groundLvl: number, width: number, transparency: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -125,6 +128,7 @@ function AddPetrolDecal(x, y, z, groundLvl, width, transparency) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x967278682CB6967A)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, p3: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -730,6 +734,7 @@ function DrawDebugBox(x1, y1, z1, x2, y2, z2, r, g, b, a) end
 ---```
 ---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
+---@overload fun(coords: vector3, size: number, red: integer, green: integer, blue: integer, alpha: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -783,6 +788,7 @@ function DrawDebugLineWithTwoColours(x1, y1, z1, x2, y2, z2, r1, g1, b1, r2, g2,
 ---```
 ---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
+---@overload fun(coords: vector3, radius: number, red: integer, green: integer, blue: integer, alpha: integer)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -798,6 +804,7 @@ function DrawDebugSphere(x, y, z, radius, red, green, blue, alpha) end
 ---```
 ---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
+---@overload fun(text: string, coords: vector3, red: integer, green: integer, blue: integer, alpha: integer)
 ---@param text string
 ---@param x number
 ---@param y number
@@ -813,6 +820,7 @@ function DrawDebugText(text, x, y, z, red, green, blue, alpha) end
 ---```
 ---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
+---@overload fun(text: string, coords: vector3, red: integer, green: integer, blue: integer, alpha: integer)
 ---@param text string
 ---@param x number
 ---@param y number
@@ -856,6 +864,7 @@ function DrawInteractiveSprite(textureDict, textureName, screenX, screenY, width
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF2A1B2771A01DBD4)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, colorR: integer, colorG: integer, colorB: integer, range: number, intensity: number)
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -869,6 +878,7 @@ function DrawLightWithRange(posX, posY, posZ, colorR, colorG, colorB, range, int
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF49E9A9716A04595)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, r: integer, g: integer, b: integer, range: number, intensity: number, shadow: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -914,6 +924,9 @@ function DrawLowQualityPhotoToPhone(p0, p1) end
 ---Draws a marker with the specified appearance at the target location. This has to be called every frame, e.g. in a `Wait(0)` loop.
 ---
 ---There's a [list of markers](https://docs.fivem.net/docs/game-references/markers/) on the FiveM documentation site.
+---@overload fun(type: integer, coords: vector3, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: integer, green: integer, blue: integer, alpha: integer, bobUpAndDown: boolean, faceCamera: boolean, rotationOrder: integer, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean)
+---@overload fun(type: integer, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, red: integer, green: integer, blue: integer, alpha: integer, bobUpAndDown: boolean, faceCamera: boolean, rotationOrder: integer, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean)
+---@overload fun(type: integer, coords: vector3, dirX: number, dirY: number, dirZ: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, red: integer, green: integer, blue: integer, alpha: integer, bobUpAndDown: boolean, faceCamera: boolean, rotationOrder: integer, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean)
 ---@param type integer
 ---@param posX number
 ---@param posY number
@@ -945,6 +958,9 @@ function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, 
 ---```
 ---NativeDB Added Parameter 26: BOOL p25
 ---```
+---@overload fun(type: integer, coords: vector3, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: integer, green: integer, blue: integer, alpha: integer, bobUpAndDown: boolean, faceCamera: boolean, rotationOrder: integer, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean, p24: boolean)
+---@overload fun(type: integer, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, red: integer, green: integer, blue: integer, alpha: integer, bobUpAndDown: boolean, faceCamera: boolean, rotationOrder: integer, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean, p24: boolean)
+---@overload fun(type: integer, coords: vector3, dirX: number, dirY: number, dirZ: number, rotation: vector3, scaleX: number, scaleY: number, scaleZ: number, red: integer, green: integer, blue: integer, alpha: integer, bobUpAndDown: boolean, faceCamera: boolean, rotationOrder: integer, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean, p24: boolean)
 ---@param type integer
 ---@param posX number
 ---@param posY number
@@ -1056,6 +1072,9 @@ function DrawScaleformMovie(scaleformHandle, x, y, width, height, red, green, bl
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x87D51D72255D4E78)  
 ---This native does not have an official description.
+---@overload fun(scaleform: integer, coords: vector3, rotX: number, rotY: number, rotZ: number, p7: number, sharpness: number, p9: number, scaleX: number, scaleY: number, scaleZ: number, p13: any)
+---@overload fun(scaleform: integer, posX: number, posY: number, posZ: number, rotation: vector3, p7: number, sharpness: number, p9: number, scaleX: number, scaleY: number, scaleZ: number, p13: any)
+---@overload fun(scaleform: integer, coords: vector3, rotation: vector3, p7: number, sharpness: number, p9: number, scaleX: number, scaleY: number, scaleZ: number, p13: any)
 ---@param scaleform integer
 ---@param posX number
 ---@param posY number
@@ -1075,6 +1094,9 @@ function DrawScaleformMovie_3d(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1CE592FDC749D6F5)  
 ---This native does not have an official description.
+---@overload fun(scaleform: integer, coords: vector3, rotX: number, rotY: number, rotZ: number, p7: number, p8: number, p9: number, scaleX: number, scaleY: number, scaleZ: number, p13: any)
+---@overload fun(scaleform: integer, posX: number, posY: number, posZ: number, rotation: vector3, p7: number, p8: number, p9: number, scaleX: number, scaleY: number, scaleZ: number, p13: any)
+---@overload fun(scaleform: integer, coords: vector3, rotation: vector3, p7: number, p8: number, p9: number, scaleX: number, scaleY: number, scaleZ: number, p13: any)
 ---@param scaleform integer
 ---@param posX number
 ---@param posY number
@@ -1124,6 +1146,7 @@ function DrawScaleformMovieFullscreenMasked(scaleform1, scaleform2, red, green, 
 ---It's called after 0xD3A10FC7FD8D98CD and 0xF1CEA8A4198D8E9A  
 ---p0 was always "CELEBRATION_WINNER"  
 ---```
+---@overload fun(p0: string, ped: integer, p2: integer, coords: vector3): boolean
 ---@param p0 string
 ---@param ped integer
 ---@param p2 integer
@@ -1143,6 +1166,7 @@ function DrawShowroom(p0, ped, p2, posX, posY, posZ) end
 ---```lua
 ---DrawSphere(35.45, 172.66, 126.22, 1.0, 0, 0, 255, 0.2)
 ---```
+---@overload fun(coords: vector3, radius: number, r: integer, g: integer, b: integer, opacity: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1173,6 +1197,7 @@ function DrawSphere(x, y, z, radius, r, g, b, opacity) end
 ---dirVector.Normalize();  
 ---Function.Call(Hash.DRAW_SPOT_LIGHT, pos.X, pos.Y, pos.Z, dirVector.X, dirVector.Y, dirVector.Z, 255, 255, 255, 100.0f, 1f, 0.0f, 13.0f, 1f);  
 ---```
+---@overload fun(coords: vector3, dirX: number, dirY: number, dirZ: number, colorR: integer, colorG: integer, colorB: integer, distance: number, brightness: number, hardness: number, radius: number, falloff: number)
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -1192,6 +1217,7 @@ function DrawSpotLight(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, color
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5BCA583A583194DB)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, dirX: number, dirY: number, dirZ: number, colorR: integer, colorG: integer, colorB: integer, distance: number, brightness: number, roundness: number, radius: number, falloff: number, shadowId: integer)
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -1496,6 +1522,7 @@ EndTextCommandScaleformString_2 = EndTextCommandUnparsedScaleformString
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD77EDADB0420E6E0)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, duration: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1900,6 +1927,7 @@ function GolfTrailSetFacing(p0) end
 ---assuming p5 - p8 is RGBA, the graphic is always yellow (255, 255, 0, 255).
 ---Tested but noticed nothing.
 ---```
+---@overload fun(type: integer, coords: vector3, p4: number, red: integer, green: integer, blue: integer, alpha: integer)
 ---@param type integer
 ---@param xPos number
 ---@param yPos number
@@ -1964,6 +1992,7 @@ function GrassLodResetScriptAreas() end
 ---```
 ---Wraps 0xAAE9BE70EC7C69AB with FLT_MAX as p7, Jenkins: 0x73E96210?
 ---```
+---@overload fun(coords: vector3, radius: number, p4: number, p5: number, p6: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2281,6 +2310,7 @@ function N_0x393bd2275ceb7793() end
 ---```
 ---
 ---Sets the given checkpoint target to the new coords
+---@overload fun(checkpointHandle: integer, coords: vector3)
 ---@param checkpointHandle integer
 ---@param x number
 ---@param y number
@@ -2690,6 +2720,7 @@ function N_0xf3f776ada161e47d(p0, p1) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF51D36185993515D)  
 ---This native does not have an official description.
+---@overload fun(checkpoint: integer, coords: vector3, unkX: number, unkY: number, unkZ: number)
 ---@param checkpoint integer
 ---@param posX number
 ---@param posY number
@@ -2846,6 +2877,7 @@ function RemoveDecalsFromObject(obj) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA6F6F70FDC6D144C)  
 ---This native does not have an official description.
+---@overload fun(obj: integer, coords: vector3)
 ---@param obj integer
 ---@param x number
 ---@param y number
@@ -2863,6 +2895,7 @@ function RemoveDecalsFromVehicle(vehicle) end
 ---```
 ---Removes all decals in range from a position, it includes the bullet holes, blood pools, petrol...  
 ---```
+---@overload fun(coords: vector3, range: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2885,6 +2918,7 @@ function RemoveParticleFxFromEntity(entity) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDD19FA1C6D657305)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number)
 ---@param X number
 ---@param Y number
 ---@param Z number
@@ -3350,6 +3384,7 @@ function SetDisablePetrolDecalsIgnitingThisFrame() end
 ---Sets the on-screen drawing origin for draw-functions in world coordinates.
 ---
 ---The effect can be reset by calling [`CLEAR_DRAW_ORIGIN`](#\_0xFF0B610F6BE0D7AF) and is limited to 32 different origins each frame.
+---@overload fun(coords: vector3, p3: any)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -3515,6 +3550,9 @@ SetParticleFxLoopedRange = SetParticleFxLoopedFarClipDist
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF7DDEBEC43483C43)  
 ---This native does not have an official description.
+---@overload fun(ptfxHandle: integer, coords: vector3, rotX: number, rotY: number, rotZ: number)
+---@overload fun(ptfxHandle: integer, x: number, y: number, z: number, rotation: vector3)
+---@overload fun(ptfxHandle: integer, coords: vector3, rotation: vector3)
 ---@param ptfxHandle integer
 ---@param x number
 ---@param y number
@@ -3745,6 +3783,7 @@ function SetTimecycleModifierStrength(strength) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x164ECBB3CF750CB0)  
 ---This native does not have an official description.
+---@overload fun(point: integer, coords: vector3, radius: number)
 ---@param point integer
 ---@param x number
 ---@param y number
@@ -3837,6 +3876,9 @@ function SetTvVolume(volume) end
 ---NativeDB Added Parameter 15: Any p14
 ---NativeDB Added Parameter 16: Any p15
 ---```
+---@overload fun(effectName: string, entity: integer, offset: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param entity integer
 ---@param xOffset number
@@ -3867,6 +3909,9 @@ StartParticleFxLoopedOnEntity_2 = StartNetworkedParticleFxLoopedOnEntity
 ---NativeDB Added Parameter 16: Any p15
 ---NativeDB Added Parameter 17: Any p16
 ---```
+---@overload fun(effectName: string, entity: integer, offset: vector3, xRot: number, yRot: number, zRot: number, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param entity integer
 ---@param xOffset number
@@ -3897,6 +3942,9 @@ StartParticleFxLoopedOnEntityBone_2 = StartNetworkedParticleFxLoopedOnEntityBone
 ---```
 ---NativeDB Added Parameter 12: BOOL p11
 ---```
+---@overload fun(effectName: string, coords: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
+---@overload fun(effectName: string, xPos: number, yPos: number, zPos: number, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
+---@overload fun(effectName: string, coords: vector3, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
 ---@param effectName string
 ---@param xPos number
 ---@param yPos number
@@ -3917,6 +3965,9 @@ StartParticleFxNonLoopedAtCoord_2 = StartNetworkedParticleFxNonLoopedAtCoord
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC95EB1DB6E92113D)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
 ---@param effectName string
 ---@param entity integer
 ---@param offsetX number
@@ -3940,6 +3991,9 @@ StartParticleFxNonLoopedOnEntity_2 = StartNetworkedParticleFxNonLoopedOnEntity
 ---```
 ---NativeDB Introduced: v2189
 ---```
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
 ---@param effectName string
 ---@param entity integer
 ---@param offsetX number
@@ -3959,6 +4013,9 @@ function StartNetworkedParticleFxNonLoopedOnEntityBone(effectName, entity, offse
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA41B6A43642AC2CF)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, ped: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
 ---@param effectName string
 ---@param ped integer
 ---@param offsetX number
@@ -3984,6 +4041,9 @@ StartParticleFxNonLoopedOnPedBone_2 = StartNetworkedParticleFxNonLoopedOnPedBone
 ---GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_fbi_falling_debris", 93.7743f, -749.4572f, 70.86904f, 0f, 0f, 0f, 0x3F800000, 0, 0, 0, 0)  
 ---p11 seems to be always 0  
 ---```
+---@overload fun(effectName: string, coords: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean, p11: boolean): integer
+---@overload fun(effectName: string, x: number, y: number, z: number, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean, p11: boolean): integer
+---@overload fun(effectName: string, coords: vector3, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean, p11: boolean): integer
 ---@param effectName string
 ---@param x number
 ---@param y number
@@ -4002,6 +4062,9 @@ function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, sca
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1AE42C1660FD6517)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, entity: integer, offset: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param entity integer
 ---@param xOffset number
@@ -4020,6 +4083,9 @@ function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOf
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6EB449E33977F0B)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, entity: integer, offset: vector3, xRot: number, yRot: number, zRot: number, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param entity integer
 ---@param xOffset number
@@ -4039,6 +4105,9 @@ function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset,
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF28DA9F38CD1787C)  
 ---This native does not have an official description.
+---@overload fun(effectName: string, ped: integer, offset: vector3, xRot: number, yRot: number, zRot: number, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, ped: integer, xOffset: number, yOffset: number, zOffset: number, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param ped integer
 ---@param xOffset number
@@ -4072,6 +4141,9 @@ function StartParticleFxLoopedOnPedBone(effectName, ped, xOffset, yOffset, zOffs
 ---example:  
 ---Function.Call<int>(Hash.START_PARTICLE_FX_NON_LOOPED_AT_COORD, "scr_fbi4_trucks_crash", GTA.Game.Player.Character.Position.X, GTA.Game.Player.Character.Position.Y, GTA.Game.Player.Character.Position.Z + 4f, 0, 0, 0, 5.5f, 0, 0, 0);  
 ---```
+---@overload fun(effectName: string, coords: vector3, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, xPos: number, yPos: number, zPos: number, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
+---@overload fun(effectName: string, coords: vector3, rotation: vector3, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): integer
 ---@param effectName string
 ---@param xPos number
 ---@param yPos number
@@ -4097,6 +4169,9 @@ function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRo
 ---Internally this calls the same function as GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE  
 ---however it uses -1 for the specified bone index, so it should be possible to start a non looped fx on an entity bone using that native  
 ---```
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, entity: integer, offset: vector3, rotation: vector3, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
 ---@param effectName string
 ---@param entity integer
 ---@param offsetX number
@@ -4119,6 +4194,9 @@ function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, 
 ---Axis - Invert Axis Flags  
 ---list: pastebin.com/N9unUFWY  
 ---```
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotX: number, rotY: number, rotZ: number, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, ped: integer, offsetX: number, offsetY: number, offsetZ: number, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+---@overload fun(effectName: string, ped: integer, offset: vector3, rotation: vector3, boneIndex: integer, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
 ---@param effectName string
 ---@param ped integer
 ---@param offsetX number
@@ -4198,6 +4276,7 @@ function TerraingridSetColours(lowR, lowG, lowB, lowAlpha, R, G, B, Alpha, highR
 ---
 ---All those natives combined they will output something like this:
 ---![](https://i.imgur.com/slYthff.png)
+---@overload fun(coords: vector3, p3: number, rotation: number, p5: number, width: number, height: number, p8: number, scale: number, glowIntensity: number, normalHeight: number, heightDiff: number)
 ---@param x number
 ---@param y number
 ---@param z number

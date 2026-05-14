@@ -11,6 +11,9 @@ function ActivatePhysics(entity) end
 ---There are 19 types of rope, from type = 0 to type = 18
 ---Rope definitions are stored in ropedata.xml
 ---Rope types 0, 15 and 18 have proper physics for hanging objects (taut, do not sag, small to medium diameter, good aspect for a rope)
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, length: number, ropeType: integer, maxLength: number, minLength: number, p10: number, p11: boolean, p12: boolean, rigid: boolean, p14: number, breakWhenShot: boolean, p17: boolean): (integer, any)
+---@overload fun(x: number, y: number, z: number, rotation: vector3, length: number, ropeType: integer, maxLength: number, minLength: number, p10: number, p11: boolean, p12: boolean, rigid: boolean, p14: number, breakWhenShot: boolean, p17: boolean): (integer, any)
+---@overload fun(coords: vector3, rotation: vector3, length: number, ropeType: integer, maxLength: number, minLength: number, p10: number, p11: boolean, p12: boolean, rigid: boolean, p14: number, breakWhenShot: boolean, p17: boolean): (integer, any)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -34,6 +37,9 @@ function AddRope(x, y, z, rotX, rotY, rotZ, length, ropeType, maxLength, minLeng
 ---**`PHYSICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE9C59F6809373A99)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, rotX: number, rotY: number, rotZ: number, length: number, ropeType: integer, isNetworked: boolean, p9: integer, p10: number): integer
+---@overload fun(x: number, y: number, z: number, rotation: vector3, length: number, ropeType: integer, isNetworked: boolean, p9: integer, p10: number): integer
+---@overload fun(coords: vector3, rotation: vector3, length: number, ropeType: integer, isNetworked: boolean, p9: integer, p10: number): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -126,6 +132,7 @@ function BreakEntityGlass(entity, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 ---**`PHYSICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4CFA2B7FAE115ECB)  
 ---ropeTop returns top half of rope, ropeBottom returns bottom half of rope
+---@overload fun(offset: vector3, p6: integer): (integer, integer, integer)
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -197,6 +204,7 @@ function GetRopeVertexCount(ropeId) end
 ---**`PHYSICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x06AADE17334F7A40)  
 ---This native does not have an official description.
+---@overload fun(horse: integer, coords: vector3)
 ---@param horse integer
 ---@param x number
 ---@param y number
@@ -469,6 +477,7 @@ function N_0xdede679ed29dd4e7(ropeId, p1) end
 ---**`PHYSICS` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE54BF2CE6C7D23A9)  
 ---This native does not have an official description.
+---@overload fun(ropeId: integer, p1: integer, coords: vector3)
 ---@param ropeId integer
 ---@param p1 integer
 ---@param x number

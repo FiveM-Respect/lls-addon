@@ -42,6 +42,7 @@ function AddCoverPoint(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x59872EA4CBD11C56)  
 ---Returns the entity coverpoint with offset.
+---@overload fun(entity: integer, offset: vector3, heading: number, p5: integer, p6: integer, p7: integer, p8: integer): integer
 ---@param entity integer
 ---@param xOffset number
 ---@param yOffset number
@@ -57,6 +58,7 @@ function AddCoverpointForEntity(entity, xOffset, yOffset, zOffset, heading, p5, 
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE8F1A5B4CED3725A)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, p4: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -82,6 +84,7 @@ function AddPatrolRouteLink(node1, node2) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x8EDF950167586B7C)  
 ---This native does not have an official description.
+---@overload fun(nodeId: integer, scenarioName: string, coords: vector3, lookPosX: number, lookPosY: number, lookPosZ: number, duration: integer, p9: boolean)
 ---@param nodeId integer
 ---@param scenarioName string
 ---@param x number
@@ -135,6 +138,7 @@ function AssociatePropWithScenario(scenario, entity, propName, p3) end
 ---[Native Documentation](https://rdr3natives.com/?_0x3ACC128510142B9D)  
 ---Returns the signed distance along the waypoint recording from its start (first node) to the point on the recording that corresponds to coords
 --- need `REQUEST_WAYPOINT_RECORDING`
+---@overload fun(waypointRecording: string, coords: vector3): number
 ---@param waypointRecording string
 ---@param x number
 ---@param y number
@@ -216,6 +220,7 @@ function CloseSequenceTask(taskSequenceId) end
 ---groundSetting: 0: spawn on ground, 2 (1?): do not spawn on ground
 ---p7: -1 in R* Scripts
 ---Returns compositeId
+---@overload fun(asset: integer | string, coords: vector3, heading: number, groundSetting: integer, p6: any, p7: integer): integer
 ---@param asset integer | string
 ---@param x number
 ---@param y number
@@ -235,6 +240,7 @@ function CreatePatrolRoute() end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x94B745CE41DB58A1)  
 ---Returns scenario
+---@overload fun(scenarioHash: integer | string, coords: vector3, heading: number, p5: any, p6: any, p7: boolean): integer
 ---@param scenarioHash integer | string
 ---@param x number
 ---@param y number
@@ -249,6 +255,7 @@ function CreateScenarioPointHash(scenarioHash, x, y, z, heading, p5, p6, p7) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x794AB1379A74064D)  
 ---Returns scenario
+---@overload fun(entity: integer, scenarioHash: integer | string, coords: vector3, heading: number, p6: any, p7: any, p8: boolean): integer
 ---@param entity integer
 ---@param scenarioHash integer | string
 ---@param x number
@@ -313,6 +320,7 @@ function DisassociatePropFromScenario(scenario, propName) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x5A59271FFADD33C1)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, radius: number, p4: boolean, p5: any, p6: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -340,6 +348,7 @@ function DoesScenarioGroupExistHash(scenarioGroup) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6EEAD6AF637DA752)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, typeHash: integer | string, radius: number, p5: boolean): boolean
 ---@param x number
 ---@param y number
 ---@param z number
@@ -436,6 +445,7 @@ function FindScenarioAllPointsInVolumeOfType(volume, itemset, scenarioType, p3, 
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD508FA229F1C4900)  
 ---Returns a scenario point handle of the given scenario type that is associated with / found near the specified object. Useful for attached scenarios (e.g., ransackable lockboxes on a prop)
+---@overload fun(object: integer, coords: vector3, scenarioType: integer | string, radius: number): integer
 ---@param object integer
 ---@param x number
 ---@param y number
@@ -448,6 +458,7 @@ function FindScenarioAtObjectOfType(object, x, y, z, scenarioType, radius) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xF533D68FF970D190)  
 ---This native does not have an official description.
+---@overload fun(coords: vector3, scenarioType: integer | string, distance: number, p5: any, p6: boolean): integer
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -731,6 +742,7 @@ function GetScenarioPointRadius(scenario) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x345EC3B7EBDE1CB5)  
 ---Note: scenariosInRadius is an array, and its size and values should be aligned to 8 bytes.
+---@overload fun(coords: vector3, radius: number, scenariosInRadius: any, size: integer): integer
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -1563,6 +1575,7 @@ function N_0x4f57397388e1dff8() end
 ---[Native Documentation](https://rdr3natives.com/?_0x508F5053E3F6F0C4)  
 ---Only used in R* SP Scripts
 ---Params: p4 = 1.0f - 30.0f
+---@overload fun(ped: integer, coords: vector3, p4: number): boolean
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2332,6 +2345,7 @@ function ResetScenarioGroupsEnabled() end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4161648394262FDF)  
 ---Resets/clears all scenario entities within the given spherical area
+---@overload fun(coords: vector3, radius: number)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2352,6 +2366,7 @@ function ResetScenarioTypesEnabled() end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x517D01BF27B682D1)  
 ---Set a ped's boat-local offset and/or facing (degrees). Boats only. Flags: 0=apply both; 1=heading only (lock offset); 2=offset only (lock heading); 3=apply neither.
+---@overload fun(ped: integer, boat: integer, offset: vector3, heading: number, flags: integer)
 ---@param ped integer
 ---@param boat integer
 ---@param offsetX number
@@ -2397,6 +2412,7 @@ function SetCarriablePickupPromptEnabled(object, enabled) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE5B302114D8162EE)  
 ---This native does not have an official description.
+---@overload fun(shootingPed: integer, targetPed: integer, targetVehicle: integer, coords: vector3)
 ---@param shootingPed integer
 ---@param targetPed integer
 ---@param targetVehicle integer
@@ -2680,6 +2696,7 @@ function SetScenarioPointActive(scenario, active) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2056AB38DF06825C)  
 ---This native does not have an official description.
+---@overload fun(scenario: integer, coords: vector3, p4: boolean)
 ---@param scenario integer
 ---@param xPos number
 ---@param yPos number
@@ -2766,6 +2783,7 @@ function SetTaskMoveNetworkSignalFloat_2(ped, signalName, value) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4662BFE01938D98D)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, signalName: string, coords: vector3)
 ---@param ped integer
 ---@param signalName string
 ---@param x number
@@ -2852,6 +2870,7 @@ function TaskAchieveHeading(ped, heading, timeout) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4AF1D73861212F52)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, time: integer, p5: any, p6: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -2874,6 +2893,7 @@ function TaskAimAtEntity(ped, targetEntity, time, p3, p4) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6671F3EEC681BDA1)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, time: integer, p5: boolean, p6: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3003,6 +3023,7 @@ function TaskBoardVehicle_2(ped, p1, p2, speed, boardingFlags) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x15C86013127CE63F)  
 ---This native does not have an official description.
+---@overload fun(pedDriver: integer, boat: integer, p2: any, p3: any, coords: vector3, p7: any, maxSpeed: number, drivingStyle: integer, p10: number, p11: any)
 ---@param pedDriver integer
 ---@param boat integer
 ---@param p2 any
@@ -3122,6 +3143,7 @@ function TaskCombatHatedTargetsAroundPedTimed(ped, radius, time, flags) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4CF5F55DAC3280A0)  
 ---Despite its name, it only attacks ONE hated target. The one closest to the specified position.
+---@overload fun(ped: integer, coords: vector3, radius: number, flags: integer, p6: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3151,6 +3173,7 @@ function TaskCombatPed(ped, targetPed, p2, p3) end
 ---[Native Documentation](https://rdr3natives.com/?_0xC624414FA748B9BA)  
 ---Coords: volume coords used in R* Script smuggler2
 ---p4/p5 = 0 in R* Scripts previous name TASK_COMBAT_PED_3
+---@overload fun(ped: integer, coords: vector3, p4: integer, p5: integer)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3365,6 +3388,7 @@ function TaskEveryoneLeaveVehicleInOrder(vehicle, p1) end
 ---Adds a new point to the current point route. Call TASK_FLUSH_ROUTE before the first call to this. Call TASK_FOLLOW_POINT_ROUTE to make the Ped go the route.
 ---
 ---A maximum of 8 points can be added.
+---@overload fun(coords: vector3)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -3374,6 +3398,7 @@ function TaskExtendRoute(x, y, z) end
 ---[Native Documentation](https://rdr3natives.com/?_0x58428248BF4B64E4)  
 ---Params: p5 = some flag?, p6 = -1.0f, p8 = 0 in R* Scripts
 ---fleeStyle: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/eFleeStyle
+---@overload fun(ped: integer, coords: vector3, fleeStyle: integer, p5: integer, p6: number, duration: integer, p8: integer)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3422,6 +3447,7 @@ function TaskFleeFromCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x7B74D8EEDE9B5727)  
 ---fleeType: see TASK_FLEE_COORD
+---@overload fun(ped: integer, fleeFromTarget: integer, coords: vector3, distance: number, p6: integer, p7: integer, p8: number, targetPed: integer)
 ---@param ped integer
 ---@param fleeFromTarget integer
 ---@param x number
@@ -3489,6 +3515,7 @@ function TaskFlyingCircle(ped, p1, p2, p3, p4, p5, p6) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD6CFC2D59DA72042)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, travelMbr: number, coords: vector3, p5: boolean, p6: boolean)
 ---@param ped integer
 ---@param travelMbr number
 ---@param x number
@@ -3544,6 +3571,7 @@ function TaskFollowEntityWhileAimingAtEntity(ped, p1, p2, p3, p4, p5, p6, p7) en
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x15D3A79D4E44B913)  
 ---If no timeout, set timeout to -1.
+---@overload fun(ped: integer, coords: vector3, speedMultiplier: number, timeout: integer, stoppingRange: number, flags: integer, heading: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3558,6 +3586,7 @@ function TaskFollowNavMeshToCoord(ped, x, y, z, speedMultiplier, timeout, stoppi
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x17F58B88D085DBAC)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, speedMultiplier: number, timeout: integer, stoppingRange: number, flags: integer, p8: number, p9: number, p10: number, entity: integer, unk: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3614,6 +3643,7 @@ function TaskFollowToOffsetOfCoord(ped, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x304AE42E357B8C7E)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, entity: integer, offset: vector3, movementSpeed: number, timeout: integer, stoppingRange: number, persistFollowing: boolean, p9: boolean, walkOnly: boolean, p11: boolean, p12: boolean, p13: boolean)
 ---@param ped integer
 ---@param entity integer
 ---@param offsetX number
@@ -3671,6 +3701,7 @@ function TaskFollowWaypointRecordingAtOffset(ped, waypointRecording, p2, p3, p4,
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x41323F4E0C4AE94B)  
 ---Force a ped that is already attacking to aim directly at the specified world coordinates
+---@overload fun(ped: integer, coords: vector3, p4: integer, p5: boolean, p6: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3702,6 +3733,7 @@ function TaskForceThrowableAtEntityWhileAiming(ped, targetEntity, duration, p3, 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD76B57B44F1E6F8B)  
 ---Tells the ped to go to a coord, without using the navemesh. if timeBeforeTeleport is -1 the ped will never warp, p8 is always 0 or 1 still unknown
+---@overload fun(ped: integer, coords: vector3, moveBlendSpeedY: number, timeBeforeTeleport: integer, finalHeading: number, targetRadius: number, p8: integer)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3716,6 +3748,7 @@ function TaskGoStraightToCoord(ped, x, y, z, moveBlendSpeedY, timeBeforeTeleport
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x61E360B7E040D12E)  
 ---Tells the ped to go to an offset coord from an entity, without using the navmesh. if timeBeforeTeleport is -1 the ped will never warp, p7 is 1 or 0 still unknown param 
+---@overload fun(ped: integer, entity: integer, offset: vector3, moveBlendRatio: integer, timeBeforeTeleport: integer, p7: integer)
 ---@param ped integer
 ---@param entity integer
 ---@param xOffset number
@@ -3769,6 +3802,7 @@ function TaskGoToCoordAndAimAtHatedEntitiesNearCoordUsingCombatStyle(ped, p1, p2
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x5BC448CB78FA3E88)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, speed: number, entity: integer, p6: boolean, walkingStyle: integer, p8: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3783,6 +3817,7 @@ function TaskGoToCoordAnyMeans(ped, x, y, z, speed, entity, p6, walkingStyle, p8
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x1DD45F9ECFDB1BC9)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, speed: number, p5: any, p6: boolean, walkingStyle: integer, p8: number, p9: any, p10: any, p11: any, p12: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -3865,6 +3900,7 @@ function TaskGoToCoordWhileAimingAtCoordUsingCombatStyle(ped, p1, p2, p3, p4, p5
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB2A16444EAD9AE47)  
 ---This native does not have an official description.
+---@overload fun(ped1: integer, coords: vector3, ped2: integer, p5: number, p6: any, p7: number, p8: number, p9: any, p10: any, p11: any, firingPattern: integer | string, p13: integer, p14: any)
 ---@param ped1 integer
 ---@param x number
 ---@param y number
@@ -3929,6 +3965,7 @@ function TaskGotoEntityAiming(ped, target, distanceToStopAt, StartAimingDist) en
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE39B4FF4FDEBDE27)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, entity: integer, p2: any, coords: vector3, duration: integer)
 ---@param ped integer
 ---@param entity integer
 ---@param p2 any
@@ -4211,6 +4248,7 @@ function TaskJump(ped, unused) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x91083103137D7254)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, entity: integer)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4297,6 +4335,7 @@ function TaskLeaveVehicle(ped, vehicle, flags, unkPed) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6FA46612594F7973)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, duration: integer, flags: integer, p6: integer, p7: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4330,6 +4369,7 @@ function TaskLootEntity(ped, entity) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xCF1501CBC4059412)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, p4: integer, p5: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4382,6 +4422,7 @@ function TaskMoveBeInFormation(ped, p1, p2, p3, p4, p5, p6) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x79482C12482A860D)  
 ---Params: moveBlendRatio commonly 1.25f, p5 is always 0 in R* Scripts
+---@overload fun(ped: integer, moveBlendRatio: number, coords: vector3, p5: any)
 ---@param ped integer
 ---@param moveBlendRatio number
 ---@param x number
@@ -4425,6 +4466,9 @@ function TaskMoveInTrafficToDestination(ped, p1, p2, p3, p4, p5, p6, p7) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0x7B6A04F98BBAFB2C)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, moveNetworkDefName: string, taskData: any, coords: vector3, xRot: number, yRot: number, zRot: number, p9: integer, p10: number, p11: integer, p12: integer, flag: integer, p14: integer)
+---@overload fun(ped: integer, moveNetworkDefName: string, taskData: any, xPos: number, yPos: number, zPos: number, rotation: vector3, p9: integer, p10: number, p11: integer, p12: integer, flag: integer, p14: integer)
+---@overload fun(ped: integer, moveNetworkDefName: string, taskData: any, coords: vector3, rotation: vector3, p9: integer, p10: number, p11: integer, p12: integer, flag: integer, p14: integer)
 ---@param ped integer
 ---@param moveNetworkDefName string
 ---@param taskData any
@@ -4522,6 +4566,7 @@ function TaskPause(ped, ms) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xD04FE6765D990A06)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, heading: number, p5: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4578,6 +4623,7 @@ function TaskPickUpWeapon(ped, p1) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xC7F0B43DCDC57E3D)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, entity: integer, coords: vector3, p5: number, flags: integer)
 ---@param ped integer
 ---@param entity integer
 ---@param x number
@@ -4599,6 +4645,7 @@ function TaskPlaceCarriedEntityOnMount(ped, entity, mount, p3) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x965FEC691D55E9BF)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, heading: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4634,6 +4681,9 @@ function TaskPlayAnim(ped, animDict, animName, speed, speedMultiplier, duration,
 ---[Native Documentation](https://rdr3natives.com/?_0x83CDB10EA29B370B)  
 ---flags: see TASK_PLAY_ANIM
 ---ikFlags: see TASK_PLAY_ANIM
+---@overload fun(ped: integer, animDict: string, animName: string, coords: vector3, rotX: number, rotY: number, rotZ: number, speed: number, speedMultiplier: number, duration: integer, flags: integer, p13: number, p14: integer, p15: integer, p16: integer)
+---@overload fun(ped: integer, animDict: string, animName: string, posX: number, posY: number, posZ: number, rotation: vector3, speed: number, speedMultiplier: number, duration: integer, flags: integer, p13: number, p14: integer, p15: integer, p16: integer)
+---@overload fun(ped: integer, animDict: string, animName: string, coords: vector3, rotation: vector3, speed: number, speedMultiplier: number, duration: integer, flags: integer, p13: number, p14: integer, p15: integer, p16: integer)
 ---@param ped integer
 ---@param animDict string
 ---@param animName string
@@ -4740,6 +4790,7 @@ function TaskPolice(ped, p1) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4172393E6BE1FECE)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, timeout: integer, p5: boolean, p6: number, p7: any, p8: any, coverpoint: integer, p10: boolean, p11: boolean, p12: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4758,6 +4809,7 @@ function TaskPutPedDirectlyIntoCover(ped, x, y, z, timeout, p5, p6, p7, p8, cove
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xDF8A5855B9F9A97B)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, fromX: number, fromY: number, fromZ: number, timeout: integer, p8: any, p9: any, p10: any, p11: any, p12: any, p13: any, p14: any, p15: any, p16: any, p17: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4806,6 +4858,7 @@ function TaskPutPedDirectlyIntoMelee(ped, meleeTarget, meleeStyle, p3, animBlend
 ---[Native Documentation](https://rdr3natives.com/?_0xC4C32C31920E1B70)  
 ---Makes a ped react to an entity.
 ---Params: reactingTo Entity can be 0, p8 is always 4
+---@overload fun(ped: integer, reactingTo: integer, coords: vector3, reactionName: string, p6: number, p7: number, p8: integer)
 ---@param ped integer
 ---@param reactingTo integer
 ---@param x number
@@ -4882,6 +4935,7 @@ function TaskSeekCoverFromPed(ped, fromPed, duration, p3, p4, p5) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x75AC2B60386D89F2)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, duration: integer, p5: any, p6: any, p7: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -4968,6 +5022,7 @@ function TaskShockingEventReact(ped, p1, p2) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x46A6CC01E0826106)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, duration: integer, firingPattern: integer | string, p6: any)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5006,6 +5061,7 @@ function TaskShuffleToNextVehicleSeat(ped, vehicle) end
 ---[Native Documentation](https://rdr3natives.com/?_0x94587F17E9C365D5)  
 ---Makes the specified ped flee the specified distance from the specified position.
 ---fleeType: see TASK_FLEE_COORD
+---@overload fun(ped: integer, coords: vector3, distance: number, time: integer, fleeType: integer, fleeSpeed: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5036,6 +5092,7 @@ function TaskSmartFleePed(ped, fleeFromTarget, fleeDistance, fleeTime, fleeType,
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xAE032F8BBA959E90)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, heading: number, scenarioName: string)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5054,6 +5111,7 @@ function TaskStandStill(ped, time) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x4D1F61FC34AF3CD1)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, scenarioHash: integer | string, coords: vector3, heading: number, duration: integer, sittingScenario: boolean, teleport: boolean, p9: string, p10: number, p11: boolean)
 ---@param ped integer
 ---@param scenarioHash integer | string
 ---@param x number
@@ -5150,6 +5208,7 @@ function TaskThrowProjectile_2(p0, p1, p2, p3) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x1DDA930A0AC38571)  
 ---duration in milliseconds
+---@overload fun(ped: integer, coords: vector3, duration: integer)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5180,6 +5239,7 @@ function TaskTurnToFaceClosestPed(ped, p1, p2, p3) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9FDA1B3D7E7028B3)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, distance: number, p5: boolean, p6: boolean, p7: boolean, p8: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5194,6 +5254,7 @@ function TaskUseNearestScenarioChainToCoord(ped, x, y, z, distance, p5, p6, p7, 
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x97A28E63F0BA5631)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, distance: number, p5: boolean, p6: boolean, p7: boolean, p8: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5208,6 +5269,7 @@ function TaskUseNearestScenarioChainToCoordWarp(ped, x, y, z, distance, p5, p6, 
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x322BFDEA666E2B0E)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, distance: number, duration: integer, p6: boolean, p7: boolean, p8: boolean, p9: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5223,6 +5285,7 @@ function TaskUseNearestScenarioToCoord(ped, x, y, z, distance, duration, p6, p7,
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x58E2E0F23F6B76C3)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, distance: number, duration: integer, p6: boolean, p7: boolean, p8: boolean, p9: boolean)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5238,6 +5301,7 @@ function TaskUseNearestScenarioToCoordWarp(ped, x, y, z, distance, duration, p6,
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x3774B03456DD6106)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, distance: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5286,6 +5350,7 @@ function TaskUseScenarioPoint_2(ped, ped2, p2, p3, p4, p5, p6, p7) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x1D125814EBC517EB)  
 ---Adds a waypoint to an AI vehicle's active drive-to-destination task; only the last 3 points are kept (ignored if no such task).
+---@overload fun(vehicle: integer, coords: vector3)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -5295,6 +5360,7 @@ function TaskVehicleAddNextDestination(vehicle, x, y, z) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x447C1E9EF844BC0F)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5312,6 +5378,7 @@ function TaskVehicleAimAtPed(ped, target) end
 ---[Native Documentation](https://rdr3natives.com/?_0x089FF2FB965F0A29)  
 ---Old name: _TASK_VEHICLE_DRIVE_TO_POINT
 ---flag: 524419 and 0 in shop_horse_shop R* Script
+---@overload fun(driver: integer, vehicle: integer, coords: vector3, p5: number, p6: number, flag: integer)
 ---@param driver integer
 ---@param vehicle integer
 ---@param x number
@@ -5326,6 +5393,7 @@ function TaskVehicleDriveStraightToPoint(driver, vehicle, x, y, z, p5, p6, flag)
 ---[Native Documentation](https://rdr3natives.com/?_0xE2A2AA2F659D77A7)  
 ---stopRange: how close vehicle will get to destination before stopping, default 4.0
 ---straightLineDist: distance at which AI switches to heading for target directly instead of following nodes, default -1
+---@overload fun(ped: integer, vehicle: integer, coords: vector3, speed: number, style: any, vehicleModel: integer | string, drivingMode: integer, stopRange: number, straightLineDist: number)
 ---@param ped integer
 ---@param vehicle integer
 ---@param x number
@@ -5360,6 +5428,7 @@ function TaskVehicleDriveToCoord_2(ped, p1, p2, p3, p4, p5, p6, p7, p8) end
 ---p8 = x coordinate
 ---p9 - 8.f
 ---p10 = false
+---@overload fun(driver: integer, vehicle: integer, coords: vector3, speed: number, drivingFlags: integer, p7: integer, stoppingRange1: number, stoppingRange2: number, p10: boolean)
 ---@param driver integer
 ---@param vehicle integer
 ---@param x number
@@ -5376,6 +5445,7 @@ function TaskVehicleDriveToDestination(driver, vehicle, x, y, z, speed, drivingF
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x391073B9D3CCE2BA)  
 ---Tasks vehicle towards owner
+---@overload fun(vehicle: integer, coords: vector3, speed: number, p5: integer, p6: integer, p7: number, p8: number)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -5390,6 +5460,7 @@ function TaskVehicleDriveToDestination_2(vehicle, x, y, z, speed, p5, p6, p7, p8
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x6524A8981E8BE7C9)  
 ---Params: p4 = 3.f or 8.f, p5 = 0.25f, p6 = 0 in R* Scripts
+---@overload fun(vehicle: integer, coords: vector3, p4: number, p5: number, p6: any)
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -5470,6 +5541,7 @@ function TaskVehicleFollowWaypointRecording_2(p0, p1, p2, p3, p4, p5, p6, p7, p8
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x195AEEB13CEFE2EE)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, vehicle: integer, coords: vector3, speed: number, behaviorFlag: integer, stoppingRange: number)
 ---@param ped integer
 ---@param vehicle integer
 ---@param x number
@@ -5483,6 +5555,7 @@ function TaskVehicleGotoNavmesh(ped, vehicle, x, y, z, speed, behaviorFlag, stop
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x583AE9AF9CEE0958)  
 ---Returns true if the vehicle’s has a destination set previously set with `_TASK_VEHICLE_DRIVE_TO_DESTINATION_2` clear using `_CLEAR_VEHICLE_TASKS`
+---@overload fun(vehicle: integer, coords: vector3): boolean
 ---@param vehicle integer
 ---@param x number
 ---@param y number
@@ -5521,6 +5594,7 @@ function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, mode, maxSpeed, dr
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x5190796ED39C9B6D)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, p4: number)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5596,6 +5670,7 @@ function TaskWanderAndConverseWithPed(ped, p1, p2, p3) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE054346CA3A0F315)  
 ---This native does not have an official description.
+---@overload fun(ped: integer, coords: vector3, radius: number, p5: number, p6: number, p7: integer)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5687,6 +5762,7 @@ function UnhogtiePed(ped, flags, getupSetHash, p3, p4, p5) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x3FFCD7BBA074CC80)  
 ---In-place update for a running follow-to-offset/go-to task: sets new target coords + local offset, with speed and arrival tolerance (foot or mount; no effect if no compatible task)
+---@overload fun(ped: integer, targetX: number, targetY: number, targetZ: number, offset: vector3, speed: number, tolerance: number)
 ---@param ped integer
 ---@param targetX number
 ---@param targetY number
@@ -5709,6 +5785,7 @@ function UpdateTaskHandsUpDuration(ped, duration) end
 ---[Native Documentation](https://rdr3natives.com/?_0xAF2EF28CE3084505)  
 ---Updates the target coordinate of an ongoing SCRIPT_TASK_VEHICLE_SHOOT_AT_COORD for the given ped This lets you retarget the shooting point in real time without restarting the task
 ---Has effect only while the ped’s task status for `SCRIPT_TASK_VEHICLE_SHOOT_AT_COORD` is `TASK_STATUS_ONGOING` (commonly 1) If the task hasn’t started yet (status 0 or not running), use `TASK_VEHICLE_SHOOT_AT_COORD` first; after it becomes active, call this to update the aim point Compared to `TASK_VEHICLE_SHOOT_AT_COORD`: the latter starts (or re-queues) the task with an initial target; this native *only* updates the active task’s target coordinate.
+---@overload fun(ped: integer, coords: vector3)
 ---@param ped integer
 ---@param x number
 ---@param y number
@@ -5882,6 +5959,7 @@ function WaypointPlaybackUseDefaultSpeed(ped) end
 ---**`TASK` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB629A298081F876F)  
 ---This native does not have an official description.
+---@overload fun(waypointRecording: string, coords: vector3, point: integer): boolean
 ---@param waypointRecording string
 ---@param x number
 ---@param y number
