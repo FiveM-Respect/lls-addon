@@ -1,7 +1,7 @@
 ---@meta
 
----@type unknown
-source = nil
+---@type integer
+source = 0
 
 ---@class EventHandler
 ---@field name string

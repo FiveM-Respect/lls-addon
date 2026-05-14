@@ -29,7 +29,7 @@ function PerformHttpRequest(url, cb, method, data, headers, options) end
 function PerformHttpRequestAwait(url, method, data, headers, options) end
 
 ---Returns a table of all connected players.
----@return string[]
+---@return integer[]
 function GetPlayers() end
 
 ---@class StateBag

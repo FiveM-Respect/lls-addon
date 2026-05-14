@@ -46,5 +46,15 @@ function OnSetText(uri, text)
 		}
 	end
 
+	-- backticks hashes
+	for start, content, finish in str_gmatch(text, '()`([^`\r\n]-)`()') do
+		count = count + 1
+		diffs[count] = {
+			start  = start,
+			finish = finish - 1,
+			text   = ('joaat("%s")'):format(content)
+		}
+	end
+
 	return diffs
 end
