@@ -123,7 +123,7 @@ function CreateNonNetworkedAmbientPickup(pickupHash, posX, posY, posZ, flags, va
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x125494B98A21AAF7)  
 ---This native does not have an official description.
----@overload fun(pickupHash: integer | string, coords: vector3, placeOnGround: boolean, modelHash: integer | string): table
+---@overload fun(pickupHash: integer | string, coords: vector3, placeOnGround: boolean, modelHash: integer | string): integer
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -140,7 +140,7 @@ CreatePortablePickup_2 = CreateNonNetworkedPortablePickup
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x509D5878EB39E842)  
 ---Creates an object (prop) with the specified model at the specified position, offset on the Z axis by the radius of the object's model.
 ---This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
----@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, netMissionEntity: boolean, doorFlag: boolean): table
+---@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, netMissionEntity: boolean, doorFlag: boolean): integer
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -155,7 +155,7 @@ function CreateObject(modelHash, x, y, z, isNetwork, netMissionEntity, doorFlag)
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A294B2138ABB884)  
 ---Creates an object (prop) with the specified model centered at the specified position.
 ---This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
----@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, netMissionEntity: boolean, doorFlag: boolean): table
+---@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, netMissionEntity: boolean, doorFlag: boolean): integer
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -210,7 +210,7 @@ function CreatePickupRotate(pickupHash, posX, posY, posZ, rotX, rotY, rotZ, flag
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2EAF1FDB2FB55698)  
 ---Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
----@overload fun(pickupHash: integer | string, coords: vector3, placeOnGround: boolean, modelHash: integer | string): table
+---@overload fun(pickupHash: integer | string, coords: vector3, placeOnGround: boolean, modelHash: integer | string): integer
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -465,7 +465,7 @@ function ForcePickupRegenerate(p0) end
 ---Has 8 params in the latest patches.  
 ---isMission - if true doesn't return mission objects  
 ---```
----@overload fun(coords: vector3, radius: number, modelHash: integer | string, isMission: boolean, p6: boolean, p7: boolean): table
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, isMission: boolean, p6: boolean, p7: boolean): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -579,7 +579,7 @@ function GetPickupObject(pickup) end
 ---Example:
 ---OBJECT::GET_RAYFIRE_MAP_OBJECT(-809.9619750976562, 170.919, 75.7406997680664, 3.0, "des_tvsmash");
 ---```
----@overload fun(coords: vector3, radius: number, name: string): table
+---@overload fun(coords: vector3, radius: number, name: string): integer
 ---@param x number
 ---@param y number
 ---@param z number

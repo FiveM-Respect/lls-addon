@@ -70,7 +70,7 @@ function ClearPedLastWeaponDamage(ped) end
 ---**`WEAPON` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9888652B8BA77F73)  
 ---This native does not have an official description.
----@overload fun(weaponHash: integer | string, ammoCount: integer, coords: vector3, showWorldModel: boolean, scale: number): table
+---@overload fun(weaponHash: integer | string, ammoCount: integer, coords: vector3, showWorldModel: boolean, scale: number): integer
 ---@param weaponHash integer | string
 ---@param ammoCount integer
 ---@param x number

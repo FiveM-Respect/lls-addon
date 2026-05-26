@@ -56,7 +56,7 @@ function ConvertOldPickupTypeToNew(pickupHash) end
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x673966A0C0FD7171)  
 ---flags: see CREATE_PICKUP
----@overload fun(pickupHash: integer | string, coords: vector3, flags: integer, amount: integer, modelHash: integer | string, createAsScriptObject: boolean, scriptHostObject: boolean, customAmmoType: integer, p10: number): table
+---@overload fun(pickupHash: integer | string, coords: vector3, flags: integer, amount: integer, modelHash: integer | string, createAsScriptObject: boolean, scriptHostObject: boolean, customAmmoType: integer, p10: number): integer
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -74,7 +74,7 @@ function CreateAmbientPickup(pickupHash, x, y, z, flags, amount, modelHash, crea
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x509D5878EB39E842)  
 ---This native does not have an official description.
----@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, bScriptHostObj: boolean, dynamic: boolean, p7: boolean, p8: boolean): table
+---@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, bScriptHostObj: boolean, dynamic: boolean, p7: boolean, p8: boolean): integer
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -90,7 +90,7 @@ function CreateObject(modelHash, x, y, z, isNetwork, bScriptHostObj, dynamic, p7
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x9A294B2138ABB884)  
 ---This native does not have an official description.
----@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, bScriptHostObj: boolean, dynamic: boolean, p7: boolean): table
+---@overload fun(modelHash: integer | string, coords: vector3, isNetwork: boolean, bScriptHostObj: boolean, dynamic: boolean, p7: boolean): integer
 ---@param modelHash integer | string
 ---@param x number
 ---@param y number
@@ -155,7 +155,7 @@ function CreatePickupRotate(pickupHash, posX, posY, posZ, rotX, rotY, rotZ, flag
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0x2EAF1FDB2FB55698)  
 ---This native does not have an official description.
----@overload fun(pickupHash: integer | string, coords: vector3, placeOnGround: boolean, modelHash: integer | string): table
+---@overload fun(pickupHash: integer | string, coords: vector3, placeOnGround: boolean, modelHash: integer | string): integer
 ---@param pickupHash integer | string
 ---@param x number
 ---@param y number
@@ -339,7 +339,7 @@ function GetAmmoTypeFromPickupType(pickupHash) end
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?_0xE143FA2249364369)  
 ---Returns the closest object of a specified type within a given radius from a specified position
----@overload fun(coords: vector3, radius: number, modelHash: integer | string, missionScriptObject: boolean, scriptHostObject: boolean, networkObject: boolean): table
+---@overload fun(coords: vector3, radius: number, modelHash: integer | string, missionScriptObject: boolean, scriptHostObject: boolean, networkObject: boolean): integer
 ---@param x number
 ---@param y number
 ---@param z number
@@ -406,7 +406,7 @@ function GetPickupObject(pickup) end
 ---**`OBJECT` ``**  
 ---[Native Documentation](https://rdr3natives.com/?_0xB48FCED898292E52)  
 ---This native does not have an official description.
----@overload fun(coords: vector3, radius: number, name: string): table
+---@overload fun(coords: vector3, radius: number, name: string): integer
 ---@param x number
 ---@param y number
 ---@param z number

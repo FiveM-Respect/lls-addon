@@ -88,7 +88,7 @@ CreateAirDefenseSphere = CreateAirDefenceSphere
 ---NativeDB Added Parameter 9: BOOL bRegisterAsNetworkObject
 ---NativeDB Added Parameter 10: BOOL bScriptHostObject
 ---```
----@overload fun(weaponHash: integer | string, ammoCount: integer, coords: vector3, bCreateDefaultComponents: boolean, scale: number, customModelHash: integer): table
+---@overload fun(weaponHash: integer | string, ammoCount: integer, coords: vector3, bCreateDefaultComponents: boolean, scale: number, customModelHash: integer): integer
 ---@param weaponHash integer | string
 ---@param ammoCount integer
 ---@param x number
